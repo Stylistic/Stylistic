@@ -1,0 +1,98 @@
+/**
+ *
+ * SETTINGS
+ *
+ **/
+grid-columns               := 12
+
+
+/**
+ *
+ * SPACING
+ *
+ **/
+spacer                     := 1rem
+spacer-x                   := spacer
+spacer-y                   := spacer
+spacers := {
+  '0': {
+    x: 0,
+    y: 0
+  },
+  '1': {
+    x: spacer-x,
+    y: spacer-y
+  },
+  '2': {
+    x: (spacer-x * 1.5),
+    y: (spacer-y * 1.5)
+  },
+  '3': {
+    x: (spacer-x * 3),
+    y: (spacer-y * 3)
+  }
+}
+border-width                := 1px
+
+/**
+ *
+ * COLORS
+ *
+ **/
+// Hash of default colors
+colors = {
+  orange: #ED8B00,
+  blue: #0D5257,
+  gray: #708573,
+  shadow: #9ABEAA,
+  red: #BE3A34,
+  gray: #55595c
+}
+
+// Loop through the hash and make variables for light and
+// dark variations of the colors
+for name, color in colors
+  define(name + '-lighter', lighten(color, 10%))
+  define(name + '-lightest', lighten(color, 20%))
+  define(name, color)
+  define(name + '-darker', darken(color, 10%))
+  define(name + '-darkest', darken(color, 20%))
+
+/**
+ *
+ * TYPESETTING
+ *
+ **/
+
+ // Set default font families
+ font-family-serif         := 'Playfair Display', serif;
+ font-family-sans          := 'Lato', sans-serif;
+ font-family-mono          := 'Source Code Pro';
+ font-family-base          := font-family-sans;
+
+ // Set default font sizes
+font-size-root             := 16px;
+
+font-size-base             := 1rem;
+font-size-lg               := 1.25rem
+font-size-sm               := .875rem
+font-size-xs               := .75rem
+
+font-size-h1               := 2.5rem
+font-size-h2               := 2rem
+font-size-h3               := 1.75rem
+font-size-h4               := 1.5rem
+font-size-h5               := 1.25rem
+font-size-h6               := 1rem
+
+// Spacing
+line-height                := 1.5
+
+
+/**
+ *
+ * BODY STYLES
+ *
+ **/
+body-bg                    := #fff
+body-color                 := gray-darker
