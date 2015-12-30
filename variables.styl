@@ -1,19 +1,12 @@
 /**
  *
- * SETTINGS
- *
- **/
-grid-columns               := 12
-
-
-/**
- *
  * SPACING
  *
  **/
-spacer                     := 1rem
-spacer-x                   := spacer
-spacer-y                   := spacer
+
+spacer                      := 1rem
+spacer-x                    := spacer
+spacer-y                    := spacer
 spacers := {
   '0': {
     x: 0,
@@ -32,18 +25,19 @@ spacers := {
     y: (spacer-y * 3)
   }
 }
-border-width                := 1px
+border-width                 := 1px
 
 /**
  *
  * COLORS
  *
  **/
+
 // Hash of default colors
 colors = {
   orange: #ED8B00,
   blue: #0D5257,
-  gray: #708573,
+  green: #708573,
   shadow: #9ABEAA,
   red: #BE3A34,
   gray: #55595c
@@ -52,41 +46,13 @@ colors = {
 // Loop through the hash and make variables for light and
 // dark variations of the colors
 for name, color in colors
-  define(name + '-lighter', lighten(color, 10%))
-  define(name + '-lightest', lighten(color, 20%))
+  define(name + '-light', lighten(color, 20%))
+  define(name + '-lighter', lighten(color, 40%))
+  define(name + '-lightest', lighten(color, 80%))
   define(name, color)
-  define(name + '-darker', darken(color, 10%))
-  define(name + '-darkest', darken(color, 20%))
-
-/**
- *
- * TYPESETTING
- *
- **/
-
- // Set default font families
- font-family-serif         := 'Playfair Display', serif;
- font-family-sans          := 'Lato', sans-serif;
- font-family-mono          := 'Source Code Pro';
- font-family-base          := font-family-sans;
-
- // Set default font sizes
-font-size-root             := 16px;
-
-font-size-base             := 1rem;
-font-size-lg               := 1.25rem
-font-size-sm               := .875rem
-font-size-xs               := .75rem
-
-font-size-h1               := 2.5rem
-font-size-h2               := 2rem
-font-size-h3               := 1.75rem
-font-size-h4               := 1.5rem
-font-size-h5               := 1.25rem
-font-size-h6               := 1rem
-
-// Spacing
-line-height                := 1.5
+  define(name + '-dark', darken(color, 20%))
+  define(name + '-darker', darken(color, 40%))
+  define(name + '-darkest', darken(color, 80%))
 
 
 /**
@@ -94,5 +60,220 @@ line-height                := 1.5
  * BODY STYLES
  *
  **/
-body-bg                    := #fff
-body-color                 := gray-darker
+
+body-bg                      := #fff
+body-color                   := gray-darker
+
+
+/**
+ *
+ * LINKS
+ *
+ **/
+
+link-color                   := blue
+link-decoration              := none
+link-hover-color             := blue-darker
+link-hover-decoration        := none
+
+/**
+ *
+ * GRID BREAKPOINTS
+ *
+ **/
+
+grid-breakpoints := {
+  xs: 0,
+  sm: 544px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+}
+
+/**
+ *
+ * GRID CONTAINERS
+ *
+ **/
+
+container-max-widths := {
+  sm: 576px,
+  md: 720px,
+  lg: 940px,
+  xl: 1140px
+}
+
+/**
+ *
+ * GRID COLUMNS
+ *
+ **/
+
+ grid-columns               := 12
+ grid-gutter-width          := 1.875rem // Or about 30px
+
+ /**
+ *
+ * TYPESETTING
+ *
+ **/
+
+// Set default font families
+font-family-serif           := 'Playfair Display', serif;
+font-family-sans            := 'Lato', sans-serif;
+font-family-mono            := 'Source Code Pro';
+font-family-base            := font-family-sans;
+
+// Set default font sizes and colors
+font-size-root              := 16px
+
+font-size-base              := 1rem
+font-size-lg                := 1.25rem
+font-size-sm                := .875rem
+font-size-xs                := .75rem
+
+font-size-h1                := 2.5rem
+font-size-h2                := 2rem
+font-size-h3                := 1.75rem
+font-size-h4                := 1.5rem
+font-size-h5                := 1.25rem
+font-size-h6                := 1rem
+
+line-height                 := 1.5
+
+heading-margin-bottom       := (spacer / 2)
+heading-font-family         := inherit
+heading-font-weight         := 500
+heading-line-height         := 1.1
+heading-color               := inherit
+
+lead-font-size              := 1.25rem
+lead-font-weight            := 300
+
+text-muted                  := gray-light
+
+abbr-border-color           := gray-light
+
+blockquote-small-color      := gray-light
+blockquote-font-size        := (font-size-base * 1.25)
+blockquote-border-color     := gray-lighter
+
+hr-border-color             := rgba(0,0,0,.1)
+hr-border-width             := border-width
+
+dt-font-weight              := bold
+nested-kbd-font-weight      := bold
+list-inline-padding         := 5px
+
+/**
+*
+* BORDERS
+*
+**/
+
+border-radius               := .25rem
+border-radius-lg            := .3rem
+border-radius-sm            := .2rem
+
+/**
+*
+* BUTTONS
+*
+**/
+
+btn-padding-x               := 1rem
+btn-padding-y               := .375rem
+btn-font-weight             := normal
+
+btn-primary-color           := #fff
+btn-primary-bg              := blue
+btn-primary-border          := btn-primary-bg
+
+btn-secondary-color         := gray-dark
+btn-secondary-bg            := #fff
+btn-secondary-border        := gray-lightest
+
+btn-info-color              := gray-dark
+btn-info-bg                 := shadow
+btn-info-border             := btn-info-bg
+
+btn-success-color           := #fff
+btn-success-bg              := green
+btn-success-border          := btn-success-bg
+
+btn-warning-color           := gray-dark
+btn-warning-bg              := orange-lighter
+btn-warning-border          := btn-warning-bg
+
+btn-danger-color           := #fff
+btn-danger-bg              := red
+btn-danger-border          := btn-danger-bg
+
+btn-link-disabled-color    := gray-light
+
+btn-padding-base           := .25rem
+
+btn-padding-x-sm           := (btn-padding-base * 3)
+btn-padding-y-sm           := (btn-padding-base)
+
+btn-padding-x-lg           := (btn-padding-base * 5)
+btn-padding-y-lg           := (btn-padding-base * 3)
+
+// Allow customizing of border radius seperately from the global border radius
+btn-border-radius          := border-radius
+btn-border-radius-lg       := border-radius-lg
+btn-border-radius-sm       := border-radius-sm
+
+/**
+*
+* FORMS
+*
+**/
+
+input-padding-x                := .75rem
+input-padding-y                := (input-padding-x / 2)
+
+input-bg                       := gray-lightest
+input-bg-disabled              := gray-lighter
+
+input-color                    := gray
+input-border-color             := gray-lighter
+
+input-btn-border-width         := border-width
+input-box-shadow               := inset 0 1px 1px rgba(0,0,0,.075)
+
+input-border-radius            := border-radius
+input-border-radius-lg         := border-radius-lg
+input-border-radius-sm         := border-radius-sm
+
+input-border-focus             := blue-light
+input-box-shadow-focus         := transparentify(blue-light, blue-light, .6)
+
+input-color-placeholder        := #999
+
+
+
+input-height                     := ((font-size-base * line-height) + (input-padding-y * 2))
+input-height-lg:                 := ((font-size-lg * line-height-lg) + (input-padding-y-lg * 2))
+input-height-sm:                 := ((font-size-sm * line-height-sm) + (input-padding-y-sm * 2))
+
+form-group-margin-bottom         := spacer-y
+
+input-group-addon-bg             := gray-lighter
+input-group-addon-border-color   := input-border-color
+
+cursor-disabled                  := not-allowed
+
+// Validation icons
+
+
+// lightdark(color, iflight, ifdark)
+//   if dark(color)
+//     ifdark
+//   else
+//     iflight
+//
+// for name, color in colors
+//   define('btn-' + name + '-color', lightdark(color, #fff, gray-dark))
+//   define('btn-' + name + '-bg', color)
+//   define('btn-' + name + '-border', color)
