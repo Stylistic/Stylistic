@@ -1,5 +1,14 @@
 /**
  *
+ * SOME HELPFUL OPTIONS
+ * at the top for convenience sake
+ *
+ **/
+
+$hover-effects              := true
+
+/**
+ *
  * SPACING
  *
  **/
@@ -140,12 +149,14 @@ font-size-h5                := 1.25rem
 font-size-h6                := 1rem
 
 line-height                 := 1.5
+line-height-lg              := (4 / 3)
+line-height-sm              := 1.5
 
-heading-margin-bottom       := (spacer / 2)
-heading-font-family         := inherit
-heading-font-weight         := 500
-heading-line-height         := 1.1
-heading-color               := inherit
+headings-margin-bottom       := (spacer / 2)
+headings-font-family         := inherit
+headings-font-weight         := 500
+headings-line-height         := 1.1
+headings-color               := inherit
 
 lead-font-size              := 1.25rem
 lead-font-weight            := 300
@@ -174,6 +185,23 @@ list-inline-padding         := 5px
 border-radius               := .25rem
 border-radius-lg            := .3rem
 border-radius-sm            := .2rem
+
+/**
+ *
+ * TABLES
+ *
+ **/
+
+table-cell-padding         := .75rem
+table-sm-cell-padding      := .3rem
+
+table-bg                   := transparent
+table-bg-accent            := #f9f9f9
+table-bg-hover             := #f5f5f5
+table-bg-active            := table-bg-hover
+
+table-border-width         := border-width
+table-border-color         := gray-lighter
 
 /**
 *
@@ -211,13 +239,11 @@ btn-danger-border          := btn-danger-bg
 
 btn-link-disabled-color    := gray-light
 
-btn-padding-base           := .25rem
+btn-padding-x-sm           := .75rem
+btn-padding-y-sm           := .25rem
 
-btn-padding-x-sm           := (btn-padding-base * 3)
-btn-padding-y-sm           := (btn-padding-base)
-
-btn-padding-x-lg           := (btn-padding-base * 5)
-btn-padding-y-lg           := (btn-padding-base * 3)
+btn-padding-x-lg           := 1.25rem
+btn-padding-y-lg           := .75rem
 
 // Allow customizing of border radius seperately from the global border radius
 btn-border-radius          := border-radius
@@ -251,11 +277,15 @@ input-box-shadow-focus         := transparentify(blue-light, blue-light, .6)
 
 input-color-placeholder        := #999
 
+input-padding-x-sm           := .75rem
+input-padding-y-sm           := .25rem
 
+input-padding-x-lg           := 1.25rem
+input-padding-y-lg           := .75rem
 
-input-height                     := ((font-size-base * line-height) + (input-padding-y * 2))
-input-height-lg:                 := ((font-size-lg * line-height-lg) + (input-padding-y-lg * 2))
-input-height-sm:                 := ((font-size-sm * line-height-sm) + (input-padding-y-sm * 2))
+input-height                     := (font-size-base * line-height) + (input-padding-y * 2)
+input-height-lg                  := (font-size-lg * line-height-lg) + (input-padding-y-lg * 2)
+input-height-sm                  := (font-size-sm * line-height-sm) + (input-padding-y-sm * 2)
 
 form-group-margin-bottom         := spacer-y
 
@@ -265,15 +295,27 @@ input-group-addon-border-color   := input-border-color
 cursor-disabled                  := not-allowed
 
 // Validation icons
+form-icon-success                := b64url('./assets/images/success.svg')
+form-icon-warning                := b64url('./assets/images/warning.svg')
+form-icon-danger                 := b64url('./assets/images/danger.svg')
 
 
-// lightdark(color, iflight, ifdark)
-//   if dark(color)
-//     ifdark
-//   else
-//     iflight
+// Form states and alerts
 //
-// for name, color in colors
-//   define('btn-' + name + '-color', lightdark(color, #fff, gray-dark))
-//   define('btn-' + name + '-bg', color)
-//   define('btn-' + name + '-border', color)
+// Define colors for form feedback states and, by default, alerts.
+
+state-success-text               := #3c763d
+state-success-bg                 := #dff0d8
+state-success-border             := darken(state-success-bg, 5%)
+
+state-info-text                  := #31708f
+state-info-bg                    := #d9edf7
+state-info-border                := darken(state-info-bg, 7%)
+
+state-warning-text               := #8a6d3b
+state-warning-bg                 := #fcf8e3
+state-warning-border             := darken(state-warning-bg, 5%)
+
+state-danger-text                := #a94442
+state-danger-bg                  := #f2dede
+state-danger-border              := darken(state-danger-bg, 5%)
