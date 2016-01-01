@@ -8,7 +8,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "serve": "node ./server.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,17 @@
   },
   "homepage": "https://github.com/MarginZero/Stylistic#readme",
   "devDependencies": {
+    "copy": "^0.1.3",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
-    "gulp-stylus": "^2.2.0"
+    "gulp-concat": "^2.6.0",
+    "gulp-copy": "0.0.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylint": "^3.0.0",
+    "gulp-stylus": "^2.2.0",
+    "gulp-uglify": "^1.5.1",
+    "mocha": "^2.3.4",
+    "node-static": "^0.7.7"
   }
 }
