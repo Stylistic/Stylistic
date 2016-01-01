@@ -26,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/MarginZero/Stylistic/issues"
   },
-  "homepage": "https://github.com/MarginZero/Stylistic#readme"
+  "homepage": "https://github.com/MarginZero/Stylistic#readme",
+  "devDependencies": {
+    "gulp-babel": "^6.1.1",
+    "gulp-stylus": "^2.2.0"
+  }
 }
