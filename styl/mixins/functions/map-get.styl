@@ -1,0 +1,6 @@
+map-get($name, $hash)
+  $res = ''
+  for $key, $val in $hash
+    if $key == $name
+      $res = $val
+  return $res

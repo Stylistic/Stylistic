@@ -1,2 +1,34 @@
 .container
   make-container()
+  make-container-max-widths()
+
+.container-fluid
+  make-container()
+
+.container-full
+  make-container(0)
+
+if $enable-grid
+  .row
+    make-row()
+
+if $enable-grid
+  make-grid-columns()
+
+if $enable-flex && $enable-grid
+  for $breakpoint in map-keys(grid-breakpoints)
+    +media-breakpoint-up($breakpoint)
+      .col-{$breakpoint}-first { order: -1; }
+      .col-{$breakpoint}-last  { order: 1; }
+
+  for $breakpoint in map-keys(grid-breakpoints)
+    +media-breakpoint-up($breakpoint)
+      .row-{$breakpoint}-top    { align-items: flex-start; }
+      .row-{$breakpoint}-center { align-items: center; }
+      .row-{$breakpoint}-bottom { align-items: flex-end; }
+
+  for $breakpoint in map-keys(grid-breakpoints)
+    +media-breakpoint-up($breakpoint)
+      .col-{$breakpoint}-top    { align-self: flex-start; }
+      .col-{$breakpoint}-center { align-self: center; }
+      .col-{$breakpoint}-bottom { align-self: flex-end; }

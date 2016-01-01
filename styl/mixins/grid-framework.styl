@@ -1,0 +1,24 @@
+make-grid-columns($columns = grid-columns, $gutter = grid-gutter-width, $breakpoints = grid-breakpoints)
+  grid-column = @block {
+    position: relative
+    min-height: 1px
+    padding-left: ($gutter / 2)
+    padding-right: ($gutter / 2)
+  }
+
+  for $breakpoint in map-keys($breakpoints)
+    for $i in (1..$columns)
+      .col-{$breakpoint}-{$i}
+        {grid-column}
+
+    +media-breakpoint-up($breakpoint)
+      for $i in (1..$columns)
+        .col-{$breakpoint}-{$i}
+          if !$enable-flex
+            float: left
+          make-col-span($i, $columns)
+
+      for $modifier in (pull push offset)
+        for $i in (0..$columns)
+          .col-{$breakpoint}-{$modifier}-{$i}
+            make-col-modifier($modifier, $i, $columns)

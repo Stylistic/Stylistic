@@ -7,6 +7,47 @@ make-container($gutter = grid-gutter-width)
     clearfix()
   }
 
-// make-container-max-widths($max-widths = container-max-widths)
-//   for breakpoint, container-max-width in $max-widths
-//
+make-container-max-widths($max-widths = container-max-widths)
+  for $breakpoint, $container-max-width in $max-widths
+    +media-breakpoint-up($breakpoint)
+      max-width: $container-max-width
+
+make-row($gutter = grid-gutter-width)
+  if $enable-flex
+    display: flex
+    flex-wrap: wrap
+  else
+    clearfix()
+  margin-left: ($gutter /2)
+  margin-right: ($gutter / 2)
+
+make-col($gutter = grid-gutter-width)
+  position: relative
+  if !$enable-flex
+    float: left
+  min-height: 1px
+  padding-left: ($gutter / 2)
+  padding-right: ($gutter / 2)
+
+make-col-span($size, $columns = grid-columns)
+  if $enable-flex
+    flex: 0 0 percentage($size / $columns)
+  else
+    width: percentage($size / $columns)
+
+make-col-offset($size, $columns = grid-columns)
+  margin-left: percentage($size / $columns)
+
+make-col-push($size, $columns = grid-columns)
+  left: $size > 0 ? percentage($size / $columns) : auto
+
+make-col-pull($size, $columns = grid-columns)
+  right: $size > 0 ? percentage($size / $columns) : auto
+
+make-col-modifier($type, $size, $columns)
+  if $type == 'push'
+    make-col-push($size, $columns)
+  else if $type == 'pull'
+    make-col-pull($size, $columns)
+  else if $type == 'offset'
+    make-col-offset($size, $columns)
