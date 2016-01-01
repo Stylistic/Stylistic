@@ -1,0 +1,30 @@
+{
+  "name": "Stylistic",
+  "version": "0.1.0",
+  "description": "Bootstrap like CSS framework written in Stylus",
+  "main": "./dist/js/npm.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarginZero/Stylistic.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "stylus",
+    "bootstrap",
+    "foundation"
+  ],
+  "author": "Chris Watson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarginZero/Stylistic/issues"
+  },
+  "homepage": "https://github.com/MarginZero/Stylistic#readme"
+}
