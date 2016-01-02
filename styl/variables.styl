@@ -8,6 +8,7 @@
 $hover-effects              := true
 $use-flex                   := true
 $enable-grid                := true
+$rounded-corners            := true
 
 /**
  *
@@ -51,19 +52,19 @@ colors = {
   green: #708573,
   shadow: #9ABEAA,
   red: #BE3A34,
-  gray: #55595c
+  gray: #808080
 }
 
 // Loop through the hash and make variables for light and
 // dark variations of the colors
 for name, color in colors
   define(name + '-light', lighten(color, 20%))
-  define(name + '-lighter', lighten(color, 40%))
-  define(name + '-lightest', lighten(color, 80%))
+  define(name + '-lighter', lighten(color, 50%))
+  define(name + '-lightest', lighten(color, 90%))
   define(name, color)
   define(name + '-dark', darken(color, 20%))
-  define(name + '-darker', darken(color, 40%))
-  define(name + '-darkest', darken(color, 80%))
+  define(name + '-darker', darken(color, 50%))
+  define(name + '-darkest', darken(color, 90%))
 
 
 /**
@@ -73,7 +74,7 @@ for name, color in colors
  **/
 
 body-bg                      := #fff
-body-color                   := gray-darker
+body-color                   := gray-darkest
 
 
 /**
@@ -82,9 +83,9 @@ body-color                   := gray-darker
  *
  **/
 
-link-color                   := blue
+link-color                   := gray
 link-decoration              := none
-link-hover-color             := blue-darker
+link-hover-color             := gray-dark
 link-hover-decoration        := none
 
 /**
@@ -120,7 +121,7 @@ container-max-widths := {
  *
  **/
 
- grid-columns               := 12
+ grid-columns               := 16
  grid-gutter-width          := 1.875rem // Or about 30px
 
  /**
@@ -130,9 +131,9 @@ container-max-widths := {
  **/
 
 // Set default font families
-font-family-serif           := Georgia, "Times New Roman", Times, serif
-font-family-sans            := "Helvetica Neue", Helvetica, Arial, sans-serif
-font-family-mono            := Menlo, Monaco, Consolas, "Courier New", monospace;
+font-family-serif           := "Playfair Display", "Times New Roman", Times, serif
+font-family-sans            := "Lato", Helvetica, Arial, sans-serif
+font-family-mono            := "Source Sans Pro", Monaco, Consolas, "Courier New", monospace;
 font-family-base            := font-family-sans;
 
 // Set default font sizes and colors
@@ -156,7 +157,7 @@ line-height-sm              := 1.5
 
 headings-margin-bottom       := (spacer / 2)
 headings-font-family         := inherit
-headings-font-weight         := 500
+headings-font-weight         := 400
 headings-line-height         := 1.1
 headings-color               := inherit
 
@@ -184,7 +185,7 @@ list-inline-padding         := 5px
 *
 **/
 
-border-radius               := .25rem
+border-radius-default       := .25rem
 border-radius-lg            := .3rem
 border-radius-sm            := .2rem
 
@@ -248,7 +249,7 @@ btn-padding-x-lg           := 1.25rem
 btn-padding-y-lg           := .75rem
 
 // Allow customizing of border radius seperately from the global border radius
-btn-border-radius          := border-radius
+btn-border-radius          := border-radius-default
 btn-border-radius-lg       := border-radius-lg
 btn-border-radius-sm       := border-radius-sm
 
@@ -270,7 +271,7 @@ input-border-color             := gray-lighter
 input-btn-border-width         := border-width
 input-box-shadow               := inset 0 1px 1px rgba(0,0,0,.075)
 
-input-border-radius            := border-radius
+input-border-radius            := border-radius-default
 input-border-radius-lg         := border-radius-lg
 input-border-radius-sm         := border-radius-sm
 
@@ -321,3 +322,44 @@ state-warning-border             := darken(state-warning-bg, 5%)
 state-danger-text                := #a94442
 state-danger-bg                  := #f2dede
 state-danger-border              := darken(state-danger-bg, 5%)
+
+// Navbar
+
+navbar-border-radius             := border-radius
+navbar-padding-horizontal        := spacer
+navbar-padding-vertical          := (spacer / 2)
+
+navbar-dark-color                := rgba(255,255,255,.5)
+navbar-dark-hover-color          := rgba(255,255,255,.75)
+navbar-dark-active-color         := rgba(255,255,255,1)
+navbar-dark-disabled-color       := rgba(255,255,255,.25)
+
+navbar-light-color               := rgba(0,0,0,.3)
+navbar-light-hover-color         := rgba(0,0,0,.6)
+navbar-light-active-color        := rgba(0,0,0,.8)
+navbar-light-disabled-color      := rgba(0,0,0,.15)
+
+
+// Navs
+
+nav-link-padding                 := .5em 1em
+nav-link-hover-bg                := gray-lighter
+
+nav-disabled-link-color          := gray-light
+nav-disabled-link-hover-color    := gray-light
+
+nav-tabs-border-color            := #ddd
+
+nav-tabs-link-border-width       := border-width
+nav-tabs-link-hover-border-color := gray-lighter
+
+nav-tabs-active-link-hover-bg    := body-bg
+nav-tabs-active-link-hover-color := gray
+nav-tabs-active-link-hover-border-color := #ddd
+
+nav-tabs-justified-link-border-color    := #ddd
+nav-tabs-justified-active-link-border-color := body-bg
+
+nav-pills-border-radius          := border-radius
+nav-pills-active-link-hover-bg   := component-active-bg
+nav-pills-active-link-hover-color:= component-active-color

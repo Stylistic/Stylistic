@@ -7,8 +7,8 @@ const gulp = require('gulp'),
       concat = require('gulp-concat'),
       stylus = require('gulp-stylus'),
       stylint = require('gulp-stylint'),
-      copy = require('copy'),
-      del = require('del');
+      del = require('del'),
+      fs = require('node-fs-extra');
 
 const paths = {
   styles  : {
@@ -20,8 +20,8 @@ const paths = {
     out: __dirname + '/dist/js'
   },
   fonts   : {
-    src: __dirname + '/fonts/**/*',
-    out: __dirname + '/dist/fonts/'
+    src: __dirname + '/fonts',
+    out: __dirname + '/dist/fonts'
   }
 };
 
@@ -54,7 +54,7 @@ gulp.task('babel', () => {
 });
 
 gulp.task('copy-fonts', () => {
-  copy(paths.fonts.src, paths.fonts.out);
+  fs.copy(paths.fonts.src, paths.fonts.out);
 });
 
 gulp.task('clean', () => {
