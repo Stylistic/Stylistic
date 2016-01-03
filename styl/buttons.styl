@@ -1,0 +1,38 @@
+.button
+  display: inline-block
+  font-weight: btn-font-weight
+  text-align: center
+  white-space: nowrap
+  vertical-align: middle
+  cursor: pointer
+  user-select: none
+  border: input-btn-border-width solid transparent
+  button-size(btn-padding-y, btn-padding-x, font-size-base, line-height, btn-border-radius)
+  // transition(all .2s ease-in-out)
+
+  +hover-focus()
+    text-decoration: none
+
+  &:focus
+    text-decoration: none
+
+  &:active,
+  &.active
+    background-image: none
+    outline: 0
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125)
+
+  &.disabled,
+  &:disabled
+    cursor: $cursor-disabled
+    opacity: .65
+    @include box-shadow(none)
+
+a.button.disabled,
+fieldset[disabled] a.button
+  pointer-events: none
+
+for name, color in colors
+  text-color = (lightness(color) > 60%) ? btn-color-light : btn-color-dark
+  .button-{name}
+    make-button(text-color, color, color)
