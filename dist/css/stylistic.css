@@ -3324,6 +3324,163 @@ output {
 [hidden] {
   display: none !important;
 }
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.center-block {
+  display: block;
+  left: 0;
+  right: 0;
+}
+.pull-xs-left,
+.pull-xs-right,
+.pull-xs-none {
+  float: none !important;
+}
+@media (min-width: 544px) {
+  .pull-sm-left,
+  .pull-sm-right,
+  .pull-sm-none {
+    float: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .pull-md-left,
+  .pull-md-right,
+  .pull-md-none {
+    float: none !important;
+  }
+}
+@media (min-width: 992px) {
+  .pull-lg-left,
+  .pull-lg-right,
+  .pull-lg-none {
+    float: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .pull-xl-left,
+  .pull-xl-right,
+  .pull-xl-none {
+    float: none !important;
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sc-only-focusable:active,
+.sc-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.invisible {
+  visibility: hidden !important;
+}
+.text-hide {
+  font: "0/0" a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.text-justify {
+  text-align: justify !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-xs-left {
+  text-align: left !important;
+}
+.text-xs-right {
+  text-align: right !important;
+}
+.text-xs-center {
+  text-align: center !important;
+}
+@media (min-width: 544px) {
+  .text-sm-left {
+    text-align: left !important;
+  }
+  .text-sm-right {
+    text-align: right !important;
+  }
+  .text-sm-center {
+    text-align: center !important;
+  }
+}
+@media (min-width: 768px) {
+  .text-md-left {
+    text-align: left !important;
+  }
+  .text-md-right {
+    text-align: right !important;
+  }
+  .text-md-center {
+    text-align: center !important;
+  }
+}
+@media (min-width: 992px) {
+  .text-lg-left {
+    text-align: left !important;
+  }
+  .text-lg-right {
+    text-align: right !important;
+  }
+  .text-lg-center {
+    text-align: center !important;
+  }
+}
+@media (min-width: 1200px) {
+  .text-xl-left {
+    text-align: left !important;
+  }
+  .text-xl-right {
+    text-align: right !important;
+  }
+  .text-xl-center {
+    text-align: center !important;
+  }
+}
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+.font-weight-normal {
+  font-weight: normal;
+}
+.font-weight-bold {
+  font-weight: bold;
+}
+.font-italic {
+  font-style: italic;
+}
+.text-muted {
+  color: $text-muted;
+}
 @font-face {
   font-family: 'Lato Hairline';
   src: url("../fonts/lato/../fonts/lato/hinted-Lato-Hairline.eot");
@@ -3784,6 +3941,10 @@ mark,
   padding-bottom: 0.25rem;
   margin-right: 1rem;
   font-size: 1.25rem;
+  color: #0a4246;
+}
+.navbar-logo .logo-accent {
+  color: rgba(0,0,0,0.4);
 }
 .navbar-logo > img {
   display: block;
@@ -3798,22 +3959,22 @@ mark,
 .navbar-default .nav-link + .nav-link {
   margin-left: 1rem;
 }
-.navbar-default .nav-right {
-  float: right;
+.navbar-default .navbar-nav.nav-right {
+  float: right !important;
 }
-.navbar-default .navbar-divider {
+.navbar-default .navbar-nav .navbar-divider {
   background-color: rgba(0,0,0,0.075);
 }
-.navbar-default .nav-link {
+.navbar-default .navbar-nav .nav-link {
   color: rgba(0,0,0,0.3);
 }
-.navbar-default .nav-link:hover {
+.navbar-default .navbar-nav .nav-link:hover {
   color: rgba(0,0,0,0.6);
 }
-.open > .nav-link,
-.active > .nav-link,
-.nav-link.open,
-.nav-link.active {
+.navbar-default .open > .nav-link,
+.navbar-default .active > .nav-link,
+.navbar-default .nav-link.open,
+.navbar-default .nav-link.active {
   color: rgba(0,0,0,0.8);
 }
 .container {
