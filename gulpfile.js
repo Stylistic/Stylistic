@@ -8,7 +8,8 @@ const gulp = require('gulp'),
       stylus = require('gulp-stylus'),
       stylint = require('gulp-stylint'),
       del = require('del'),
-      fs = require('node-fs-extra');
+      fs = require('node-fs-extra'),
+      sequence = require('run-sequence');
 
 const paths = {
   styles  : {
@@ -22,6 +23,11 @@ const paths = {
   fonts   : {
     src: __dirname + '/fonts',
     out: __dirname + '/dist/fonts'
+  },
+  docs    : {
+    css: __dirname + '/docs/dist/css',
+    fonts: __dirname + '/docs/dist/fonts',
+    js: __dirname + '/docs/dist/js'
   }
 };
 
@@ -38,7 +44,8 @@ gulp.task('stylus', () => {
             }
         }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(paths.styles.out));
+        .pipe(gulp.dest(paths.styles.out))
+        .pipe(gulp.dest(paths.docs.css));
 });
 
 gulp.task('babel', () => {
@@ -49,12 +56,14 @@ gulp.task('babel', () => {
 		    }))
 		    .pipe(concat('all.js'))
 		    .pipe(sourcemaps.write('.'))
-        .pipe(uglify())
-		    .pipe(gulp.dest(paths.scripts.out));
+        //.pipe(uglify())
+		    .pipe(gulp.dest(paths.scripts.out))
+        .pipe(gulp.dest(paths.docs.js));
 });
 
-gulp.task('copy-fonts', () => {
+gulp.task('copy', () => {
   fs.copy(paths.fonts.src, paths.fonts.out);
+  fs.copy(paths.fonts.src, paths.docs.fonts);
 });
 
 gulp.task('clean', () => {
@@ -66,4 +75,4 @@ gulp.task('watch', () => {
     gulp.watch('./js/**/*', ['babel']);
 });
 
-gulp.task('default', ['watch', 'stylus', 'babel', 'copy-fonts']);
+gulp.task('default', ['watch', 'copy', 'babel', 'stylus']);

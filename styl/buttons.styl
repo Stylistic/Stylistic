@@ -33,6 +33,20 @@ fieldset[disabled] a.button
   pointer-events: none
 
 for name, color in colors
-  text-color = (lightness(color) > 60%) ? btn-color-light : btn-color-dark
+  text-color = (lightness(color) > 65%) ? btn-color-light : btn-color-dark
   .button-{name}
     make-button(text-color, color, color)
+
+  &.button-block
+    display: block
+    width: 100%
+
+  &.btn-block + .btn-block
+    margin-top: 5px
+
+
+  &.button-lg
+    button-size(btn-padding-y-lg, btn-padding-x-lg, font-size-lg, line-height-lg, btn-border-radius-lg)
+
+  &.button-sm
+    button-size(btn-padding-y-sm, btn-padding-x-sm, font-size-sm, line-height-sm, btn-border-radius-sm)

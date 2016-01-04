@@ -49,12 +49,21 @@ for $breakpoint in map-keys(grid-breakpoints)
 .font-weight-bold    { font-weight: bold; }
 .font-italic         { font-style: italic; }
 
-.text-muted {
-  color: $text-muted;
-}
+.text-muted { color: text-muted; }
 
 text-emphasis-variant('.text-blue', blue);
 text-emphasis-variant('.text-green', green);
 text-emphasis-variant('.text-red', red);
 text-emphasis-variant('.text-orange', orange);
 text-emphasis-variant('.text-shadow', shadow);
+
+// Borders
+
+.border-rounded
+  border-radius: border-radius-default
+
+.border-rounded-sm
+  border-radius: border-radius-sm
+
+.border-radius-lg
+  border-radius: border-radius-lg

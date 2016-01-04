@@ -35,6 +35,15 @@
   .nav-link.active
     color: navbar-light-active-color
 
+  .navbar-toggle
+    display: block
+    font-size: 3rem 
+
+  for name, size in grid-breakpoints
+    .navbar-collapse-{name}
+      +media-breakpoint-down(name)
+        Display: none;
+
   &.navbar-inverted
     background-color: navbar-dark-bg
     .navbar-nav

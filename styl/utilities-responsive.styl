@@ -1,0 +1,12 @@
+for bp in map-keys(grid-breakpoints)
+  .hidden-{bp}-up
+    +media-breakpoint-up(bp)
+      display: none !important
+
+  .hidden-{bp}-down
+    +media-breakpoint-down(bp)
+      display: none !important
+
+  .hidden-{bp}-only
+    +media-breakpoint-only(bp)
+      display: none !important

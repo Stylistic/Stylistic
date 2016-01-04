@@ -3,7 +3,7 @@ make-container($gutter = grid-gutter-width)
   margin-right: auto
   padding-left:  ($gutter / 2)
   padding-right: ($gutter / 2)
-  if !$enable-flex {
+  if not $enable-flex {
     clearfix()
   }
 
@@ -23,11 +23,11 @@ make-row($gutter = grid-gutter-width)
 
 make-col($gutter = grid-gutter-width)
   position: relative
-  if !$enable-flex
+  if not $enable-flex
     float: left
   min-height: 1px
-  padding-left: ($gutter / 2)
-  padding-right: ($gutter / 2)
+  padding-left: ($gutter / 1.5)
+  padding-right: ($gutter / 1.5)
 
 make-col-span($size, $columns = grid-columns)
   if $enable-flex

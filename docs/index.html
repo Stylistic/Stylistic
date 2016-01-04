@@ -3,16 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stylistic Kitchen Sink</title>
-    <link rel="stylesheet" href="../dist/css/stylistic.css" />
+    <title>Stylistic Docs - v0.1.0-alpha</title>
+    <link rel="stylesheet" href="./dist/css/stylistic.css" />
 </head>
 <body>
-  <div class="ribbon ribbon-blue ribbon-top-left">
-    v.0.1.0-alpha
-  </div>
+  <div class="ribbon ribbon-blue ribbon-top-left">v.0.1.0-alpha</div>
   <div class="navbar navbar-transparent navbar-fixed navbar-inverted" data-snap="300px">
     <div class="container">
-      <nav class="navbar-nav nav-right nav-collapse-sm">
+      <div class="navbar-toggle hidden-md-up pull-right"><i class="ion-navicon-round"></i></div>
+      <nav class="navbar-nav nav-right navbar-collapse-sm">
           <a href="#" class="nav-link active">Home</a>
           <a href="#" class="nav-link">Grid System</a>
           <a href="#" class="nav-link">Components</a>
@@ -25,12 +24,56 @@
       <div class="masthead-caption text-center">
         <img src="./images/stylistic.png" alt="Stylistic Logo" class="center-block m-b-1">
         <h2 class="subtitle m-b-2">not just another CSS framework</h2>
-        <a href="#" class="button button-blue">See what makes me special</a>
+        <a href="#getting-started" class="button button-lg button-blue">Getting started</a>
+        <a href="#" class="button button-lg button-red">Release Notes</a>
         <!-- <div class="m-t-1">
           <span class="label label-gray">v0.1.0-alpha</span>
         </div> -->
       </div>
     </div>
   </div>
+  <section id="getting-started" class="p-y-4">
+    <div class="container">
+      <div class="row">
+        <h1 class="center-block text-center">Building beautiful sites just got easier</h1>
+        <h3 class="center-block text-center m-b-2 text-muted">With a grid that adapts to your style</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row m-b-1">
+            <div class="col-xs-12">
+              <div class="border-rounded bg-orange p-y-2"></div>
+            </div>
+          </div>
+          <div class="row m-b-1">
+            <div class="col-md-4">
+              <div class="border-rounded bg-teal p-y-2"></div>
+            </div>
+            <div class="col-md-4">
+              <div class="border-rounded bg-teal p-y-2"></div>
+            </div>
+            <div class="col-md-4">
+              <div class="border-rounded bg-teal p-y-2"></div>
+            </div>
+          </div>
+          <div class="row m-b-1">
+            <div class="col-md-8">
+              <div class="border-rounded bg-red p-y-2"></div>
+            </div>
+            <div class="col-md-4">
+              <div class="border-rounded bg-red p-y-2"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="border-rounded bg-orange p-y-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="./dist/js/all.js"></script>
 </body>
 </html>
