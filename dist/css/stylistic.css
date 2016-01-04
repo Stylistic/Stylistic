@@ -4098,7 +4098,40 @@ mark,
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
-.ribbon a {
+.ribbon-orange {
+  background-color: #ed8b00;
+}
+a {
+  color: #f0f0f0;
+}
+.ribbon-blue {
+  background-color: #0d5257;
+}
+a {
+  color: #f0f0f0;
+}
+.ribbon-green {
+  background-color: #708573;
+}
+a {
+  color: #f0f0f0;
+}
+.ribbon-shadow {
+  background-color: #9abeaa;
+}
+a {
+  color: #f0f0f0;
+}
+.ribbon-red {
+  background-color: #be3a34;
+}
+a {
+  color: #f0f0f0;
+}
+.ribbon-gray {
+  background-color: #808080;
+}
+a {
   color: #f0f0f0;
 }
 .navbar {
