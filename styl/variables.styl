@@ -61,11 +61,11 @@ colors = {
 for name, color in colors
   define(name + '-light', lighten(color, 20%))
   define(name + '-lighter', lighten(color, 50%))
-  define(name + '-lightest', lighten(color, 90%))
+  define(name + '-lightest', lighten(color, 95%))
   define(name, color)
   define(name + '-dark', darken(color, 20%))
   define(name + '-darker', darken(color, 50%))
-  define(name + '-darkest', darken(color, 90%))
+  define(name + '-darkest', darken(color, 95%))
 
 
 /**
@@ -243,7 +243,7 @@ btn-border-width           := 2px
 input-padding-x                := .75rem
 input-padding-y                := (input-padding-x / 2)
 
-input-bg                       := gray-lightest
+input-bg                       := #FEFEFE
 input-bg-disabled              := gray-lighter
 
 input-color                    := gray
@@ -354,3 +354,8 @@ nav-pills-active-link-hover-color:= component-active-color
 
 code-color                       := gray-dark
 code-bg                          := gray-lightest
+
+
+// ANIMATIONS
+
+transition-duration              := .2s
