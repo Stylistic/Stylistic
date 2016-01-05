@@ -5916,5 +5916,23 @@ fieldset[disabled] a.button {
   background-color: #9e9e9e;
   color: #101010;
 }
+.anim-fade-in {
+  transition: opacity transition-duration linear;
+}
+.z-1 {
+  box-shadow: 2px 2px 5px;
+}
+.z-2 {
+  box-shadow: 4px 4px 10px;
+}
+.z-3 {
+  box-shadow: 6px 6px 15px;
+}
+.z-4 {
+  box-shadow: 8px 8px 20px;
+}
+.z-5 {
+  box-shadow: 10px 10px 25px;
+}
 
 /*# sourceMappingURL=stylistic.css.map */
