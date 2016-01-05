@@ -6,7 +6,7 @@
   vertical-align: middle
   cursor: pointer
   user-select: none
-  border: input-btn-border-width solid transparent
+  border: btn-border-width solid transparent
   button-size(btn-padding-y, btn-padding-x, font-size-base, line-height, btn-border-radius)
   // transition(all .2s ease-in-out)
 
@@ -45,8 +45,49 @@ for name, color in colors
     margin-top: 5px
 
 
-  &.button-lg
+  &.button-lg, &.button-lg + .label
     button-size(btn-padding-y-lg, btn-padding-x-lg, font-size-lg, line-height-lg, btn-border-radius-lg)
 
-  &.button-sm
+
+  &.button-sm, &.button-sm + .label
     button-size(btn-padding-y-sm, btn-padding-x-sm, font-size-sm, line-height-sm, btn-border-radius-sm)
+
+.button-labeled
+  padding: 0
+  clearfix()
+  font-size: 0
+
+  .button
+    display: inline-block
+    border-right-radius(0)
+    margin: 0
+
+  .label
+    display: inline-block
+    margin: 0
+    background: #fafafa !important
+    color: gray-darker !important
+    border-left-radius(0)
+
+    &.label-pointing
+      position: relative
+      &::before
+        border-width: 0 0 1px 1px;
+        background-color: inherit;
+        border-style: solid;
+        border-color: inherit;
+        position: absolute;
+        top: 50%;
+        margin-top: -0.3333em;
+        left: -7px;
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        bottom: auto;
+        right: auto;
+        content: '';
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        /* transform: rotate(45deg); */
+        background-image: none;
+        z-index: 2;
+        width: 0.6666em;
+        height: 0.6666em;

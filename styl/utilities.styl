@@ -4,6 +4,12 @@
 .center-block
   center-block()
 
+.pull-left
+  pull-left()
+
+.pull-right
+  pull-right()
+
 for $breakpoint in map-keys(grid-breakpoints)
   +media-breakpoint-up($breakpoint)
     .pull-{$breakpoint}-left { pull-left() }

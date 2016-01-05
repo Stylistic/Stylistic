@@ -1,10 +1,17 @@
 .label
-  padding: tag-padding-y tag-padding-x
-  border-radius: tag-border-radius
   display: inline-block
+  font-weight: btn-font-weight
+  text-align: center
+  white-space: nowrap
+  vertical-align: middle
+  cursor: pointer
+  user-select: none
+  border: btn-border-width solid transparent
+  button-size(btn-padding-y, btn-padding-x, font-size-base, line-height, btn-border-radius)
 
   for name, color in colors
     &.label-{name}
       text-color = lightness(color) < 60 ? #fefefe : gray-darkest
       background-color: color
+      border-color: color
       color: text-color
