@@ -72,3 +72,7 @@ Make sure that any changes are attached to a branch. The branch naming conventio
 #### Commit your change and submit a pull request
 
 Once you've made a change commit it, push it to your remote, and then submit a pull request. Make sure to be descriptive when submitting a pull request so I know what your code is doing.
+
+## About
+
+This project is a combination of my favorite elements from Bootstrap, Foundation, Semantic UI, and Materialize with a few things of my own thrown in for good measure. The goal is to create a costomizable and extendable CSS framework that requires little tweaking to get beautiful results. 
