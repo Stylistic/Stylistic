@@ -41,7 +41,17 @@ for name, color in colors
     display: block
     width: 100%
 
-  &.btn-block + .btn-block
+  &.button-block + .button-block
+
+  &.button-block + .button-block
+    margin-top: 5px
+
+for bp in map-keys(grid-breakpoints)
+  &.button-block-{bp}
+    +media-breakpoint-down(bp)
+      display: block
+      width: 100%
+  &.button-block-{bp} + &.button-block-{bp}
     margin-top: 5px
 
 

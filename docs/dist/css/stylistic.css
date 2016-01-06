@@ -3496,6 +3496,80 @@ output {
 .border-radius-lg {
   border-radius: 0.3rem;
 }
+@media (max-width: 543px) {
+  .ng-xs {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .ng-sm {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (max-width: 991px) {
+  .ng-md {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (max-width: 1199px) {
+  .ng-lg {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+.ng-xl {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.p-a-0 {
+  padding: 0rem !important;
+}
+.p-y-0 {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.p-x-0 {
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+}
+.p-t-0 {
+  padding-top: 0rem !important;
+}
+.p-b-0 {
+  padding-bottom: 0rem !important;
+}
+.p-l-0 {
+  padding-left: 0rem !important;
+}
+.p-r-0 {
+  padding-right: 0rem !important;
+}
+.m-a-0 {
+  margin: 0rem !important;
+}
+.m-y-0 {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.m-x-0 {
+  margin-left: 0rem !important;
+  margin-right: 0rem !important;
+}
+.m-t-0 {
+  margin-top: 0rem !important;
+}
+.m-b-0 {
+  margin-bottom: 0rem !important;
+}
+.m-l-0 {
+  margin-left: 0rem !important;
+}
+.m-r-0 {
+  margin-right: 0rem !important;
+}
 .p-a-1 {
   padding: 1rem !important;
 }
@@ -4405,7 +4479,7 @@ code {
   padding: 0.2rem 0.4rem;
   font-size: 90%;
   color: #7e7e7e;
-  background-color: #fafafa;
+  background-color: #b1b1b1;
 }
 .container {
   margin-left: auto;
@@ -5732,22 +5806,8 @@ fieldset[disabled] a.button {
   display: block;
   width: 100%;
 }
-.btn-block + .btn-block {
+.button-block + .button-block {
   margin-top: 5px;
-}
-.button-lg,
-.button-lg + .label {
-  padding: 0.75rem 1.25rem;
-  font-size: 1.25rem;
-  line-height: 1.333333333333333;
-  border-radius: 0.3rem;
-}
-.button-sm,
-.button-sm + .label {
-  padding: 0.25rem 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  border-radius: 0.2rem;
 }
 .button-blue {
   color: #fefefe;
@@ -5786,22 +5846,8 @@ fieldset[disabled] a.button {
   display: block;
   width: 100%;
 }
-.btn-block + .btn-block {
+.button-block + .button-block {
   margin-top: 5px;
-}
-.button-lg,
-.button-lg + .label {
-  padding: 0.75rem 1.25rem;
-  font-size: 1.25rem;
-  line-height: 1.333333333333333;
-  border-radius: 0.3rem;
-}
-.button-sm,
-.button-sm + .label {
-  padding: 0.25rem 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  border-radius: 0.2rem;
 }
 .button-teal {
   color: #fefefe;
@@ -5840,22 +5886,8 @@ fieldset[disabled] a.button {
   display: block;
   width: 100%;
 }
-.btn-block + .btn-block {
+.button-block + .button-block {
   margin-top: 5px;
-}
-.button-lg,
-.button-lg + .label {
-  padding: 0.75rem 1.25rem;
-  font-size: 1.25rem;
-  line-height: 1.333333333333333;
-  border-radius: 0.3rem;
-}
-.button-sm,
-.button-sm + .label {
-  padding: 0.25rem 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  border-radius: 0.2rem;
 }
 .button-yellow {
   color: #fefefe;
@@ -5894,22 +5926,8 @@ fieldset[disabled] a.button {
   display: block;
   width: 100%;
 }
-.btn-block + .btn-block {
+.button-block + .button-block {
   margin-top: 5px;
-}
-.button-lg,
-.button-lg + .label {
-  padding: 0.75rem 1.25rem;
-  font-size: 1.25rem;
-  line-height: 1.333333333333333;
-  border-radius: 0.3rem;
-}
-.button-sm,
-.button-sm + .label {
-  padding: 0.25rem 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  border-radius: 0.2rem;
 }
 .button-red {
   color: #fefefe;
@@ -5948,22 +5966,8 @@ fieldset[disabled] a.button {
   display: block;
   width: 100%;
 }
-.btn-block + .btn-block {
+.button-block + .button-block {
   margin-top: 5px;
-}
-.button-lg,
-.button-lg + .label {
-  padding: 0.75rem 1.25rem;
-  font-size: 1.25rem;
-  line-height: 1.333333333333333;
-  border-radius: 0.3rem;
-}
-.button-sm,
-.button-sm + .label {
-  padding: 0.25rem 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  border-radius: 0.2rem;
 }
 .button-gray {
   color: #fefefe;
@@ -6002,7 +6006,106 @@ fieldset[disabled] a.button {
   display: block;
   width: 100%;
 }
-.btn-block + .btn-block {
+.button-block + .button-block {
+  margin-top: 5px;
+}
+@media (max-width: 543px) {
+  .button-block-xs {
+    display: block;
+    width: 100%;
+  }
+}
+.button-block-xs + .button-block-xs {
+  margin-top: 5px;
+}
+.button-lg,
+.button-lg + .label {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.333333333333333;
+  border-radius: 0.3rem;
+}
+.button-sm,
+.button-sm + .label {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+@media (max-width: 767px) {
+  .button-block-sm {
+    display: block;
+    width: 100%;
+  }
+}
+.button-block-sm + .button-block-sm {
+  margin-top: 5px;
+}
+.button-lg,
+.button-lg + .label {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.333333333333333;
+  border-radius: 0.3rem;
+}
+.button-sm,
+.button-sm + .label {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+@media (max-width: 991px) {
+  .button-block-md {
+    display: block;
+    width: 100%;
+  }
+}
+.button-block-md + .button-block-md {
+  margin-top: 5px;
+}
+.button-lg,
+.button-lg + .label {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.333333333333333;
+  border-radius: 0.3rem;
+}
+.button-sm,
+.button-sm + .label {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+@media (max-width: 1199px) {
+  .button-block-lg {
+    display: block;
+    width: 100%;
+  }
+}
+.button-block-lg + .button-block-lg {
+  margin-top: 5px;
+}
+.button-lg,
+.button-lg + .label {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.333333333333333;
+  border-radius: 0.3rem;
+}
+.button-sm,
+.button-sm + .label {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+.button-block-xl {
+  display: block;
+  width: 100%;
+}
+.button-block-xl + .button-block-xl {
   margin-top: 5px;
 }
 .button-lg,

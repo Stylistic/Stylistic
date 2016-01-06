@@ -73,3 +73,10 @@ text-emphasis-variant('.text-shadow', shadow);
 
 .border-radius-lg
   border-radius: border-radius-lg
+
+
+for $bp in map-keys(grid-breakpoints)
+  .ng-{$bp}
+    +media-breakpoint-down($bp)
+      padding-left: 0 !important
+      padding-right: 0 !important
