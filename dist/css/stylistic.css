@@ -3861,6 +3861,9 @@ output {
 .text-gray {
   color: #9e9e9e !important;
 }
+.bg-muted {
+  background-color: #fafafa;
+}
 @font-face {
   font-family: 'Lato Hairline';
   src: url("../fonts/lato/../fonts/lato/hinted-Lato-Hairline.eot");
@@ -4375,12 +4378,6 @@ a {
 .navbar .nav-link.active {
   color: rgba(0,0,0,0.8);
 }
-.navbar .navbar-toggle {
-  display: block;
-  font-size: 3rem;
-  color: #4f4f4f;
-  cursor: pointer;
-}
 @media (max-width: 543px) {
   .navbar .navbar-collapse-xs {
     Display: none;
@@ -4459,6 +4456,7 @@ a {
 .navbar.navbar-default,
 .navbar.navbar-fixed {
   position: fixed;
+  z-index: 999;
 }
 .navbar.navbar-default::after,
 .navbar.navbar-fixed::after {
@@ -4468,6 +4466,14 @@ a {
 }
 .navbar.navbar-transparent {
   background-color: transparent;
+}
+.navbar-toggle {
+  display: block;
+  font-size: 3rem;
+  color: #4f4f4f;
+  cursor: pointer;
+  z-index: 999;
+  text-shadow: 1px 1px 30px #fafafa;
 }
 code,
 kbd,
@@ -4491,6 +4497,7 @@ pre {
   color: #7e7e7e;
   background-color: #f7f7f9;
   padding: 0.2rem 0.3rem;
+  overflow-x: auto;
   border-radius: 0.25rem;
 }
 .pre-dark {
