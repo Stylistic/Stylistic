@@ -35,12 +35,6 @@
   .nav-link.active
     color: navbar-light-active-color
 
-  .navbar-toggle
-    display: block
-    font-size: 3rem
-    color: navbar-toggle-color
-    cursor: pointer
-
   for name, size in grid-breakpoints
     .navbar-collapse-{name}
       +media-breakpoint-down(name)
@@ -99,7 +93,16 @@
 
   &.navbar-fixed
     position: fixed
+    z-index: 999
     clearfix()
 
   &.navbar-transparent
     background-color: transparent
+
+.navbar-toggle
+  display: block
+  font-size: 3rem
+  color: navbar-toggle-color
+  cursor: pointer
+  z-index: 999
+  text-shadow: 1px 1px 30px gray-lightest
