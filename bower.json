@@ -1,0 +1,32 @@
+{
+  "name": "Stylistic",
+  "description": "Beautiful and inspired CSS framework written in Stylus",
+  "main": [
+    "./dist/css/stylistic.css",
+    "./dist/js/stylistic.js"
+  ],
+  "authors": [
+    "Chris Watson"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "framework",
+    "bootstrap",
+    "materal",
+    "materialize",
+    "foundation",
+    "semantic",
+    "semanticui",
+    "stylus"
+  ],
+  "homepage": "https://github.com/MarginZero/Stylistic",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -5,7 +5,38 @@ samp
   font-family: font-family-mono
 
 code
-  padding: .2rem .4rem
+  padding: .2rem .3rem
   font-size: 90%
-  color: code-color
-  background-color: code-bg
+  color: code-light-color
+  background-color: code-light-bg
+  if $rounded-corners
+    border-radius(code-border-radius)
+
+  &.code-dark
+    color: code-dark-color
+    background-color: code-dark-bg
+
+pre
+  display: block
+  color: pre-light-color
+  background-color: pre-light-bg
+  padding: .2rem .3rem
+  if $rounded-corners
+    border-radius(pre-border-radius)
+
+&.pre-dark
+  color: pre-dark-color
+  background-color: pre-dark-bg
+
+  code
+    padding: 0
+    font-size: inherit
+    color: inherit
+    background-color: transparent
+    border-radius: 0
+
+  .shell-line
+    &::before
+      content: '$'
+      display: inline
+      margin-right: 1rem

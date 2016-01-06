@@ -54,7 +54,7 @@ gulp.task('babel', () => {
 		    .pipe(babel({
 			      presets: ['es2015']
 		    }))
-		    .pipe(concat('all.js'))
+		    .pipe(concat('stylistic.js'))
 		    .pipe(sourcemaps.write('.'))
         //.pipe(uglify())
 		    .pipe(gulp.dest(paths.scripts.out))

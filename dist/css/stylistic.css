@@ -4476,10 +4476,38 @@ samp {
   font-family: "Source Sans Pro", Monaco, Consolas, "Courier New", monospace;
 }
 code {
-  padding: 0.2rem 0.4rem;
+  padding: 0.2rem 0.3rem;
   font-size: 90%;
   color: #7e7e7e;
-  background-color: #b1b1b1;
+  background-color: #f7f7f9;
+  border-radius: 0.25rem;
+}
+code.code-dark {
+  color: #fafafa;
+  background-color: #4f4f4f;
+}
+pre {
+  display: block;
+  color: #7e7e7e;
+  background-color: #f7f7f9;
+  padding: 0.2rem 0.3rem;
+  border-radius: 0.25rem;
+}
+.pre-dark {
+  color: #fafafa;
+  background-color: #4f4f4f;
+}
+.pre-dark code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+}
+.pre-dark .shell-line::before {
+  content: '$';
+  display: inline;
+  margin-right: 1rem;
 }
 .container {
   margin-left: auto;
