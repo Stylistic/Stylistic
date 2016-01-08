@@ -11,7 +11,8 @@ const gulp = require('gulp'),
       fs = require('node-fs-extra'),
       sequence = require('run-sequence'),
       hb = require('gulp-hb'),
-      layouts = require('handlebars-layouts');
+      layouts = require('handlebars-layouts'),
+      connect = require('gulp-connect');
 
 layouts.register(hb.handlebars);
 
@@ -49,7 +50,8 @@ gulp.task('stylus', () => {
         }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.out))
-        .pipe(gulp.dest(paths.docs.css));
+        .pipe(gulp.dest(paths.docs.css))
+        .pipe(connect.reload());
 });
 
 gulp.task('babel', () => {
@@ -62,21 +64,29 @@ gulp.task('babel', () => {
 		    .pipe(sourcemaps.write('.'))
         //.pipe(uglify())
 		    .pipe(gulp.dest(paths.scripts.out))
-        .pipe(gulp.dest(paths.docs.js));
+        .pipe(gulp.dest(paths.docs.js))
+        .pipe(connect.reload());
 });
 
 gulp.task('templates', () => {
-  gulp.src('./docs/_hbs/*.{html,hbs}')
+  gulp.src('./docs/hbs/**/*.html')
       .pipe(hb({
-        debug: true,
-        data: './docs/_hbs/data/**/*.{js,json}',
+        data: './docs/hbs/data/**/*.{js,json}',
         helpers: [
-          './docs/_hbs/helpers/*.js',
+          './docs/hbs/helpers/*.js',
           './node_modules/handlebars-layouts/index.js'
         ],
-        partials: './docs/_hbs/partials/**/*.hbs'
+        partials: './docs/hbs/partials/**/*.hbs'
       }))
-      .pipe(gulp.dest('./docs'));
+      .pipe(gulp.dest('./docs'))
+      .pipe(connect.reload());
+});
+
+gulp.task('serve', () => {
+  connect.server({
+    root: './docs',
+    livereload: true
+  });
 });
 
 gulp.task('copy', () => {
@@ -91,7 +101,7 @@ gulp.task('clean', () => {
 gulp.task('watch', () => {
     gulp.watch('./styl/**/*', ['stylus']);
     gulp.watch('./js/**/*', ['babel']);
-    gulp.watch(['./docs/_hbs/**/*', './docs/hbs/partials/**/*'], ['templates']);
+    gulp.watch(['./docs/**/*.{html,hbs}'], ['templates']);
 });
 
-gulp.task('default', ['watch', 'copy', 'babel', 'stylus', 'templates']);
+gulp.task('default', ['watch', 'copy', 'babel', 'stylus', 'templates', 'serve']);
