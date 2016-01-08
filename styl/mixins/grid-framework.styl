@@ -1,29 +1,33 @@
 make-grid-columns($columns = grid-columns, $gutter = grid-gutter-width, $breakpoints = grid-breakpoints)
 
-  grid-column = @block {
-    position: relative;
+  .grid-column {
+    position: relative
     // Prevent columns from collapsing when empty
-    min-height: 1px;
+    min-height: 1px
+    // Fix for issue #2
+    min-width: 0px
     // Inner gutter via padding
-    padding-left: ($gutter / 2);
-    padding-right: ($gutter / 2);
+    padding-left: ($gutter / 2)
+    padding-right: ($gutter / 2)
   }
 
-  for $breakpoing in map-keys($breakpoints)
+  for $breakpoint in map-keys($breakpoints)
     for $i in (1..$columns)
       .col-{$breakpoint}-{$i}
-        grid-column
-
-  for $breakpoint in map-keys($breakpoints)
+        @extend .grid-column
 
     +media-breakpoint-up($breakpoint)
+      .grid-column-float-{$breakpoint} {
+        float: left
+      }
+
       for $i in (1..$columns)
         .col-{$breakpoint}-{$i}
-          if !$enable-flex
-            float: left
+          if not $enable-flex
+            @extend .grid-column-float-{$breakpoint}
           make-col-span($i, $columns)
 
-      for $modifier in (pull push offset)
+      for $modifier in (push pull offset)
         for $i in (0..$columns)
           .col-{$breakpoint}-{$modifier}-{$i}
             make-col-modifier($modifier, $i, $columns)
