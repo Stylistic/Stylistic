@@ -1,26 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stylistic Docs - v0.1.0-alpha</title>
-    <link rel="stylesheet" href="./dist/css/stylistic.css" />
-</head>
-<body>
-  <div class="ribbon ribbon-blue ribbon-top-left">v.0.1.0-alpha</div>
-  <div class="navbar navbar-transparent navbar-fixed navbar-inverted" data-snap="300px">
-    <div class="container">
-      <a href="#" class="navbar-toggle hidden-md-up pull-right"><i class="ion-navicon-round"></i></a>
-      <nav class="navbar-nav nav-right navbar-collapse-sm">
-          <a href="#" class="nav-link active">Home</a>
-          <a href="#" class="nav-link">Grid System</a>
-          <a href="#" class="nav-link">Components</a>
-          <a href="#" class="nav-link">Javascript</a>
-      </nav>
-    </div>
-  </div>
-
-      <div class="masthead masthead-full">
+{{#extend "layout"}}
+  {{#content "content"}}
+    <div class="masthead masthead-full">
       <div class="container">
         <div class="masthead-caption text-center">
           <img src="./images/stylistic.png" alt="Stylistic Logo" class="center-block m-b-1">
@@ -117,28 +97,5 @@
         </div>
       </div>
     </section>
-
-
-  <footer class="footer footer-inverse p-y-4">
-    <div class="container">
-      <div class="row m-b-2">
-        <ul class="list-group list-inline">
-          <li><a href="https://github.com/MarginZero/Stylistic"><i class="ion-social-github"></i> GitHub</a></li>
-          <li><a href="#">Documentation</a></li>
-          <li><a href="#">Examples</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <small>
-          Built by <a href="https://github.com/iDev0urer">@idev0urer</a> and <a href="http://marginzero.co">Margin Zero LLC</a>. Contributions are always appreciated. To view a list of what needs to be done please visit our <a href="https://github.com/MarginZero/Stylistic/issues">Issues Page.</a><br />
-          Copyright &copy; 2015-2016 <a href="http://marginzero.co">Margin Zero LLC.</a>
-        </small>
-      </div>
-    </div>
-  </footer>
-
-  <script type="text/javascript" src="./dist/js/all.js"></script>
-</body>
-</html>
+    {{/content}}
+{{/extend}}
