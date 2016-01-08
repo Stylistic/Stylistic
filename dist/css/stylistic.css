@@ -3185,7 +3185,7 @@ html {
 }
 body {
   background-color: #fff;
-  color: #080808;
+  color: #202020;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -3241,7 +3241,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #7e7e7e;
+  color: #767676;
   text-decoration: none;
 }
 pre {
@@ -3862,7 +3862,7 @@ output {
   color: #9e9e9e !important;
 }
 .bg-muted {
-  background-color: #fafafa;
+  background-color: #ececec;
 }
 @font-face {
   font-family: 'Lato Hairline';
@@ -4217,13 +4217,13 @@ mark,
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   font-size: 1.25rem;
-  border-left: 0.25rem solid #cfcfcf;
+  border-left: 0.25rem solid #ddd;
 }
 .blockquote-footer {
   display: block;
   font-size: 80%;
   line-height: 1.5;
-  color: #b1b1b1;
+  color: #b6b6b6;
 }
 .blockquote-footer::before {
   content: "\2014 \00A0";
@@ -4232,7 +4232,7 @@ mark,
   padding-right: 1rem;
   padding-left: 0;
   text-align: right;
-  border-right: 0.25rem solid #cfcfcf;
+  border-right: 0.25rem solid #ddd;
   border-left: 0;
 }
 .blockquote-reverse .blockquote-footer::before {
@@ -4255,7 +4255,7 @@ mark,
 }
 .ribbon {
   width: 200px;
-  background: #4f4f4f;
+  background: #373737;
   position: absolute;
   top: 25px;
   left: -50px;
@@ -4355,10 +4355,10 @@ a {
   padding-bottom: 0.25rem;
   margin-right: 1rem;
   font-size: 1.25rem;
-  color: #0362ff;
+  color: #005bf2;
 }
 .navbar .navbar-logo .logo-accent {
-  color: rgba(0,0,255,0.4);
+  color: rgba(0,0,223,0.4);
 }
 .navbar .navbar-logo .logo-accent > img {
   display: block;
@@ -4402,7 +4402,7 @@ a {
   Display: none;
 }
 .navbar.navbar-inverted {
-  background-color: #080808;
+  background-color: #202020;
 }
 .navbar.navbar-inverted .navbar-nav .navbar-divider {
   background-color: rgba(0,0,0,0.075);
@@ -4414,10 +4414,10 @@ a {
   color: rgba(255,255,255,0.75);
 }
 .navbar.navbar-inverted .navbar-logo {
-  color: #fafafa;
+  color: #ececec;
 }
 .navbar.navbar-inverted .navbar-logo .logo-accent {
-  color: rgba(243,243,243,0.4);
+  color: rgba(208,208,208,0.4);
 }
 .navbar.navbar-inverted .open > .nav-link,
 .navbar.navbar-inverted .active > .nav-link,
@@ -4470,10 +4470,10 @@ a {
 .navbar-toggle {
   display: block;
   font-size: 3rem;
-  color: #4f4f4f;
+  color: #373737;
   cursor: pointer;
   z-index: 999;
-  text-shadow: 1px 1px 30px #fafafa;
+  text-shadow: 1px 1px 30px #ececec;
 }
 code,
 kbd,
@@ -4484,25 +4484,25 @@ samp {
 code {
   padding: 0.2rem 0.3rem;
   font-size: 90%;
-  color: #7e7e7e;
+  color: #767676;
   background-color: #f7f7f9;
   border-radius: 0.25rem;
 }
 code.code-dark {
-  color: #fafafa;
-  background-color: #4f4f4f;
+  color: #ececec;
+  background-color: #373737;
 }
 pre {
   display: block;
-  color: #7e7e7e;
+  color: #767676;
   background-color: #f7f7f9;
   padding: 0.2rem 0.3rem;
   overflow-x: auto;
   border-radius: 0.25rem;
 }
 .pre-dark {
-  color: #fafafa;
-  background-color: #4f4f4f;
+  color: #ececec;
+  background-color: #373737;
 }
 .pre-dark code {
   padding: 0;
@@ -5373,7 +5373,7 @@ pre {
   color: #9e9e9e;
   background-color: #fefefe;
   background-image: none;
-  border: 1px solid #cfcfcf;
+  border: 1px solid #ddd;
   border-radius: 0.25rem;
 }
 .form-block.block-inline {
@@ -5389,7 +5389,7 @@ pre {
 }
 .form-block:disabled,
 .form-block[readonly] {
-  background-color: #cfcfcf;
+  background-color: #ddd;
   opacity: 1;
 }
 .form-block:disabled {
@@ -5520,7 +5520,7 @@ pre {
 .label.label-blue {
   background-color: #448aff;
   border-color: #448aff;
-  color: #080808;
+  color: #202020;
 }
 .label.label-teal {
   background-color: #009688;
@@ -5530,7 +5530,7 @@ pre {
 .label.label-yellow {
   background-color: #ffeb3b;
   border-color: #ffeb3b;
-  color: #080808;
+  color: #202020;
 }
 .label.label-red {
   background-color: #f44336;
@@ -5540,7 +5540,7 @@ pre {
 .label.label-gray {
   background-color: #9e9e9e;
   border-color: #9e9e9e;
-  color: #080808;
+  color: #202020;
 }
 .anim-fade-in {
   transition: opacity 0.2s linear;
@@ -5957,7 +5957,7 @@ fieldset[disabled] a.button {
   display: inline-block;
   margin: 0;
   background: #fafafa !important;
-  color: #4f4f4f !important;
+  color: #373737 !important;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -5984,6 +5984,21 @@ fieldset[disabled] a.button {
   z-index: 2;
   width: 0.6666em;
   height: 0.6666em;
+}
+.footer.footer-inverse {
+  background-color: #202020;
+  color: #fafafa;
+}
+.list-group {
+  margin-right: 0;
+  padding-right: 0;
+}
+.list-inline li {
+  display: inline-block;
+  margin-right: 5px;
+}
+.list-inline li:last-child {
+  margin-right: 0;
 }
 
 /*# sourceMappingURL=stylistic.css.map */
