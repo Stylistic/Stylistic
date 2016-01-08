@@ -1,9 +1,20 @@
 make-grid-columns($columns = grid-columns, $gutter = grid-gutter-width, $breakpoints = grid-breakpoints)
 
-  for $breakpoint in map-keys($breakpoints)
+  grid-column = @block {
+    position: relative;
+    // Prevent columns from collapsing when empty
+    min-height: 1px;
+    // Inner gutter via padding
+    padding-left: ($gutter / 2);
+    padding-right: ($gutter / 2);
+  }
+
+  for $breakpoing in map-keys($breakpoints)
     for $i in (1..$columns)
       .col-{$breakpoint}-{$i}
-        make-col($gutter)
+        grid-column
+
+  for $breakpoint in map-keys($breakpoints)
 
     +media-breakpoint-up($breakpoint)
       for $i in (1..$columns)
