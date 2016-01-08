@@ -5577,7 +5577,7 @@ pre {
   font-weight: normal;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
+  vertical-align: bottom;
   cursor: pointer;
   user-select: none;
   border: 2px solid transparent;
@@ -5990,8 +5990,8 @@ fieldset[disabled] a.button {
   color: #fafafa;
 }
 .list-group {
-  margin-right: 0;
-  padding-right: 0;
+  margin-left: 0;
+  padding-left: 0;
 }
 .list-inline li {
   display: inline-block;

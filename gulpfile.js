@@ -9,7 +9,11 @@ const gulp = require('gulp'),
       stylint = require('gulp-stylint'),
       del = require('del'),
       fs = require('node-fs-extra'),
-      sequence = require('run-sequence');
+      sequence = require('run-sequence'),
+      hb = require('gulp-hb'),
+      layouts = require('handlebars-layouts');
+
+layouts.register(hb.handlebars);
 
 const paths = {
   styles  : {
@@ -61,6 +65,20 @@ gulp.task('babel', () => {
         .pipe(gulp.dest(paths.docs.js));
 });
 
+gulp.task('templates', () => {
+  gulp.src('./docs/_hbs/*.{html,hbs}')
+      .pipe(hb({
+        debug: true,
+        data: './docs/_hbs/data/**/*.{js,json}',
+        helpers: [
+          './docs/_hbs/helpers/*.js',
+          './node_modules/handlebars-layouts/index.js'
+        ],
+        partials: './docs/_hbs/partials/**/*.hbs'
+      }))
+      .pipe(gulp.dest('./docs'));
+});
+
 gulp.task('copy', () => {
   fs.copy(paths.fonts.src, paths.fonts.out);
   fs.copy(paths.fonts.src, paths.docs.fonts);
@@ -73,6 +91,7 @@ gulp.task('clean', () => {
 gulp.task('watch', () => {
     gulp.watch('./styl/**/*', ['stylus']);
     gulp.watch('./js/**/*', ['babel']);
+    gulp.watch(['./docs/_hbs/**/*', './docs/hbs/partials/**/*'], ['templates']);
 });
 
-gulp.task('default', ['watch', 'copy', 'babel', 'stylus']);
+gulp.task('default', ['watch', 'copy', 'babel', 'stylus', 'templates']);
