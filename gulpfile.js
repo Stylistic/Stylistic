@@ -101,7 +101,7 @@ gulp.task('clean', () => {
 gulp.task('watch', () => {
     gulp.watch('./styl/**/*', ['stylus']);
     gulp.watch('./js/**/*', ['babel']);
-    gulp.watch(['./docs/**/*.{html,hbs}'], ['templates']);
+    gulp.watch([__dirname + '/docs/hbs/**/*.{html,hbs}'], ['templates']);
 });
 
 gulp.task('default', ['watch', 'copy', 'babel', 'stylus', 'templates', 'serve']);
