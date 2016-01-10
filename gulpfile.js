@@ -10,11 +10,11 @@ const gulp = require('gulp'),
       del = require('del'),
       fs = require('node-fs-extra'),
       sequence = require('run-sequence'),
-      hb = require('gulp-hb'),
-      layouts = require('handlebars-layouts'),
+      jade = require('jade'),
+      gulpJade = require('gulp-jade'),
       connect = require('gulp-connect');
 
-layouts.register(hb.handlebars);
+let locals = {};
 
 const paths = {
   styles  : {
@@ -69,14 +69,11 @@ gulp.task('babel', () => {
 });
 
 gulp.task('templates', () => {
-  gulp.src('./docs/hbs/**/*.html')
-      .pipe(hb({
-        data: './docs/hbs/data/**/*.{js,json}',
-        helpers: [
-          './docs/hbs/helpers/*.js',
-          './node_modules/handlebars-layouts/index.js'
-        ],
-        partials: './docs/hbs/partials/**/*.hbs'
+  gulp.src('./docs/jade/**/*.jade')
+      .pipe(gulpJade({
+        jade: jade,
+        locals: locals,
+        pretty: true
       }))
       .pipe(gulp.dest('./docs'))
       .pipe(connect.reload());
@@ -101,7 +98,7 @@ gulp.task('clean', () => {
 gulp.task('watch', () => {
     gulp.watch('./styl/**/*', ['stylus']);
     gulp.watch('./js/**/*', ['babel']);
-    gulp.watch([__dirname + '/docs/hbs/**/*.{html,hbs}'], ['templates']);
+    gulp.watch([__dirname + '/docs/jade/**/*.jade'], ['templates']);
 });
 
 gulp.task('default', ['watch', 'copy', 'babel', 'stylus', 'templates', 'serve']);

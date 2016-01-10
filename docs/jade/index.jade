@@ -1,0 +1,66 @@
+extends ./partials/_layout.jade
+    
+block content
+  .masthead.masthead-full
+    .container
+      .masthead-caption.text-center
+        img.center-block.m-b-1(src='./images/stylistic-logo-white.png', alt='Stylistic Logo', style='width: 300px;')
+        h2.subtitle.m-b-2 not just another CSS framework
+        a.button.button-lg.button-blue.button-block-sm(href='#getting-started') Getting started
+        a.button.button-lg.button-red.button-block-sm(href='https://github.com/MarginZero/Stylistic/releases') Release Notes
+        //
+          <div class="m-t-1">
+          <span class="label label-gray">v0.1.0-alpha</span>
+          </div>
+  section#attention-grabber.p-y-4
+    .container
+      .row.m-b-2
+        h1.center-block.text-center Building beautiful sites just got easier
+        h3.center-block.text-center.text-muted With a grid that adapts to your style
+      .row
+        .col-xs-12.col-md-8.col-md-offset-2
+          .row.m-b-1
+            .col-xs-12
+              .border-rounded.bg-orange.p-y-2
+          .row.m-b-1
+            .col-xs-4.col-md-4
+              .border-rounded.bg-teal.p-y-2
+            .col-xs-4.col-md-4
+              .border-rounded.bg-teal.p-y-2
+            .col-xs-4.col-md-4
+              .border-rounded.bg-teal.p-y-2
+          .row.m-b-1
+            .col-xs-8.col-md-8
+              .border-rounded.bg-red.p-y-2
+            .col-xs-4.col-md-4
+              .border-rounded.bg-red.p-y-2
+          .row
+            .col-xs-12.col-md-12
+              .border-rounded.bg-orange.p-y-2
+  section#getting-started.bg-muted.p-y-2
+    .container
+      .row.m-b-2
+        h1.text-center.center-block Getting Started
+      .row.m-b-2
+        .col-xs-12.col-md-8.col-md-offset-2
+          h3 Clone from Git
+          pre.center-block.pre-dark
+            code.code-light
+              span.shell-line git clone https://github.com:MarginZero/Stylistic <br />
+              span.shell-line cd Stylistic <br />
+              span.shell-line npm install <br />
+              span.shell-line gulp
+      .row.m-b-2
+        .col-xs-12.col-md-8.col-md-offset-2
+          h3 Install via Bower
+          pre.center-block.pre-dark
+            code.code-light
+              span.shell-line bower install stylistic#v0.1.0-alpha.2
+      .row.m-b-2
+        .col-xs-12.col-md-8.col-md-offset-2
+          h3.m-b-2 Download the archive
+          .row
+            .col-xs-12.col-lg-8.col-lg-offset-2
+              a.button.button-block.button-lg.button-teal(href='https://github.com/MarginZero/Stylistic/archive/v0.1.0-alpha.2.zip')
+                | Download 
+                i.ion-arrow-down-a
