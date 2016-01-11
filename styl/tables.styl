@@ -1,0 +1,32 @@
+table
+  width: 100%
+  max-width: 100%
+  margin-bottom: spacer
+
+  th,
+  td
+    padding: table-cell-padding
+    line-height: line-height
+    vertical-align: top
+    border: table-border-width solid table-border-color
+
+  thead th
+    vertical-align: middle
+    border-bottom: (2 * table-border-width) solid table-border-color
+
+  tbody + tbody
+    border-top: (2 * table-border-width) solid table-border-color
+
+  .table
+    background-color: body-bg
+
+.table-sm
+  th,
+  td
+    padding: table-sm-cell-padding
+
+.table-responsive
+  display: block
+  width: 100%
+  min-height: 0.01%
+  overflow-x: auto

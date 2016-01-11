@@ -14,7 +14,9 @@ const gulp = require('gulp'),
       gulpJade = require('gulp-jade'),
       connect = require('gulp-connect');
 
-let locals = {};
+let locals = {
+  version: 'v0.1.0-alpha.2'
+};
 
 const paths = {
   styles  : {
