@@ -2,6 +2,8 @@
 
 A new [Stylus](http://stylus-lang.com) based CSS framework for those who love beautiful things.
 
+[![GitHub version](https://badge.fury.io/gh/MarginZero%2FStylistic.svg)](https://badge.fury.io/gh/MarginZero%2FStylistic)
+
 ## Table of Contents
 + [Getting Started](#getting-started)
   - [Installing NPM](#installing-npm)
