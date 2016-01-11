@@ -4,3 +4,269 @@ block variables
   - var active = 'documentation'
 
 block content
+  .masthead.masthead-full
+    .container
+      h1.center-block.text-center.display-3 Documentation
+      h4.center-block.text-center So how do you use it?
+      
+  section.p-y-2
+    .container
+      h1.section-title.anchor Grid System
+      p.lead Stylistic comes packed with a full 12 column grid system that can be modified to fit your needs, whatever they may be. Both standard CSS classes and mixins are included that will allow you to build your own system if you don't need the overhead that a pre-built grid provides.
+      
+      .comment-block.comment-block-info
+        h5 Getting started
+        :marked
+          Getting up and going with our grid system is super easy. In fact, if you're already using Bootstrap you will have to do very little to get going. Some important things to note:
+          + All rows need to be placed inside a `container` of some kind. The container you place it in is up to you and can either be a `container`, `container-fluid`, `container-full`, or a container that you create by using the `make-container()` Stylus mixin.
+          + All `columns` must be placed inside of `row` elements. If you are having spacing issues make sure that you are following this rule.
+          
+      h3.anchor.m-b-1 Breakpoints
+      p.lead The breakpoints in Stylistic are completely customizable like everything else. The default breakpoints are as follows:
+      
+      table.table-responsive
+        thead
+          tr
+            th 
+            th Extra Small
+            th Small
+            th Medium
+            th Large
+            th Extra Large
+        tbody
+          tr
+            th(scope="row") Container width
+            td None
+            td 576px
+            td 720px
+            td 940px
+            td 1140px
+          tr
+            th(scope="row") Class prefix
+            td: code .col-xs
+            td: code .col-sm
+            td: code .col-md
+            td: code .col-lg
+            td: code .col-xl
+          tr
+            th(scope="row") # of columns
+            td(colspan="5") 12
+        
+      h3.anchor.m-t-2 Example - Default
+      .example-container
+        .container.text-center
+          .row
+            .col-md-1.p-y-1 .col-md-1
+            .col-md-1.p-y-1 .col-md-1
+            .col-md-1.p-y-1 .col-md-1
+            .col-md-1.p-y-1 .col-md-1
+            .col-md-1.p-y-1 .col-md-1
+            .col-md-1.p-y-1 .col-md-1
+            .col-md-1.p-y-1 .col-md-1
+            .col-md-1.p-y-1 .col-md-1
+            .col-md-1.p-y-1 .col-md-1
+            .col-md-1.p-y-1 .col-md-1
+            .col-md-1.p-y-1 .col-md-1
+            .col-md-1.p-y-1 .col-md-1
+          .row
+            .col-md-2.p-y-1 .col-md-2
+            .col-md-2.p-y-1 .col-md-2
+            .col-md-2.p-y-1 .col-md-2
+            .col-md-2.p-y-1 .col-md-2
+            .col-md-2.p-y-1 .col-md-2
+            .col-md-2.p-y-1 .col-md-2
+          .row
+            .col-md-4.p-y-1 .col-md-4
+            .col-md-4.p-y-1 .col-md-4
+            .col-md-4.p-y-1 .col-md-4
+          .row
+            .col-md-6.p-y-1 .col-md-6
+            .col-md-6.p-y-1 .col-md-6
+          .row
+            .col-md-8.p-y-1 .col-md-8
+            .col-md-4.p-y-1 .col-md-4
+          .row
+            .col-md-12.p-y-1 .col-md-12
+          
+      pre.example-code
+        code
+          :escape-html
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              ...
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-2"></div>
+              ...
+            </div>
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"></div>
+              ...
+            </div>
+            <div class="row">
+              <div class="col-md-6"></div>
+              <div class="col-md-6"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-8"></div>
+              <div class="col-md-4"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-12"></div>
+            </div>
+
+      h3.anchor.m-t-2 Example - Container types
+      p You can turn any container into a full-width container or a fluid container just by adding a class
+      
+      pre.example-code
+        code
+          :escape-html
+            // This will be a full container with no gutters. Basically the same as having no container
+            <div class="container-full">
+              <div class="row">
+                ...
+              </div>
+            </div>
+            
+            // This is the same as the above, but with gutters
+            <div class="container-fluid">
+              <div class="row">
+                ...
+              </div>
+            </div>
+            
+      h3.anchor.m-t-2 Example - Responsiveness
+      p Up till now our grid has only broken down at the media breakpoint. It's possible to define a different size for each breakpoint.
+      
+      .example-container
+        .container.text-center
+          .row
+            .col-xs-12.col-md-8.p-y-1 .col-xs-12 .col-md-8
+            .col-xs-6.col-md-4.p-y-1 .col-xs-6 .col-md-4
+          .row
+            .col-xs-6.col-md-4.p-y-1 .col-xs-6 .col-md-4
+            .col-xs-6.col-md-4.p-y-1 .col-xs-6 .col-md-4
+            .col-xs-6.col-md-4.p-y-1 .col-xs-6 .col-md-4
+          .row
+            .col-xs-6 .col-xs-6
+            
+      pre.example-code
+        code
+          :escape-html
+            <div class="row">
+              <div class="col-xs-12 col-md-8"></div>
+              <div class="col-xs-6 col-md-4"></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6 col-md-4"></div>
+              <div class="col-xs-6 col-md-4"></div>
+              <div class="col-xs-6 col-md-4"></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6"></div>
+              <div class="col-xs-6"></div>
+            </div>
+            
+      h3.anchor.m-t-2 Example - Wrapping
+      p When more columns are placed in a row than the grid system allows the extra columns will wrap
+      
+      .example-container
+        .container.text-center
+          .row
+            .col-xs-9.p-y-1 .col-xs-9
+            .col-xs-4.p-y-1 .col-xs-4
+            .col-xs-6.p-y-1 .col-xs-6
+            
+      pre.example-code
+        code
+          :escape-html
+            <div class="row">
+              <div class="col-xs-9"></div>
+              <div class="col-xs-4"></div>
+              <div class="col-xs-6"></div>
+            </div>
+            
+      h3.anchor.m-t-2 Example - Column Resets
+      p Occasionally you'll run into an issue where coluns don't match up because one is taller than the other. This can be fixed easily by using a clearfix combined with a responsive utility class.
+      
+      .example-container
+        .container.text-center
+          .row
+            .col-xs-6.col-sm-3.p-y-1 .col-xs-6 .col-sm-3<br />View this on mobile to see what we're talking about
+            .col-xs-6.col-sm-3.p-y-1 .col-xs-6 .col-sm-3
+            .clearfix.visible-xs-block
+            .col-xs-6.col-sm-3.p-y-1 .col-xs-6 .col-sm-3
+            .col-xs-6.col-sm-3.p-y-1 .col-xs-6 .col-sm-3
+            
+      pre.example-code
+        :escape-html
+          <div class="row">
+            <div class="col-xs-6 col-sm-3">.col-sm-3<br />View this on mobile to see what we're talking about</div>
+            <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+            <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+            <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+          </div>
+          
+      h3.anchor.m-t-2 Example - Column Offsets
+      p You can move columns right by utilizing the col-offset property. This is exactly the same as the way Bootstrap does it.
+      
+      .example-container
+        .container.text-center
+          .row
+            .col-md-4.p-y-1 .col-md-4
+            .col-md-4.col-md-offset-4.p-y-1 .col-md-4 .col-md-offset-4
+          .row
+            .col-md-3.col-md-offset-3.p-y-1 .col-md-3 .col-md-offset-3
+            .col-md-3.col-md-offset-3.p-y-1 .col-md-3 .col-md-offset-3
+          .row
+            .col-md-6.col-md-offset-3.p-y-1 .col-md-6 .col-md-offset-3
+            
+      pre.example-code
+        :escape-html
+          <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4 col-md-offset-4"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-3"></div>
+            <div class="col-md-3 col-md-offset-3"></div>
+          </div>
+            <div class="row">
+            <div class="col-md-6 col-md-offset-3"></div>
+          </div>
+
+  section.p-y-2
+  .container
+      h1.section-title.anchor Icons
+      p.lead We decided to use the icon font IonIcons because it is beautiful and simple just like Stylistic. To view all of them go to 
+        a(href="http://ionicons.com/") http://ionicons.com
+        
+  section.p-y-2
+    .container
+      h1.section-title.anchor Buttons
+      p.lead Beautiful and fully customizable flat buttons
+      
+      h3.m-b-1 Example
+      
+      .example-container
+        a.button.button-teal(href="#") Teal Button
+        a.button.button-orange(href="#") Orange Button 
+        button.button.button-blue(href="#") Blue Button 
+        input.button.button-yellow(type="button" href="#" value="Yellow Button")
+        a.button.button-gray(href="#") Gray Button
+      pre.example-code
+        code(data-language='html')
+          | &lt;a href="#" class="button button-teal"&gt;Teal Button&lt;a/&gt; 
+          | &lt;a href="#" class="button button-orange"&gt;Orange Button&lt;a/&gt; 
+          | &lt;a href="#" class="button button-blue"&gt;Blue Button&lt;a/&gt; 
+          | &lt;a href="#" class="button button-yellow"&gt;Yellow Button&lt;a/&gt; 
+          | &lt;a href="#" class="button button-gray"&gt;Gray Button&lt;a/&gt;
+          
+      .comment-block.comment-block-warning
+        h5 Known issues
+        p
+          :marked
+            [#7](https://github.com/MarginZero/Stylistic/issues/7) Right now when the `.button` class is applied to an `input` or a `button` element the element has a height of about 2 extra pixels

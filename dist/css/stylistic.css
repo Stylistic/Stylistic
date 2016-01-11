@@ -113,7 +113,7 @@ q:after {
 a {
   background: transparent;
   font-size: 100%;
-  margin: 0;
+  margin: 0l;
   padding: 0;
   vertical-align: baseline;
 }
@@ -3185,7 +3185,7 @@ html {
 }
 body {
   background-color: #fff;
-  color: #202020;
+  color: #373737;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -3219,6 +3219,7 @@ ol,
 ul,
 dl {
   margin-bottom: 0;
+  padding: 0 1rem;
 }
 ol ol,
 ul ul,
@@ -3237,11 +3238,11 @@ blockquote {
   margin: 0 0 1rem;
 }
 a {
-  color: #9e9e9e;
+  color: #007166;
   text-decoration: none;
 }
 a:hover {
-  color: #767676;
+  color: #003530;
   text-decoration: none;
 }
 pre {
@@ -3844,10 +3845,10 @@ output {
   color: #009688 !important;
 }
 .bg-yellow {
-  background-color: #ffeb3b !important;
+  background-color: #d0c036 !important;
 }
 .text-yellow {
-  color: #ffeb3b !important;
+  color: #d0c036 !important;
 }
 .bg-red {
   background-color: #f44336 !important;
@@ -4170,6 +4171,41 @@ h6 {
 .h6 {
   font-size: 1rem;
 }
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+/* Warning: Needed for oldIE support, but words are broken up letter-by-letter */
+  -ms-word-break: break-all;
+  word-break: break-all;
+/* Non standard for webkit */
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+.display-1 {
+  font-size: 5rem;
+  font-weight: 600;
+}
+.display-2 {
+  font-size: 4.5rem;
+  font-weight: 600;
+}
+.display-3 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+.display-*,
+.lead {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -4300,37 +4336,37 @@ mark,
 .ribbon-orange {
   background-color: #ed8b00;
 }
-a {
+.ribbon-orange a {
   color: #f0f0f0;
 }
 .ribbon-blue {
   background-color: #448aff;
 }
-a {
+.ribbon-blue a {
   color: #f0f0f0;
 }
 .ribbon-teal {
   background-color: #009688;
 }
-a {
+.ribbon-teal a {
   color: #f0f0f0;
 }
 .ribbon-yellow {
-  background-color: #ffeb3b;
+  background-color: #d0c036;
 }
-a {
+.ribbon-yellow a {
   color: #f0f0f0;
 }
 .ribbon-red {
   background-color: #f44336;
 }
-a {
+.ribbon-red a {
   color: #f0f0f0;
 }
 .ribbon-gray {
   background-color: #9e9e9e;
 }
-a {
+.ribbon-gray a {
   color: #f0f0f0;
 }
 .navbar {
@@ -4360,8 +4396,9 @@ a {
 .navbar .navbar-logo .logo-accent {
   color: rgba(0,0,223,0.4);
 }
-.navbar .navbar-logo .logo-accent > img {
+.navbar .navbar-logo img {
   display: block;
+  max-height: 1.9rem;
 }
 .navbar .navbar-nav .navbar-divider {
   background-color: rgba(0,0,0,0.075);
@@ -4445,7 +4482,7 @@ a {
   display: block;
   padding-top: 0.425rem;
   padding-bottom: 0.425rem;
-  color: #b6b6b6;
+  color: #00d4c0;
 }
 .navbar .nav-link + .nav-link {
   margin-left: 1rem;
@@ -4500,16 +4537,16 @@ pre {
   overflow-x: auto;
   border-radius: 0.25rem;
 }
-.pre-dark {
-  color: #ececec;
-  background-color: #373737;
-}
-.pre-dark code {
+pre code {
   padding: 0;
   font-size: inherit;
   color: inherit;
   background-color: transparent;
   border-radius: 0;
+}
+.pre-dark {
+  color: #ececec;
+  background-color: #373737;
 }
 .pre-dark .shell-line::before {
   content: '$';
@@ -5364,6 +5401,38 @@ pre {
     align-self: flex-end;
   }
 }
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+table th,
+table td {
+  padding: 0.75rem;
+  line-height: 1.5;
+  vertical-align: top;
+  border: 1px solid #ddd;
+}
+table thead th {
+  vertical-align: middle;
+  border-bottom: 2px solid #ddd;
+}
+table tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+table .table {
+  background-color: #fff;
+}
+.table-sm th,
+.table-sm td {
+  padding: 0.3rem;
+}
+.table-responsive {
+  display: block;
+  width: 100%;
+  min-height: 0.01%;
+  overflow-x: auto;
+}
 .form-block {
   display: block;
   width: 100%;
@@ -5528,9 +5597,9 @@ pre {
   color: #fefefe;
 }
 .label.label-yellow {
-  background-color: #ffeb3b;
-  border-color: #ffeb3b;
-  color: #202020;
+  background-color: #d0c036;
+  border-color: #d0c036;
+  color: #fefefe;
 }
 .label.label-red {
   background-color: #f44336;
@@ -5585,6 +5654,7 @@ pre {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
+  margin: 0;
 }
 .button:focus,
 .button:hover {
@@ -5616,8 +5686,8 @@ fieldset[disabled] a.button {
 }
 .button-orange:hover {
   color: #fefefe;
-  background-color: #d57d00;
-  border-color: #d57d00;
+  background-color: #c97600;
+  border-color: #c97600;
 }
 .button-orange:active,
 .button-orange.active {
@@ -5652,8 +5722,8 @@ fieldset[disabled] a.button {
 }
 .button-blue:hover {
   color: #fefefe;
-  background-color: #2476ff;
-  border-color: #2476ff;
+  background-color: #146cff;
+  border-color: #146cff;
 }
 .button-blue:active,
 .button-blue.active {
@@ -5688,8 +5758,8 @@ fieldset[disabled] a.button {
 }
 .button-teal:hover {
   color: #fefefe;
-  background-color: #00877a;
-  border-color: #00877a;
+  background-color: #008074;
+  border-color: #008074;
 }
 .button-teal:active,
 .button-teal.active {
@@ -5719,13 +5789,13 @@ fieldset[disabled] a.button {
 }
 .button-yellow {
   color: #fefefe;
-  background-color: #ffeb3b;
-  border-color: #ffeb3b;
+  background-color: #d0c036;
+  border-color: #d0c036;
 }
 .button-yellow:hover {
   color: #fefefe;
-  background-color: #ffe81c;
-  border-color: #ffe81c;
+  background-color: #b4a62a;
+  border-color: #b4a62a;
 }
 .button-yellow:active,
 .button-yellow.active {
@@ -5736,15 +5806,15 @@ fieldset[disabled] a.button {
 .button-yellow.disabled:focus,
 .button-yellow:disabled.focus,
 .button-yellow.disabled.focus {
-  background-color: #ffeb3b;
-  border-color: #ffeb3b;
+  background-color: #d0c036;
+  border-color: #d0c036;
 }
 .button-yellow:disabled:focus:hover,
 .button-yellow.disabled:focus:hover,
 .button-yellow:disabled.focus:hover,
 .button-yellow.disabled.focus:hover {
-  background-color: #ffeb3b;
-  boder-color: #ffeb3b;
+  background-color: #d0c036;
+  boder-color: #d0c036;
 }
 .button-block {
   display: block;
@@ -5760,8 +5830,8 @@ fieldset[disabled] a.button {
 }
 .button-red:hover {
   color: #fefefe;
-  background-color: #f2291a;
-  border-color: #f2291a;
+  background-color: #f01d0d;
+  border-color: #f01d0d;
 }
 .button-red:active,
 .button-red.active {
@@ -5796,8 +5866,8 @@ fieldset[disabled] a.button {
 }
 .button-gray:hover {
   color: #fefefe;
-  background-color: #8e8e8e;
-  border-color: #8e8e8e;
+  background-color: #868686;
+  border-color: #868686;
 }
 .button-gray:active,
 .button-gray.active {
