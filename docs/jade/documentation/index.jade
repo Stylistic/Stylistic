@@ -89,7 +89,7 @@ block content
             .col-md-12.p-y-1 .col-md-12
           
       pre.example-code
-        code
+        code.language-html
           :escape-html
             <div class="row">
               <div class="col-md-1"></div>
@@ -122,16 +122,16 @@ block content
       p You can turn any container into a full-width container or a fluid container just by adding a class
       
       pre.example-code
-        code
+        code.language-html
           :escape-html
-            // This will be a full container with no gutters. Basically the same as having no container
+            <!-- This will be a full container with no gutters. Basically the same as having no container -->
             <div class="container-full">
               <div class="row">
                 ...
               </div>
             </div>
             
-            // This is the same as the above, but with gutters
+            <!-- This is the same as the above, but with gutters -->
             <div class="container-fluid">
               <div class="row">
                 ...
@@ -154,7 +154,7 @@ block content
             .col-xs-6 .col-xs-6
             
       pre.example-code
-        code
+        code.language-html
           :escape-html
             <div class="row">
               <div class="col-xs-12 col-md-8"></div>
@@ -181,7 +181,7 @@ block content
             .col-xs-6.p-y-1 .col-xs-6
             
       pre.example-code
-        code
+        code.language-html
           :escape-html
             <div class="row">
               <div class="col-xs-9"></div>
@@ -202,13 +202,14 @@ block content
             .col-xs-6.col-sm-3.p-y-1 .col-xs-6 .col-sm-3
             
       pre.example-code
-        :escape-html
-          <div class="row">
-            <div class="col-xs-6 col-sm-3">.col-sm-3<br />View this on mobile to see what we're talking about</div>
-            <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-            <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-            <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-          </div>
+        code.language-html
+          :escape-html
+            <div class="row">
+              <div class="col-xs-6 col-sm-3">.col-sm-3<br />View this on mobile to see what we're talking about</div>
+              <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+              <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+              <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+            </div>
           
       h3.anchor.m-t-2 Example - Column Offsets
       p You can move columns right by utilizing the col-offset property. This is exactly the same as the way Bootstrap does it.
@@ -225,18 +226,19 @@ block content
             .col-md-6.col-md-offset-3.p-y-1 .col-md-6 .col-md-offset-3
             
       pre.example-code
-        :escape-html
-          <div class="row">
-            <div class="col-md-4">.col-md-4</div>
-            <div class="col-md-4 col-md-offset-4"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-3 col-md-offset-3"></div>
-            <div class="col-md-3 col-md-offset-3"></div>
-          </div>
+        code.language-html
+          :escape-html
             <div class="row">
-            <div class="col-md-6 col-md-offset-3"></div>
-          </div>
+              <div class="col-md-4">.col-md-4</div>
+              <div class="col-md-4 col-md-offset-4"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 col-md-offset-3"></div>
+              <div class="col-md-3 col-md-offset-3"></div>
+            </div>
+              <div class="row">
+              <div class="col-md-6 col-md-offset-3"></div>
+            </div>
 
   section.p-y-2
   .container
@@ -244,6 +246,19 @@ block content
       p.lead We decided to use the icon font IonIcons because it is beautiful and simple just like Stylistic. To view all of them go to 
         a(href="http://ionicons.com/") http://ionicons.com
         
+      h3.m-b-1 Examples
+      
+      .example-container
+        a.button.button-blue.button-lg: i.ion-arrow-down-a
+        a.button.button-red.button-lg: i.ion-power
+      pre.example-code
+        :escape-html
+          <a href="#" class="button button-lg button-blue">
+            <i class="ion-arrow-down-a"></i>
+          </a>
+          <a href="#" class="button button-lg button-red">
+            <i class="ion-power"></i>
+          </a>
   section.p-y-2
     .container
       h1.section-title.anchor Buttons
@@ -256,14 +271,17 @@ block content
         a.button.button-orange(href="#") Orange Button 
         button.button.button-blue(href="#") Blue Button 
         input.button.button-yellow(type="button" href="#" value="Yellow Button")
+        a.button.button-red(href="#") Red Button
         a.button.button-gray(href="#") Gray Button
       pre.example-code
-        code(data-language='html')
-          | &lt;a href="#" class="button button-teal"&gt;Teal Button&lt;a/&gt; 
-          | &lt;a href="#" class="button button-orange"&gt;Orange Button&lt;a/&gt; 
-          | &lt;a href="#" class="button button-blue"&gt;Blue Button&lt;a/&gt; 
-          | &lt;a href="#" class="button button-yellow"&gt;Yellow Button&lt;a/&gt; 
-          | &lt;a href="#" class="button button-gray"&gt;Gray Button&lt;a/&gt;
+        code.language-html
+          :escape-html
+            <a href="#" class="button button-teal">Teal Button<a/>
+            <a href="#" class="button button-orange">Orange Button<a/>
+            <button class="button button-blue">Blue Button<a/>
+            <input class="button button-yellow" type="button" value="Yellow button" />
+            <a href="#" class="button button-red">Red Button<a/>
+            <a href="#" class="button button-gray">Gray Button<a/>
           
       .comment-block.comment-block-warning
         h5 Known issues
