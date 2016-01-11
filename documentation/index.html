@@ -12,6 +12,7 @@
     <title>Stylistic Framework - CSS framework built in Stylus</title>
     <link rel="stylesheet" href="/dist/css/stylistic.css">
     <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/prism.css">
     <link rel="author" href="https://plus.google.com/+ChrisWatson1993">
     <link rel="pblisher" href="https://plus.google.com/b/105045194371251679718">
   </head>
@@ -122,7 +123,7 @@
             </div>
           </div>
         </div>
-        <pre class="example-code"><code>&lt;div class=&quot;row&quot;&gt;
+        <pre class="example-code"><code class="language-html">&lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col-md-1&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;col-md-1&quot;&gt;&lt;/div&gt;
   ...
@@ -151,14 +152,14 @@
 </code></pre>
         <h3 class="anchor m-t-2">Example - Container types</h3>
         <p>You can turn any container into a full-width container or a fluid container just by adding a class</p>
-        <pre class="example-code"><code>// This will be a full container with no gutters. Basically the same as having no container
+        <pre class="example-code"><code class="language-html">&lt;!-- This will be a full container with no gutters. Basically the same as having no container --&gt;
 &lt;div class=&quot;container-full&quot;&gt;
   &lt;div class=&quot;row&quot;&gt;
     ...
   &lt;/div&gt;
 &lt;/div&gt;
 
-// This is the same as the above, but with gutters
+&lt;!-- This is the same as the above, but with gutters --&gt;
 &lt;div class=&quot;container-fluid&quot;&gt;
   &lt;div class=&quot;row&quot;&gt;
     ...
@@ -183,7 +184,7 @@
             </div>
           </div>
         </div>
-        <pre class="example-code"><code>&lt;div class=&quot;row&quot;&gt;
+        <pre class="example-code"><code class="language-html">&lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col-xs-12 col-md-8&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;col-xs-6 col-md-4&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -208,7 +209,7 @@
             </div>
           </div>
         </div>
-        <pre class="example-code"><code>&lt;div class=&quot;row&quot;&gt;
+        <pre class="example-code"><code class="language-html">&lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col-xs-9&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;col-xs-4&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;col-xs-6&quot;&gt;&lt;/div&gt;
@@ -227,13 +228,13 @@
             </div>
           </div>
         </div>
-        <pre class="example-code">&lt;div class=&quot;row&quot;&gt;
+        <pre class="example-code"><code class="language-html">&lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col-xs-6 col-sm-3&quot;&gt;.col-sm-3&lt;br /&gt;View this on mobile to see what we&#39;re talking about&lt;/div&gt;
   &lt;div class=&quot;col-xs-6 col-sm-3&quot;&gt;.col-xs-6 .col-sm-3&lt;/div&gt;
   &lt;div class=&quot;col-xs-6 col-sm-3&quot;&gt;.col-xs-6 .col-sm-3&lt;/div&gt;
   &lt;div class=&quot;col-xs-6 col-sm-3&quot;&gt;.col-xs-6 .col-sm-3&lt;/div&gt;
 &lt;/div&gt;
-</pre>
+</code></pre>
         <h3 class="anchor m-t-2">Example - Column Offsets</h3>
         <p>You can move columns right by utilizing the col-offset property. This is exactly the same as the way Bootstrap does it.</p>
         <div class="example-container">
@@ -251,7 +252,7 @@
             </div>
           </div>
         </div>
-        <pre class="example-code">&lt;div class=&quot;row&quot;&gt;
+        <pre class="example-code"><code class="language-html">&lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col-md-4&quot;&gt;.col-md-4&lt;/div&gt;
   &lt;div class=&quot;col-md-4 col-md-offset-4&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -262,13 +263,21 @@
   &lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col-md-6 col-md-offset-3&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-</pre>
+</code></pre>
       </div>
     </section>
     <section class="p-y-2"></section>
     <div class="container">
       <h1 class="section-title anchor">Icons</h1>
       <p class="lead">We decided to use the icon font IonIcons because it is beautiful and simple just like Stylistic. To view all of them go to <a href="http://ionicons.com/">http://ionicons.com</a></p>
+      <h3 class="m-b-1">Examples</h3>
+      <div class="example-container"><a class="button button-blue button-lg"><i class="ion-arrow-down-a"></i></a><a class="button button-red button-lg"><i class="ion-power"></i></a></div>
+      <pre class="example-code">&lt;a href=&quot;#&quot; class=&quot;button button-lg button-blue&quot;&gt;
+  &lt;i class=&quot;ion-arrow-down-a&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button button-lg button-red&quot;&gt;
+  &lt;i class=&quot;ion-power&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;</pre>
     </div>
     <section class="p-y-2">
       <div class="container">
@@ -277,13 +286,15 @@
         <h3 class="m-b-1">Example</h3>
         <div class="example-container"><a href="#" class="button button-teal">Teal Button</a><a href="#" class="button button-orange">Orange Button </a>
           <button href="#" class="button button-blue">Blue Button </button>
-          <input type="button" href="#" value="Yellow Button" class="button button-yellow"><a href="#" class="button button-gray">Gray Button</a>
+          <input type="button" href="#" value="Yellow Button" class="button button-yellow"><a href="#" class="button button-red">Red Button</a><a href="#" class="button button-gray">Gray Button</a>
         </div>
-        <pre class="example-code"><code data-language="html">&lt;a href="#" class="button button-teal"&gt;Teal Button&lt;a/&gt; 
-&lt;a href="#" class="button button-orange"&gt;Orange Button&lt;a/&gt; 
-&lt;a href="#" class="button button-blue"&gt;Blue Button&lt;a/&gt; 
-&lt;a href="#" class="button button-yellow"&gt;Yellow Button&lt;a/&gt; 
-&lt;a href="#" class="button button-gray"&gt;Gray Button&lt;a/&gt;</code></pre>
+        <pre class="example-code"><code class="language-html">&lt;a href=&quot;#&quot; class=&quot;button button-teal&quot;&gt;Teal Button&lt;a/&gt;
+&lt;a href=&quot;#&quot; class=&quot;button button-orange&quot;&gt;Orange Button&lt;a/&gt;
+&lt;button class=&quot;button button-blue&quot;&gt;Blue Button&lt;a/&gt;
+&lt;input class=&quot;button button-yellow&quot; type=&quot;button&quot; value=&quot;Yellow button&quot; /&gt;
+&lt;a href=&quot;#&quot; class=&quot;button button-red&quot;&gt;Red Button&lt;a/&gt;
+&lt;a href=&quot;#&quot; class=&quot;button button-gray&quot;&gt;Gray Button&lt;a/&gt;
+</code></pre>
         <div class="comment-block comment-block-warning">
           <h5>Known issues</h5>
           <p><p><a href="https://github.com/MarginZero/Stylistic/issues/7">#7</a> Right now when the <code>.button</code> class is applied to an <code>input</code> or a <code>button</code> element the element has a height of about 2 extra pixels</p>
@@ -315,6 +326,7 @@
       ga('send', 'pageview');
     </script>
     <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/prism.js"></script>
     <script type="text/javascript" src="/js/anchor.js"></script>
     <script type="text/javascript" src="/dist/js/all.js"></script>
     <script type="text/javascript" src="/js/site.js"></script>
