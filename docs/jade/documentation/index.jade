@@ -239,6 +239,21 @@ block content
               <div class="row">
               <div class="col-md-6 col-md-offset-3"></div>
             </div>
+            
+  section.p-y-2
+    .container
+      h1.cestion-title.anchor Colors
+      p.lead Unlike with other frameworks, colors in Stylistic are completely customizable from the name to the color itself. That means you can have as many, or as few, colors as you want and when a color changes that change is seen in buttons, backgrounds, etc.
+      
+      .comment-block.comment-block-warning
+        h5 Things to note
+        :marked
+          Having this much control over colors is a big responsibility. To make sure nothing breaks:
+          + Remember that some elements are already tied to a specific color. If you change the name of a color make sure to update your `stylistic_overrides.styl` file
+          + Buttons, backgrounds, text-colors, and more will be automatically generated based on the colors you include. So the more colors the bigger your `stylistic.css` file will end up.
+          
+      h3.m-b-1 Palette
+      
 
   section.p-y-2
   .container
@@ -259,6 +274,7 @@ block content
           <a href="#" class="button button-lg button-red">
             <i class="ion-power"></i>
           </a>
+
   section.p-y-2
     .container
       h1.section-title.anchor Buttons
