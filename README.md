@@ -1,4 +1,4 @@
-![Stylistic Logo](http://gostylistic.com/images/stylistic-logo-teal.png)
+
 
 A new [Stylus](http://stylus-lang.com) based CSS framework for those who love beautiful things.
 
