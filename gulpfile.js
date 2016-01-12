@@ -52,7 +52,7 @@ gulp.task('stylus', () => {
         }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.out))
-        .pipe(gulp.dest(paths.docs.css))
+//        .pipe(gulp.dest(paths.docs.css))
         .pipe(connect.reload());
 });
 
@@ -81,6 +81,23 @@ gulp.task('templates', () => {
       .pipe(connect.reload());
 });
 
+gulp.task('doc_stylus', () => {
+  gulp.src('./docs/css/site.styl')
+      .pipe(stylint())
+      .pipe(stylint.reporter())
+      .pipe(sourcemaps.init())
+      .pipe(stylus({
+          'include css': true,
+          url: {
+            name: 'b64url',
+            limit: false
+          }
+      }))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest('./docs/css/'))
+      .pipe(connect.reload());
+});
+
 gulp.task('serve', () => {
   connect.server({
     root: './docs',
@@ -100,7 +117,8 @@ gulp.task('clean', () => {
 gulp.task('watch', () => {
     gulp.watch('./styl/**/*', ['stylus']);
     gulp.watch('./js/**/*', ['babel']);
+    gulp.watch('./docs/css/*.styl', ['doc_stylus']);
     gulp.watch([__dirname + '/docs/jade/**/*.jade'], ['templates']);
 });
 
-gulp.task('default', ['watch', 'copy', 'babel', 'stylus', 'templates', 'serve']);
+gulp.task('default', ['watch', 'copy', 'babel', 'stylus', 'templates', 'doc_stylus', 'serve']);
