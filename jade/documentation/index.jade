@@ -6,12 +6,12 @@ block variables
 block content
   .masthead.masthead-full
     .container
-      h1.center-block.text-center.display-3 Documentation
+      h1.center-block.text-center.display-1 Documentation
       h4.center-block.text-center So how do you use it?
       
   section.p-y-2
     .container
-      h1.section-title.anchor Grid System
+      h1.section-title.display-4.anchor Grid System
       p.lead Stylistic comes packed with a full 12 column grid system that can be modified to fit your needs, whatever they may be. Both standard CSS classes and mixins are included that will allow you to build your own system if you don't need the overhead that a pre-built grid provides.
       
       .comment-block.comment-block-info
@@ -242,7 +242,7 @@ block content
             
   section.p-y-2
     .container
-      h1.cestion-title.anchor Colors
+      h1.cestion-title.display-4.anchor Colors
       p.lead Unlike with other frameworks, colors in Stylistic are completely customizable from the name to the color itself. That means you can have as many, or as few, colors as you want and when a color changes that change is seen in buttons, backgrounds, etc.
       
       .comment-block.comment-block-warning
@@ -253,31 +253,59 @@ block content
           + Buttons, backgrounds, text-colors, and more will be automatically generated based on the colors you include. So the more colors the bigger your `stylistic.css` file will end up.
           
       h3.m-b-1 Palette
-      
-
-  section.p-y-2
-  .container
-      h1.section-title.anchor Icons
-      p.lead We decided to use the icon font IonIcons because it is beautiful and simple just like Stylistic. To view all of them go to 
-        a(href="http://ionicons.com/") http://ionicons.com
-        
-      h3.m-b-1 Examples
-      
-      .example-container
-        a.button.button-blue.button-lg: i.ion-arrow-down-a
-        a.button.button-red.button-lg: i.ion-power
-      pre.example-code
-        :escape-html
-          <a href="#" class="button button-lg button-blue">
-            <i class="ion-arrow-down-a"></i>
-          </a>
-          <a href="#" class="button button-lg button-red">
-            <i class="ion-power"></i>
-          </a>
+      .palette-circle.bg-teal.text-white
+        span
+          div Teal
+          div #009688
+          
+      .palette-circle.bg-orange.text-white
+        span
+          div Orange
+          div #ED8B00
+          
+      .palette-circle.bg-blue.text-white
+        span
+          div Blue
+          div #448AFF
+          
+      .palette-circle.bg-yellow.text-white
+        span
+          div Yellow
+          div #d0c036
+          
+      .palette-circle.bg-red.text-white
+        span
+          div Red
+          div #F44336
+          
+      .palette-circle.bg-gray.text-white
+        span
+          div Gray
+          div #9E9E9E
 
   section.p-y-2
     .container
-      h1.section-title.anchor Buttons
+        h1.section-title.display-4.anchor Icons
+        p.lead We decided to use the icon font IonIcons because it is beautiful and simple just like Stylistic. To view all of them go to 
+          a(href="http://ionicons.com/") http://ionicons.com
+          
+        h3.m-b-1 Examples
+        
+        .example-container
+          a.button.button-blue.button-lg: i.ion-arrow-down-a
+          a.button.button-red.button-lg: i.ion-power
+        pre.example-code
+          :escape-html
+            <a href="#" class="button button-lg button-blue">
+              <i class="ion-arrow-down-a"></i>
+            </a>
+            <a href="#" class="button button-lg button-red">
+              <i class="ion-power"></i>
+            </a>
+
+  section.p-y-2
+    .container
+      h1.section-title.display-4.anchor Buttons
       p.lead Beautiful and fully customizable flat buttons
       
       h3.m-b-1 Example

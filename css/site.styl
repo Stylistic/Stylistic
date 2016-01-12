@@ -1,0 +1,81 @@
+@require 'stylistic_and_overrides'
+
+.anchorjs-link
+  font-family: 'Ionicons'
+
+.section-title
+  border-bottom: 1px solid #eaeaea
+  padding-bottom: .5rem
+  margin-bottom: .5rem
+
+.example-container
+  padding: 45px 15px 15px
+  margin: 0
+  background-color: #fafafa
+  border: 1px solid #ddd
+  border-radius: 0.4rem 0.4rem 0 0
+  position: relative
+  font-size: 14px
+
+.example-container::after
+  position: absolute
+  top: 15px
+  left: 15px
+  font-size: 12px
+  font-weight: 700
+  color: #959595
+  text-transform: uppercase
+  letter-spacing: 1px
+  content: "Example"
+
+.example-container .row
+  margin-bottom: 1rem
+
+.example-container [class^="col-"]
+  border: 1px solid #202020
+  background-color: #baeeea
+
+.example-container + .example-code
+  border-radius: 0 0 .4rem .4rem
+
+.example-code
+  margin: 0
+  background-color: #fafafa
+  border: 1px solid #ddd
+  border-top: none
+  border-radius: .4rem
+  position: relative
+
+.comment-block
+  padding: 1rem
+  background-color: #fafafa
+  border: 1px solid #ddd
+  border-radius: 0 .4rem .4rem 0
+  margin: 2rem 0
+
+.comment-block-info
+  border-left: 4px solid teal
+
+.comment-block-warning
+  border-left: 4px solid orange
+
+.button + .button
+  margin-left: .4rem
+
+.palette-circle
+  border-radius: 50%
+  display: inline-table
+  height: 100px
+  width: auto
+  margin-bottom: .2rem
+
+  span
+    display: table-cell
+    vertical-align: middle
+    height: 100px
+    width: 100px
+    text-align: center
+    font-weight: bold
+
+  + .palette-circle
+    margin-left: .2rem
