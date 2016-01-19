@@ -4,15 +4,16 @@ block variables
   - var active = 'home'
     
 block content
-  .masthead.masthead-full
+  .masthead.masthead-full.p-t-3-p-b-4
     .container
       .masthead-caption.text-center
         img.center-block.m-b-1(src='/images/stylistic-logo-white.png', alt='Stylistic Logo', style='width: 300px;')
         h2.subtitle.m-b-2 not just another CSS framework
         a.button.button-lg.button-blue.button-block-sm.m-r-1(href='#getting-started') Getting started
         a.button.button-lg.button-red.button-block-sm(href='https://github.com/MarginZero/Stylistic/releases') Release Notes
-        .m-t-2.text-white.text-center
-            strong Documentation and examples coming soon
+        .m-t-1.text-center
+          .label.label-orange: strong #{version}
+          
   section#attention-grabber.p-y-4
     .container
       .row.m-b-2
