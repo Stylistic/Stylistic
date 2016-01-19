@@ -5589,30 +5589,54 @@ table .table {
   border-color: #ed8b00;
   color: #fefefe;
 }
+.label.label-orange:hover {
+  color: #d8d8d8;
+  border-color: #c97600;
+}
 .label.label-blue {
   background-color: #448aff;
   border-color: #448aff;
   color: #202020;
+}
+.label.label-blue:hover {
+  color: #1b1b1b;
+  border-color: #146cff;
 }
 .label.label-teal {
   background-color: #009688;
   border-color: #009688;
   color: #fefefe;
 }
+.label.label-teal:hover {
+  color: #d8d8d8;
+  border-color: #008074;
+}
 .label.label-yellow {
   background-color: #d0c036;
   border-color: #d0c036;
   color: #fefefe;
+}
+.label.label-yellow:hover {
+  color: #d8d8d8;
+  border-color: #b4a62a;
 }
 .label.label-red {
   background-color: #f44336;
   border-color: #f44336;
   color: #fefefe;
 }
+.label.label-red:hover {
+  color: #d8d8d8;
+  border-color: #f01d0d;
+}
 .label.label-gray {
   background-color: #9e9e9e;
   border-color: #9e9e9e;
   color: #202020;
+}
+.label.label-gray:hover {
+  color: #1b1b1b;
+  border-color: #868686;
 }
 .anim-fade-in {
   transition: opacity 0.2s linear;
@@ -6030,7 +6054,6 @@ fieldset[disabled] a.button {
   display: inline-block;
   margin: 0;
   background: #fafafa !important;
-  color: #373737 !important;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -6060,6 +6083,9 @@ fieldset[disabled] a.button {
 }
 .footer.footer-inverse {
   background-color: #202020;
+  color: #fafafa;
+}
+.footer.footer-inverse a {
   color: #fafafa;
 }
 .list-group {

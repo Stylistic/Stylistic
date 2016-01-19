@@ -295,20 +295,21 @@ block content
           a.button.button-blue.button-lg: i.ion-arrow-down-a
           a.button.button-red.button-lg: i.ion-power
         pre.example-code
-          :escape-html
-            <a href="#" class="button button-lg button-blue">
-              <i class="ion-arrow-down-a"></i>
-            </a>
-            <a href="#" class="button button-lg button-red">
-              <i class="ion-power"></i>
-            </a>
+          code.language-html
+            :escape-html
+              <a href="#" class="button button-lg button-blue">
+                <i class="ion-arrow-down-a"></i>
+              </a>
+              <a href="#" class="button button-lg button-red">
+                <i class="ion-power"></i>
+              </a>
 
   section.p-y-2
     .container
       h1.section-title.display-4.anchor Buttons
       p.lead Beautiful and fully customizable flat buttons
       
-      h3.m-b-1 Example
+      h3.m-b-1 Regular Buttons
       
       .example-container
         a.button.button-teal(href="#") Teal Button
@@ -332,3 +333,10 @@ block content
         p
           :marked
             [#7](https://github.com/MarginZero/Stylistic/issues/7) Right now when the `.button` class is applied to an `input` or a `button` element the element has a height of about 2 extra pixels
+
+      h3.m-b-1 Labeled Button
+      
+      .example-container
+        .button-labeled
+          a.button.button-teal(href="#") Button
+          .label.label-teal: i.ion-social-facebook
