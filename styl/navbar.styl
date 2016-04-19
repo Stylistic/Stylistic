@@ -25,7 +25,7 @@
   .navbar-nav
     .navbar-divider
       background-color: rgba(0,0,0,.075)
-    .nav-link
+    .nav-link, .nav-item
       color: navbar-light-color
       &:hover
         color: navbar-light-hover-color
@@ -76,13 +76,15 @@
     &::before
       content: "\00a0"
 
-  .nav-link
+  .nav-link, .nav-item
     float: left
     display: block
     padding-top: .425rem
     padding-bottom: .425rem
     color: lighten(link-color, 25%)
     + .nav-link
+      margin-left: 1rem
+    + .nav-item
       margin-left: 1rem
 
   .navbar-nav

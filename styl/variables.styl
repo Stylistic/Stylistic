@@ -48,7 +48,7 @@ border-width                 := 1px
  **/
 
 // Hash of default colors
-colors = {
+base-colors = {
   orange: #ED8B00,
   blue: #448AFF,
   teal: #009688,
@@ -57,16 +57,22 @@ colors = {
   gray: #9E9E9E
 }
 
+colors := {}
+
 // Loop through the hash and make variables for light and
 // dark variations of the colors
+for name, color in base-colors
+  colors[name + '-light'] = lighten(color, 25%)
+  colors[name + '-lighter'] = lighten(color, 65%)
+  colors[name + '-lightest'] = lighten(color, 80%)
+  colors[name] = color
+  colors[name + '-dark'] = darken(color, 25%)
+  colors[name + '-darker'] = darken(color, 65%)
+  colors[name + '-darkest'] = darken(color, 80%)
+
 for name, color in colors
-  define(name + '-light', lighten(color, 25%))
-  define(name + '-lighter', lighten(color, 65%))
-  define(name + '-lightest', lighten(color, 80%))
   define(name, color)
-  define(name + '-dark', darken(color, 25%))
-  define(name + '-darker', darken(color, 65%))
-  define(name + '-darkest', darken(color, 80%))
+
 
 // Some bonus colors
 facebook-blue                := #3b5998
@@ -151,6 +157,7 @@ font-size-base              := 1rem
 font-size-lg                := 1.25rem
 font-size-sm                := .875rem
 font-size-xs                := .75rem
+font-weight-base            = 200
 
 font-size-h1                := 2.5rem
 font-size-h2                := 2rem
@@ -177,6 +184,9 @@ lead-weight                 := 400
 line-height                 := 1.5
 line-height-lg              := (4 / 3)
 line-height-sm              := 1.5
+
+caret-width                 := .3em
+caret-width-lg              := caret-width
 
 headings-margin-bottom       := (spacer / 2)
 headings-font-family         := inherit
@@ -207,7 +217,7 @@ list-inline-padding         := 5px
  * ICON FONTS
  *
  **/
-
+use-icons                   := true
 icon-font-path              := '../fonts/'
 icon-font-name              := 'ionicons'
 
@@ -265,6 +275,48 @@ btn-border-radius-lg       := border-radius-lg
 btn-border-radius-sm       := border-radius-sm
 btn-border-width           := 2px
 
+
+/**
+*
+* DROPDOWNS
+*
+**/
+
+dropdown-bg                := #fff
+dropdown-border-color      := rgba(0,0,0,.15)
+dropdown-border-width      := border-width
+dropdown-divider-bg        := #e5e5e5
+dropdown-active-bg         := transparent
+
+dropdown-link-color        := gray-dark
+dropdown-link-hover-color  := darken(gray-dark, 5%)
+dropdown-link-hover-bg     := #f5f5f5
+
+dropdown-link-active-color := component-active-color
+dropdown-link-active-bg    := component-active-bg
+
+dropdown-link-disabled-color := gray-light
+
+dropdown-header-color      := gray-light
+
+dropdown-item-padding-y    := spacer-y
+dropdown-item-padding-x    := spacer-x
+
+
+/**
+*
+* Z-INDEXES
+*
+**/
+
+zindex-navbar              := 1000
+zindex-dropdown            := 1000
+zindex-popover             := 1060
+zindex-tooltip             := 1070
+zindex-navbar-fixed        := 1030
+zindex-navbar-sticky       := 1030
+zindex-modal-bg            := 1040
+zindex-modal               := 1050
 
 /**
 *
@@ -338,7 +390,7 @@ state-danger-border              := darken(state-danger-bg, 5%)
 
 // Navbar
 
-navbar-border-radius             := border-radius
+navbar-border-radius             := border-radius-default
 navbar-padding-horizontal        := spacer
 navbar-padding-vertical          := (spacer / 2)
 
@@ -348,7 +400,7 @@ navbar-dark-hover-color          := rgba(255,255,255,.75)
 navbar-dark-active-color         := rgba(255,255,255,1)
 navbar-dark-disabled-color       := rgba(255,255,255,.25)
 
-navabr-light-bg                  := gray-lightest
+navbar-light-bg                  := gray-lightest
 navbar-light-color               := rgba(0,0,0,.3)
 navbar-light-hover-color         := rgba(0,0,0,.6)
 navbar-light-active-color        := rgba(0,0,0,.8)

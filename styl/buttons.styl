@@ -27,7 +27,7 @@
   &:disabled
     cursor: $cursor-disabled
     opacity: .65
-    @include box-shadow(none)
+    box-shadow: none
 
 a.button.disabled,
 fieldset[disabled] a.button
@@ -102,3 +102,24 @@ for bp in map-keys(grid-breakpoints)
         z-index: 2;
         width: 0.6666em;
         height: 0.6666em;
+
+.button-link
+  font-weight: normal
+  color: link-color
+  border-radius: 0
+
+  &, &:active, &.active, &:disabled
+    background-color: transparent
+    box-shadow: none
+
+  &, &:focus, &:active, &::hover
+    border-color: transparent
+
+  &:hover, &:focus
+    color: link-hover-color
+    text-decoration: link-hover-decoration
+    background-color: transparent
+
+  &:disabled, .disabled
+    color: btn-link-disabled-color
+    text-decoration: none
