@@ -30,7 +30,7 @@ pre[class*="language-"] {
 /* Code blocks */
 pre[class*="language-"] {
 	position: relative;
-	background-color: #fafafa;
+	background-color: #fefefe;
 	/*background-image: -webkit-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
 	background-image: -moz-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
 	background-image: -ms-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
@@ -53,7 +53,7 @@ code[class*="language"] {
 /* Margin bottom to accomodate shadow */
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background-color: #fafafa;
+	background-color: #fefefe;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;

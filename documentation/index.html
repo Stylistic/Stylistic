@@ -10,7 +10,6 @@
     <meta property="og:url" content="http://gostylistic.com">
     <meta property="og:image" content="http://gostylistic.com/images/stylistic-social.png">
     <title>Stylistic Framework - CSS framework built in Stylus</title>
-    <link rel="stylesheet" href="/dist/css/stylistic.css">
     <link rel="stylesheet" href="/css/site.css">
     <link rel="stylesheet" href="/css/prism.css">
     <link rel="author" href="https://plus.google.com/+ChrisWatson1993">
@@ -337,10 +336,137 @@
         </div>
         <h3 class="m-b-1">Labeled Button</h3>
         <div class="example-container">
-          <div class="button-labeled"><a href="#" class="button button-teal">Button</a>
+          <div class="button-labeled"><a href="#" class="button button-teal">Follow us on Facebook</a>
             <div class="label label-teal"><i class="ion-social-facebook"></i></div>
           </div>
+          <div class="button-labeled"><a href="#" class="button button-gray">Gray button</a>
+            <div class="label label-gray"><i class="ion-icecream"></i></div>
+          </div>
         </div>
+      </div>
+    </section>
+    <section class="p-y-2">
+      <div class="container">
+        <h1 class="section-title display-4 anchor">Messages</h1>
+        <p class="lead">In the words of John Mayer, "Say what you need to say."</p>
+        <h3 class="m-b-1">Default</h3>
+        <div class="example-container">
+          <div class="message">
+            <div class="header">Default message</div><p>This is a message!</p>
+
+          </div>
+          <div class="message message-dark">
+            <div class="header">Default dark message</div><p>This is a darker message!</p>
+
+          </div>
+        </div>
+        <pre class="example-code"><code class="language-html">&lt;div class=&quot;message&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;Default message&lt;/div&gt;
+  &lt;p&gt;This is a message!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;message message-dark&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;Default dark message&lt;/div&gt;
+  &lt;p&gt;This is a darker message!&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+        <h3 class="m-b-1">Close Button</h3>
+        <div class="example-container">
+          <div class="message">
+            <div class="i ion ion-close close-btn"></div>
+            <div class="header">Close me!</div>
+            <div class="content">This message has a close button</div>
+          </div>
+        </div>
+        <pre class="example-code"><code class="language-html">&lt;div class=&quot;message&quot;&gt;
+  &lt;div class=&quot;i ion ion-close close-btn&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;header&quot;&gt;Close me!&lt;/div&gt;
+  &lt;div class=&quot;content&quot;&gt;This message has a close button&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+        <h3 class="m-b-1">Syntax</h3>
+        <div class="example-container">
+          <div class="message message-info">
+            <div class="header">Information message!</div>
+            <div class="content">This is an info message</div>
+          </div>
+          <div class="message message-danger">
+            <div class="header">Danger message!</div>
+            <div class="content">This is a danger message</div>
+          </div>
+          <div class="message message-warning">
+            <div class="header">Warning message!</div>
+            <div class="content">This is a warning message</div>
+          </div>
+          <div class="message message-success">
+            <div class="header">Success message!</div>
+            <div class="content">This is a success message</div>
+          </div>
+        </div>
+        <pre class="example-code"><code class="language-html">&lt;div class=&quot;message message-info&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;Information message!&lt;/div&gt;
+  &lt;div class=&quot;content&quot;&gt;This is an info message&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;message message-danger&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;Danger message!&lt;/div&gt;
+  &lt;div class=&quot;content&quot;&gt;This is a danger message&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;message message-warning&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;Warning message!&lt;/div&gt;
+  &lt;div class=&quot;content&quot;&gt;This is a warning message&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;message message-success&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;Success message!&lt;/div&gt;
+  &lt;div class=&quot;content&quot;&gt;This is a success message&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+        <h3 class="m-b-1">Colored</h3>
+        <div class="example-container">
+          <div class="message message-dark message-teal">
+            <div class="content">A teal message</div>
+          </div>
+          <div class="message message-dark message-orange">
+            <div class="content">An orange message</div>
+          </div>
+          <div class="message message-dark message-blue">
+            <div class="content">A blue message</div>
+          </div>
+          <div class="message message-dark message-yellow">
+            <div class="content">A yellow message</div>
+          </div>
+          <div class="message message-dark message-red">
+            <div class="content">A red message</div>
+          </div>
+          <div class="message message-dark message-gray">
+            <div class="content">A gray message</div>
+          </div>
+        </div>
+        <pre class="example-code"><code class="language-html">&lt;div class=&quot;message message-dark message-teal&quot;&gt;
+  &lt;div class=&quot;content&quot;&gt;A teal message&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;message message-dark message-orange&quot;&gt;
+  &lt;div class=&quot;content&quot;&gt;An orange message&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;message message-dark message-blue&quot;&gt;
+  &lt;div class=&quot;content&quot;&gt;A blue message&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;message message-dark message-yellow&quot;&gt;
+  &lt;div class=&quot;content&quot;&gt;A yellow message&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;message message-dark message-red&quot;&gt;
+  &lt;div class=&quot;content&quot;&gt;A red message&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;message message-dark message-gray&quot;&gt;
+  &lt;div class=&quot;content&quot;&gt;A gray message&lt;/div&gt;
+&lt;/div&gt;</code></pre>
       </div>
     </section>
     <footer class="footer footer-inverse p-y-4">
