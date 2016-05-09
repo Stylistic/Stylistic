@@ -1,0 +1,83 @@
+.message
+  position: relative
+  min-height: 1rem
+  margin: message-top-margin 0 message-bottom-margin
+  background: message-background
+  border: message-border-width solid message-border-color
+  border-radius: message-border-radius
+  padding: message-padding
+  font-size: message-font-size
+  color: message-color
+
+  &:first-child
+    margin-top: 0
+
+  &:last-child
+    margin-bottom: 0
+
+  .header
+    font-size: message-header-size
+    color: message-header-color
+    weight: message-header-weight
+
+  &.message-dark
+    color: message-dark-color
+    background: message-dark-bg
+    border: message-dark-border-width solid message-dark-border-color
+
+    .header
+      color: message-dark-header-color
+
+  &.message-info
+    color: message-info-color
+    background: message-info-bg
+    border message-info-border-width solid message-info-border-color
+
+    .header
+      color: message-info-header-color
+
+  &.message-danger
+    color: message-danger-color
+    background: message-danger-bg
+    border message-danger-border-width solid message-danger-border-color
+
+    .header
+      color: message-danger-header-color
+
+  &.message-warning
+    color: message-warning-color
+    background: message-warning-bg
+    border message-warning-border-width solid message-warning-border-color
+
+    .header
+      color: message-warning-header-color
+
+  &.message-success
+    color: message-success-color
+    background: message-success-bg
+    border message-success-border-width solid message-success-border-color
+
+    .header
+      color: message-success-header-color
+
+  & > p, .content
+
+    &:first-child
+      margin-top: 0
+
+    &:last-child
+      margin-bottom: 0
+
+  .close-btn
+    cursor: pointer
+    position: absolute
+    margin: 0
+    font-size: message-close-font-size
+    top: message-close-btn-pos-top
+    right: message-close-btn-pos-right
+    opacity: message-close-btn-opacity
+    color: message-close-btn-color
+
+  for name, color in colors
+    &.message-{name}
+      background: color

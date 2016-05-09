@@ -2,7 +2,7 @@
   clearfix()
 
 .center-block
-  center-block()
+  center-block(false)
 
 .pull-left
   pull-left()
@@ -25,23 +25,30 @@ for $breakpoint in map-keys(grid-breakpoints)
 .invisible
   visibility: hidden !important
 
+.hidden
+  display: none !important
+
 .text-hide
   text-hide()
 
-.text-justify
-  text-align: justify !important
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.text-justify { text-align: justify; }
+.text-center { text-align: center; }
 
-.text-right
-  text-align: right !important
+.text-right-important { text-align: right !important; }
+.text-left-important { text-align: left !important; }
+.text-justify-important { text-align: justify !important; }
+.text-center-important { text-align: center !important; }
 
 .text-truncate
   text-truncate()
 
 for $breakpoint in map-keys(grid-breakpoints)
   +media-breakpoint-up($breakpoint)
-    .text-{$breakpoint}-left { text-align: left !important; }
-    .text-{$breakpoint}-right { text-align: right !important; }
-    .text-{$breakpoint}-center { text-align: center !important; }
+    .text-left-{$breakpoint} { text-align: left !important; }
+    .text-right-{$breakpoint} { text-align: right !important; }
+    .text-center-{$breakpoint} { text-align: center !important; }
 
 // Transformation
 
@@ -54,8 +61,6 @@ for $breakpoint in map-keys(grid-breakpoints)
 .font-weight-normal  { font-weight: normal; }
 .font-weight-bold    { font-weight: bold; }
 .font-italic         { font-style: italic; }
-
-.text-muted { color: text-muted; }
 
 text-emphasis-variant('.text-blue', blue);
 text-emphasis-variant('.text-green', green);
@@ -80,3 +85,7 @@ for $bp in map-keys(grid-breakpoints)
     +media-breakpoint-down($bp)
       padding-left: 0 !important
       padding-right: 0 !important
+
+for $align in (baseline sub super top text-top middle bottom text-bottom initial inherit)
+  .valign-{$align}
+    vertical-align: $align

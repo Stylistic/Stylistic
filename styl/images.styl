@@ -1,0 +1,56 @@
+.image
+  position: relative
+  display: inline-block
+  vertical-align: middle
+  max-width: 100%
+  background-color: placeholder-color
+
+  & svg,
+  & img
+    display: block
+    max-width: 100%
+    height: auto
+
+  &.inline, &.inline svg, &.inline img
+    display: inline-block
+
+.image, .images
+  &.hidden
+    display: none
+
+  &.disabled
+    cursor: default
+    opacity: image-disabled-opacity
+
+  &.top-aligned
+    display: inline-block
+    vertical-align: top
+
+  &.middle-aligned
+    display: inline-block
+    vertical-align: middle
+
+  &.bottom-aligned
+    display: inline-block
+    vertical-align: bottom
+
+  &.centered
+    margin: 0 auto
+
+  &.rounded, &.rounded > *
+    border-radius: image-rounded-border-radius
+
+  &.bordered, &.bordered img, &.bordered svg
+    border: image-border
+
+  &.circular
+    overflow: hidden
+
+  &.circular, &.circular .image, &.circular .image > *
+    border-radius: image-circular-radius
+
+  &.full-width
+    width: 100%
+
+img.image
+  display: block

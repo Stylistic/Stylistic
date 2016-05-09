@@ -8,14 +8,14 @@
   user-select: none
   border: btn-border-width solid transparent
   button-size(btn-padding-y, btn-padding-x, font-size-base, line-height, btn-border-radius)
+  background-color: transparent
 
   for name, color in colors
     &.label-{name}
-      text-color = lightness(color) < 60 ? #fefefe : gray-darkest
-      background-color: color
+      background-color: white
       border-color: color
-      color: text-color
+      color: color
 
       &:hover
-        color: darken(text-color, 15%)
+        color: darken(color, 15%)
         border-color: darken(color, 15%)

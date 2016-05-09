@@ -3,6 +3,7 @@
   background-color: navbar-light-bg
   padding: navbar-padding-vertical navbar-padding-horizontal
   width: 100%
+  z-index: zindex-navbar
   clearfix()
   +media-breakpoint-up(sm)
     border-radius(navbar-border-radius)
@@ -27,6 +28,7 @@
       background-color: rgba(0,0,0,.075)
     .nav-link, .nav-item
       color: navbar-light-color
+
       &:hover
         color: navbar-light-hover-color
 
@@ -39,14 +41,14 @@
   for name, size in grid-breakpoints
     .navbar-collapse-{name}
       +media-breakpoint-down(name)
-        Display: none;
+        display: none;
 
   &.navbar-inverted
     background-color: navbar-dark-bg
-    .navbar-nav
+    .navbar-nav, .nav-header
       .navbar-divider
         background-color: rgba(0,0,0,.075)
-      .nav-link
+      .nav-link, .nav-item
         color: navbar-dark-color
         &:hover
           color: navbar-dark-hover-color

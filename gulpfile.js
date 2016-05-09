@@ -12,7 +12,7 @@ const gulp = require('gulp'),
       sequence = require('run-sequence'),
       jade = require('jade'),
       gulpJade = require('gulp-jade'),
-      connect = require('gulp-connect');
+      webserver = require('gulp-webserver');
 
 let locals = {
   version: 'v0.1.0-alpha.2'
@@ -52,8 +52,7 @@ gulp.task('stylus', () => {
         }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.out))
-//        .pipe(gulp.dest(paths.docs.css))
-        .pipe(connect.reload());
+        //.pipe(gulp.dest(paths.docs.css));
 });
 
 gulp.task('babel', () => {
@@ -66,8 +65,7 @@ gulp.task('babel', () => {
 		    .pipe(sourcemaps.write('.'))
         //.pipe(uglify())
 		    .pipe(gulp.dest(paths.scripts.out))
-        .pipe(gulp.dest(paths.docs.js))
-        .pipe(connect.reload());
+        .pipe(gulp.dest(paths.docs.js));
 });
 
 gulp.task('templates', () => {
@@ -77,8 +75,7 @@ gulp.task('templates', () => {
         locals: locals,
         pretty: true
       }))
-      .pipe(gulp.dest('./docs'))
-      .pipe(connect.reload());
+      .pipe(gulp.dest('./docs'));
 });
 
 gulp.task('doc_stylus', () => {
@@ -94,15 +91,18 @@ gulp.task('doc_stylus', () => {
           }
       }))
       .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('./docs/css/'))
-      .pipe(connect.reload());
+      .pipe(gulp.dest('./docs/css/'));
 });
 
 gulp.task('serve', () => {
-  connect.server({
-    root: './docs',
-    livereload: true
-  });
+  gulp.src('./docs')
+      .pipe(webserver({
+        livereload: true,
+        directoryListing: true,
+        open: true,
+        port: 8080,
+        fallback: 'index.html'
+      }))
 });
 
 gulp.task('copy', () => {
@@ -117,7 +117,7 @@ gulp.task('clean', () => {
 gulp.task('watch', () => {
     gulp.watch('./styl/**/*', ['stylus']);
     gulp.watch('./js/**/*', ['babel']);
-    gulp.watch('./docs/css/*.styl', ['doc_stylus']);
+    gulp.watch(['./docs/css/*.styl', './styl/**/*'], ['doc_stylus']);
     gulp.watch([__dirname + '/docs/jade/**/*.jade'], ['templates']);
 });
 

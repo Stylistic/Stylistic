@@ -1,0 +1,98 @@
+.modal
+  display: none
+  position: fixed
+  z-index: zindex-modal
+
+  top: 50%
+  left: 50%
+  transform: translateY(-50%);
+  max-height: 95%
+  text-align: left
+  padding: modal-padding
+
+  background: modal-light-bg
+  color: modal-light-color
+  box-shadow: modal-box-shadow
+  transform-origin: 50% 25%
+
+  border-radius: modal-border-radius
+  border: modal-border-size solid modal-border-color
+
+  user-select: text
+  will-change: top, left, margin, transform, opacity
+
+  +media-breakpoint-down('xs')
+    width: 95%
+    margin-left: -(95% / 2)
+
+  +media-breakpoint-only('sm')
+    width: 88%
+    margin-left: -(88% / 2)
+
+  +media-breakpoint-only('md')
+    width: 88%
+    margin-left: -(88% / 2)
+
+  +media-breakpoint-only('lg')
+    width: 850px
+    margin-left: -(850px / 2)
+
+  +media-breakpoint-up('xl')
+    width: 950px
+    margin-left: -(950px / 2)
+
+  &.fluid
+    width: auto
+    min-width: 350px
+
+  &.active
+    display: block
+
+  & > :first-child:not(.icon),
+  & > :first-child + *
+    border-top-radius(modal-border-radius)
+
+  & > :last-child
+    border-bottom-radius(modal-border-radius)
+
+  > .close, .close-button
+    display: block
+    cursor: pointer
+    position: absolute
+    top: modal-close-top
+    right: modal-close-right
+
+    opacity: modal-close-opacity
+    font-size: modal-close-size
+    color: modal-close-color
+
+    width: modal-close-width
+    height: modal-close-height
+    padding: modal-close-padding
+
+    &:hover
+      opacity: 1
+      text-decoration: none
+
+  .header
+    display: block
+    margin: modal-header-margin
+    padding: modal-header-padding
+    border-bottom: modal-header-border-bottom
+
+  .content
+    display: block
+    width: 100%
+    font-size: modal-content-font-size
+    line-height: modal-content-line-height
+    padding: modal-content-padding
+
+.scrolling
+
+  .modal
+    position: static
+    margin-top: spacer-y
+    margin-bottom: spacer-y
+    margin-left: 50%
+    transform: translate3d(-50%, 0, 0)
+    max-height: none

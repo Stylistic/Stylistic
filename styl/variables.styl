@@ -47,31 +47,31 @@ border-width                 := 1px
  *
  **/
 
+percentage-offset-1 := 25%
+percentage-offset-2 := 65%
+percentage-offset-3 := 90%
+
 // Hash of default colors
-base-colors = {
+colors := {
   orange: #ED8B00,
   blue: #448AFF,
   teal: #009688,
   yellow: #d0c036,
   red: #F44336,
+  green: #009150
   gray: #9E9E9E
 }
 
-colors := {}
-
 // Loop through the hash and make variables for light and
 // dark variations of the colors
-for name, color in base-colors
-  colors[name + '-light'] = lighten(color, 25%)
-  colors[name + '-lighter'] = lighten(color, 65%)
-  colors[name + '-lightest'] = lighten(color, 80%)
-  colors[name] = color
-  colors[name + '-dark'] = darken(color, 25%)
-  colors[name + '-darker'] = darken(color, 65%)
-  colors[name + '-darkest'] = darken(color, 80%)
-
 for name, color in colors
+  define(name + '-light', lighten(color, percentage-offset-1))
+  define(name + '-lighter', lighten(color, percentage-offset-2))
+  define(name + '-lightest', lighten(color, percentage-offset-3))
   define(name, color)
+  define(name + '-dark', darken(color, percentage-offset-1))
+  define(name + '-darker', darken(color, percentage-offset-2))
+  define(name + '-darkest', darken(color, percentage-offset-3))
 
 
 // Some bonus colors
@@ -157,7 +157,7 @@ font-size-base              := 1rem
 font-size-lg                := 1.25rem
 font-size-sm                := .875rem
 font-size-xs                := .75rem
-font-weight-base            = 200
+font-weight-base            := 400
 
 font-size-h1                := 2.5rem
 font-size-h2                := 2rem
@@ -275,7 +275,6 @@ btn-border-radius-lg       := border-radius-lg
 btn-border-radius-sm       := border-radius-sm
 btn-border-width           := 2px
 
-
 /**
 *
 * DROPDOWNS
@@ -302,21 +301,62 @@ dropdown-header-color      := gray-light
 dropdown-item-padding-y    := spacer-y
 dropdown-item-padding-x    := spacer-x
 
-
 /**
 *
-* Z-INDEXES
+* MESSAGES
 *
 **/
 
-zindex-navbar              := 1000
-zindex-dropdown            := 1000
-zindex-popover             := 1060
-zindex-tooltip             := 1070
-zindex-navbar-fixed        := 1030
-zindex-navbar-sticky       := 1030
-zindex-modal-bg            := 1040
-zindex-modal               := 1050
+message-background         := gray-lightest
+message-border-color       := gray
+message-border-width       := border-width
+message-border-radius      := border-radius-default
+message-padding            := spacer-y spacer-x
+message-font-size          := font-size-base
+message-color              := gray-dark
+message-top-margin         := spacer-y
+message-bottom-margin      := spacer-y
+
+message-header-size        := font-size-h5
+message-header-weight      := 600
+message-header-color       := body-color
+
+message-dark-color         := white
+message-dark-bg            := gray-darker
+message-dark-header-color  := white
+message-dark-border-color  := gray-darker
+message-dark-border-width  := 0
+
+message-info-color         := gray-darker
+message-info-bg            := blue-lightest
+message-info-border-width  := border-width
+message-info-border-color  := blue-light
+message-info-header-color  := gray-darkest
+
+message-danger-color         := gray-darker
+message-danger-bg            := red-lightest
+message-danger-border-width  := border-width
+message-danger-border-color  := red-light
+message-danger-header-color  := gray-darkest
+
+message-warning-color         := gray-darker
+message-warning-bg            := yellow-lightest
+message-warning-border-width  := border-width
+message-warning-border-color  := yellow-light
+message-warning-header-color  := gray-darkest
+
+message-success-color         := gray-darker
+message-success-bg            := green-lightest
+message-success-border-width  := border-width
+message-success-border-color  := green-light
+message-success-header-color  := gray-darkest
+
+message-close-btn-pos-top     := (spacer-y / 2)
+message-close-btn-pos-right   := (spacer-x / 2)
+message-close-btn-opacity     := .8
+message-close-btn-color       := gray-darkest
+message-close-font-size       := .65rem
+
 
 /**
 *
@@ -394,6 +434,8 @@ navbar-border-radius             := border-radius-default
 navbar-padding-horizontal        := spacer
 navbar-padding-vertical          := (spacer / 2)
 
+navbar-vertical-width            := 260px
+
 navbar-dark-bg                   := gray-darkest
 navbar-dark-color                := rgba(255,255,255,.5)
 navbar-dark-hover-color          := rgba(255,255,255,.75)
@@ -434,6 +476,58 @@ nav-pills-border-radius          := border-radius
 nav-pills-active-link-hover-bg   := component-active-bg
 nav-pills-active-link-hover-color:= component-active-color
 
+// Sidebar
+
+sidebar-width                     := 260px
+sidebar-wide-width                := 340px
+sidebar-very-wide-width           := 520px
+sidebar-border-radius             := 0
+sidebar-padding-horizontal        := spacer
+sidebar-padding-vertical          := (spacer / 2)
+
+sidebar-dark-bg                   := gray-darkest
+sidebar-dark-color                := rgba(255,255,255,.7)
+sidebar-dark-hover-color          := rgba(255,255,255,.9)
+sidebar-dark-active-color         := rgba(255,255,255,1)
+sidebar-dark-disabled-color       := rgba(255,255,255,.25)
+
+sidebar-light-bg                  := gray-lightest
+sidebar-light-color               := rgba(0,0,0,.7)
+sidebar-light-hover-color         := rgba(0,0,0,.9)
+sidebar-light-active-color        := rgba(0,0,0,1)
+sidebar-light-disabled-color      := rgba(0,0,0,.25)
+
+sidebar-toggle-color              := gray-darker
+
+// MODALS
+modal-border-radius               := border-radius-default
+modal-border-size                 := 0
+modal-border-color                := gray-darkest
+modal-box-shadow                  := 1px 3px 3px 0 rgba(0,0,0,.2), 1px 3px 15px 2px rgba(0,0,0,.2);
+
+modal-header-padding              := 0
+modal-header-margin               := spacer-y spacer-x
+modal-header-border-bottom        := border-width solid gray-darker
+
+modal-content-padding             := spacer-y spacer-x
+modal-content-font-size           := font-size-base
+modal-content-line-height         := line-height
+modal-content-background          := transparent
+
+modal-light-bg                    := white
+modal-light-color                 := gray-darkest
+
+modal-dark-bg                     := gray-darkest
+modal-dark-color                  := white
+
+modal-close-top                   := spacer-y
+modal-close-right                 := spacer-x
+modal-close-opacity               := .6
+modal-close-size                  := font-size-base
+modal-close-color                 := gray-darkest
+modal-close-hitbox                := font-size-base
+modal-close-padding               := 0
+
 // CODE
 
 code-light-color                 := gray-dark
@@ -448,6 +542,30 @@ pre-dark-color                  := gray-lightest
 pre-dark-bg                     := gray-darker
 pre-border-radius               := border-radius-default
 
+// IMAGES
+placeholder-color               := gray-lighter
+image-disabled-opacity          := .7
+image-rounded-border-radius     := border-radius-lg
+image-border                    := border-width solid rgba(gray-light, .2)
+image-circular-radius           := 50%
+
 // ANIMATIONS
 
 transition-duration              := .2s
+
+/**
+*
+* Z-INDEXES
+*
+**/
+
+zindex-navbar              := 1000
+zindex-dropdown            := 1000
+zindex-popover             := 1060
+zindex-tooltip             := 1070
+zindex-navbar-fixed        := 1030
+zindex-navbar-sticky       := 1030
+zindex-modal-bg            := 1040
+zindex-modal               := 1050
+zindex-sidebar             := 1030
+zindex-dimmer              := 1040

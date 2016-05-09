@@ -1,21 +1,30 @@
 .dropup, .dropdown
   position: relative
 
-.dropdown-toggle
-  &::after
+  &.inline
     display: inline-block
-    width: 0
-    height: 0
-    margin-right: .25rem
-    margin-left: .25rem
     vertical-align: middle
-    content: ""
-    border-top: caret-width solid
-    border-right: caret-width solid transparent
-    border-left: caret-width solid transparent
 
-  &:focus
-    outline: 0
+    .dropdown-toggle
+      width: 100%
+
+  .dropdown-toggle
+    text-align: left
+
+    &::after
+      display: inline-block
+      width: 0
+      height: 0
+      margin-right: .25rem
+      margin-left: .25rem
+      vertical-align: middle
+      content: ""
+      border-top: caret-width solid
+      border-right: caret-width solid transparent
+      border-left: caret-width solid transparent
+
+    &:focus
+      outline: 0
 
 .dropup
   .dropdown-toggle
@@ -30,7 +39,7 @@
   z-index: zindex-dropdown
   display: none
   float: left
-  min-width: max-content
+  min-width: 100%
   padding: 5px 0
   margin: 2px 0 0
   font-size: font-size-base
@@ -41,6 +50,18 @@
   border: dropdown-border-width solid dropdown-border-color
   border-radius(border-radius)
   make-box-shadow(0, 6px, 12px, rgba(0, 0, 0, .175))
+
+  &.scrollable
+    max-height: (font-size-base + (spacer-y * 2)) * 6
+    overflow-y: auto
+
+  &.fit-width
+    max-width: 100%
+
+    .dropdown-item, .dropdown-item > a
+      max-width: 100%
+      overflow-x: hidden;
+      text-overflow: ellipsis
 
 .dropdown-divider
   height: 1px
@@ -86,6 +107,14 @@
       background-image: none
       reset-filter()
 
+  &.with-right-icon
+    .icon
+      float: right
+
+  &.with-left-icon
+    .icon
+      float: left
+
   .content
     display: inline-block
 
@@ -93,6 +122,10 @@
     float: right
     margin: 0 0 0 1em
     color: rgba(0,0,0,.4)
+
+  a
+    color: inherit
+    text-decoration: inherit
 
 .open
   background: dropdown-active-bg
@@ -141,3 +174,17 @@
     top: auto
     bottom: 100%
     margin-bottom: 2px
+
+.dropup, .dropdown
+
+  &.disabled
+    .dropdown-toggle
+      color: text-muted
+      cursor: default
+
+      &:hover
+        text-decoration: none
+        color: text-muted
+
+.dropdown.dropdown-block
+  width: 100%

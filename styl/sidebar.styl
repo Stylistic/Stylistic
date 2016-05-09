@@ -1,0 +1,158 @@
+.sidebar
+  position: fixed
+  top: 0
+  left: 0
+  backface-visibility: hidden
+  transition: none
+  will-change: transform
+  transform: translate3d(0,0,0)
+  visibility: hidden
+  overflow-scrolling: touch
+  height: 100%
+  max-height: 100%
+  border-radius: 0
+  margin: 0
+  overflow-y: auto
+  z-index: zindex-sidebar
+  background-color: sidebar-light-bg
+  color: sidebar-light-color
+
+  > *
+    backface-visibility: hidden
+
+.sidebar-left
+  right: auto
+  left: 0
+  transform: translate3d(-100%, 0, 0)
+
+.sidebar-right
+  right: 0 !important
+  left: auto !important
+  transform: translate3d(100%, 0, 0)
+
+.sidebar-inverted
+  background-color: sidebar-dark-bg
+  color: sidebar-dark-color
+
+// Make the container pushable by the sidebar
+.pushable
+  height: 100%
+  overflow-x: hidden
+  padding: 0 !important
+
+body.pushable
+  background: white !important
+
+.pushable:not(body)
+  transform: translate3d(0, 0, 0)
+
+.pushable:not(body) > .sidebar,
+.pushable:not(body) > .fixed,
+.pushable:not(body) > .pusher::after
+  position: absolute
+
+.pushable > .fixed
+  position: fixed
+  backface-visibility: hidden
+  transition: transform .3s ease-out // TODO: Create vartiables for duration and easing
+  will-change: transform
+  z-index: zindex-sidebar
+
+.pushable > .pusher
+  position: relative
+  backface-visibility: hidden
+  overflow: hidden
+  min-height: 100%
+  min-height: 100vh
+  transition: transform .3s ease-out // TODO: Create vartiables for duration and easing
+  z-index: zindex-sidebar
+
+.body-pushable > .pusher
+  background: inherit
+
+// Dimmer
+.pushable > .pusher::after
+  position: fixed;
+  top: 0px
+  right: 0px
+  content: ''
+  background-color: gray-darker
+  overflow: hidden
+  opacity: 0
+  transition: opacity .3s ease
+  will-change: opacity
+  z-index: zindex-dimmer
+
+.pushable > .pusher.dimmed::after
+  width: 100% !important
+  height: 100% !important
+  opacity: 1 !important
+
+.sidebar.animating
+  visibility: visible
+
+.sidebar.visible
+  visibility: visible
+
+.sidebar-left.visible,
+.sidebar-right.visible
+  // TODO: Add box shadow here
+
+.sidebar-left.visible ~ .fixed,
+.sidebar-left.visible ~ .pusher
+  transform: translate3d(sidebar-width, 0, 0)
+
+.sidebar-right.visible ~ .fixed,
+.sidebar-right.visible ~ .pusher
+  transform: translate3d(-(sidebar-width), 0, 0)
+
+.sidebar-left.visible ~ .sidebar-right.visible ~ .fixed,
+.sidebar-left.visible ~ .sidebar-right.visible ~ .pusher,
+.sidebar-right.visible ~ .sidebar-left.visible ~ .fixed,
+.sidebar-right.visible ~ .sidebar-left.visible ~ .pusher
+  transform: translate3d(0, 0, 0)
+
+html.ios
+  overflow-x: hidden
+  overflow-scrolling: touch
+
+html.ios,
+html.ios body
+  height: initial !important
+
+.sidebar-left, .sidebar-right
+  width: sidebar-width
+
+.sidebar-left.wide, .sidebar-right.wide
+  width: sidebar-wide-width
+
+.sidebar-left.very-wide, .sidebar-right.very-wide
+  width: sidebar-very-wide-width
+
+/*-------------
+   ANIMATIONS
+--------------*/
+
+.sidebar.overlay
+  z-index: zindex-sidebar + 100
+
+.sidebar-left.overlay
+  translate3d(-100%, 0, 0)
+
+.sidebar-right.overlay
+  translate3d(100%, 0, 0)
+
+.sidebar.overlay.animating,
+sidebar.overlay.visible
+  transition: transform .3s ease // TODO: Create vartiables for duration and easing
+
+.left-sidebar.overlay.visible,
+.sidebar-right.overlay.visible
+  translate3d(0, 0, 0)
+
+.sidebar.overlay.visible ~ .fixed,
+.sidebar.overlay.visible ~ .pusher
+  transform: none !important
+
+// TODO: Finish this
+

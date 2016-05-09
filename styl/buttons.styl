@@ -38,6 +38,16 @@ for name, color in colors
   .button-{name}
     make-button(text-color, color, color)
 
+    &.button-outline
+      background: transparent
+      color: color
+      border-color: color
+
+      &:hover
+        color: white
+        background: color
+        border-color: color
+
   &.button-block
     display: block
     width: 100%
@@ -67,41 +77,42 @@ for bp in map-keys(grid-breakpoints)
   padding: 0
   clearfix()
   font-size: 0
+  display: inline-block
 
   .button
     display: inline-block
     border-right-radius(0)
     margin: 0
 
-  .label
-    display: inline-block
-    margin: 0
-    background: #fafafa !important
-    //color: gray-darker !important
-    border-left-radius(0)
+    ~ .label
+      display: inline-block
+      margin: 0
+      background: #fafafa !important
+      //color: gray-darker !important
+      border-left-radius(0)
 
-    &.label-pointing
-      position: relative
-      &::before
-        border-width: 0 0 1px 1px;
-        background-color: inherit;
-        border-style: solid;
-        border-color: inherit;
-        position: absolute;
-        top: 50%;
-        margin-top: -0.3333em;
-        left: -7px;
-        transform: translateX(-50%) translateY(-50%) rotate(45deg);
-        bottom: auto;
-        right: auto;
-        content: '';
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        /* transform: rotate(45deg); */
-        background-image: none;
-        z-index: 2;
-        width: 0.6666em;
-        height: 0.6666em;
+      &.label-pointing
+        position: relative
+        &::before
+          border-width: 0 0 1px 1px;
+          background-color: inherit;
+          border-style: solid;
+          border-color: inherit;
+          position: absolute;
+          top: 50%;
+          margin-top: -0.3333em;
+          left: -7px;
+          transform: translateX(-50%) translateY(-50%) rotate(45deg);
+          bottom: auto;
+          right: auto;
+          content: '';
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          /* transform: rotate(45deg); */
+          background-image: none;
+          z-index: 2;
+          width: 0.6666em;
+          height: 0.6666em;
 
 .button-link
   font-weight: normal
