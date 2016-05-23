@@ -49,8 +49,8 @@ for name, color in colors
         border-color: color
 
   &.button-block
-    display: block
-    width: 100%
+    display: block !important
+    width: 100% !important
 
   &.button-block + .button-block
 
@@ -118,6 +118,7 @@ for bp in map-keys(grid-breakpoints)
   font-weight: normal
   color: link-color
   border-radius: 0
+  border: none
 
   &, &:active, &.active, &:disabled
     background-color: transparent
