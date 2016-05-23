@@ -7,12 +7,12 @@ const gulp = require('gulp'),
       connect = require('gulp-connect'),
       concat = require('gulp-concat'),
       stylus = require('gulp-stylus'),
+      poststylus = require('poststylus'),
       stylint = require('gulp-stylint'),
       del = require('del'),
       fs = require('node-fs-extra'),
       jade = require('jade'),
-      gulpJade = require('gulp-jade'),
-      webserver = require('gulp-webserver');
+      gulpJade = require('gulp-jade');
 
 let locals = {
   version: 'v0.1.0-alpha.2'
@@ -42,15 +42,14 @@ gulp.task('stylus', () => {
     gulp.src(paths.styles.src)
         .pipe(stylint())
         .pipe(stylint.reporter())
-        .pipe(sourcemaps.init())
         .pipe(stylus({
-            'include css': true,
-            url: {
-              name: 'b64url',
-              limit: false
-            }
+            use: [
+                poststylus([
+                  'postcss-cssnext',
+                  'postcss-flexibility'
+                ])
+            ]
         }))
-        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.out));
 });
 
@@ -83,15 +82,14 @@ gulp.task('doc_stylus', () => {
   gulp.src('./docs/css/site.styl')
       .pipe(stylint())
       .pipe(stylint.reporter())
-      .pipe(sourcemaps.init())
       .pipe(stylus({
-          'include css': true,
-          url: {
-            name: 'b64url',
-            limit: false
-          }
+          use: [
+              poststylus([
+                'postcss-cssnext',
+                'postcss-flexibility'
+              ])
+          ]
       }))
-      .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest('./docs/css/'))
       .pipe(connect.reload());
 });

@@ -338,15 +338,42 @@ block content
       h3.m-b-1 Labeled Button
       
       .example-container
-          a.button.button-teal.button-labeled.right-labeled.icon-button.left-icon(href="#")
+          a.button.button-teal.button-labeled.right-labeled.icon-button.left-icon.strong(href="#")
             i.ion.ion-social-facebook.icon
             | Follow us on Facebook
-            .label.label-teal 1200
+            span.label.label-teal.label-pointing-left 1200
             
-          a.button.button-gray.button-labeled.left-labeled.icon-button.right-icon(href="#")
-            .label.label-gray 1400
+          a.button.button-gray.button-labeled.left-labeled.icon-button.right-icon.strong(href="#")
+            span.label.label-gray.label-pointing-right 1400
             | Fork this on Github
-            i.ion.ion-fork-repo.icon
+            i.icon.ion.ion-fork-repo.icon
+            
+      pre.example-code
+        code.language-html
+          :escape-html
+            <a href="#" class="button button-teal button-labeled right-labeled icon-button left-icon strong">
+              <i class="icon ion ion-social-facebook"></i>
+              Follow us on Facebook
+              <span class="label label-teal label-pointing-left">1200</span>
+            </a>
+            
+            <a href="#" class="button button-gray button-labeled left-labeled icon-button right-icon strong">
+              <span class="label label-gray label-pointing-left">1200</span>
+              Fork this on Github
+              <i class="icon ion ion-fork-repo"></i>
+            </a>
+            
+      pre.example-code
+        code.language-html
+            
+      h3.m-b-1 Icon Button
+      
+      .example-container
+        a.button.button-red.icon-button
+          i.ion.ion-heart
+          
+        a.button.button-gray.icon-button
+          i.ion.ion-bookmark
           
   section.p-y-2
     .container

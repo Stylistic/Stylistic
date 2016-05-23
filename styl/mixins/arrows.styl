@@ -1,0 +1,29 @@
+make-arrow($direction = up, $size = 10px, $color = #fafafa)
+  content: ""
+  position: absolute
+  width: 0
+  height: 0
+
+  if $direction == up
+    top: -($size)
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+
+  if $direction == down
+    bottom: -($size)
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+
+  if $direction == left
+    left: -($size)
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+
+  if $direction == right
+    right: -($size)
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;

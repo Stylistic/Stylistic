@@ -70,6 +70,19 @@ for bp in map-keys(grid-breakpoints)
   &.button-sm, &.button-sm + .label
     button-size(btn-padding-y-sm, btn-padding-x-sm, font-size-sm, line-height-sm, btn-border-radius-sm)
 
+.icon-button
+  padding: btn-icon-padding
+
+  &.left-icon
+    .icon
+      margin-right: .5rem
+      margin-left: 0
+
+  &.right-icon
+    .icon
+      margin-left: .5rem
+      margin-right: 0
+
 .button-labeled
   clearfix()
   display: inline-block
@@ -78,46 +91,42 @@ for bp in map-keys(grid-breakpoints)
 
   > .label
     display: inline-block
+    font-weight: inherit
     background: #fafafa !important
     //color: gray-darker !important
     border-left-radius(0)
 
-    &.label-pointing
+    &.label-pointing-left
       position: relative
       &::before
-        border-width: 0 0 1px 1px
-        background-color: inherit
-        border-style: solid
-        border-color: inherit
-        position: absolute
-        top: 50%
-        margin-top: -0.3333em
-        left: -7px
-        transform: translateX(-50%) translateY(-50%) rotate(45deg)
-        bottom: auto
-        right: auto
-        content: ''
-        -webkit-transform: rotate(45deg)
-        -ms-transform: rotate(45deg)
-        /* transform: rotate(45deg) */
-        background-image: none
-        z-index: 2
-        width: 0.6666em
-        height: 0.6666em
+        make-arrow(left, 10px, #fafafa)
+
+    &.label-pointing-right
+      position: relative
+      &::after
+        make-arrow(right, 10px, #fafafa)
 
   &.left-labeled
       padding-left: 0
 
     .label
-      margin-right: .5rem
+      margin-right: 15px
       margin-left: 0
+
+    &.with-arrow
+      .label::after
+        make-arrow(right, 10px, #fafafa)
 
   &.right-labeled
     padding-right: 0
 
     .label
-      margin-left: .5rem
+      margin-left: 15px
       margin-right: 0
+
+    &.with-arrow
+      .label::before
+        make-arrow(left, 10px, #fafafa)
 
 .button-link
   font-weight: normal
@@ -140,14 +149,3 @@ for bp in map-keys(grid-breakpoints)
   &:disabled, .disabled
     color: btn-link-disabled-color
     text-decoration: none
-
-.icon-button
-  &.left-icon
-    .icon
-      margin-right: .5rem
-      margin-left: 0
-
-  &.right-icon
-    .icon
-      margin-left: .5rem
-      margin-right: 0
