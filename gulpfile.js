@@ -4,12 +4,12 @@ const gulp = require('gulp'),
       uglify = require('gulp-uglify'),
       sourcemaps = require('gulp-sourcemaps'),
       babel = require('gulp-babel'),
+      connect = require('gulp-connect'),
       concat = require('gulp-concat'),
       stylus = require('gulp-stylus'),
       stylint = require('gulp-stylint'),
       del = require('del'),
       fs = require('node-fs-extra'),
-      sequence = require('run-sequence'),
       jade = require('jade'),
       gulpJade = require('gulp-jade'),
       webserver = require('gulp-webserver');
@@ -51,8 +51,7 @@ gulp.task('stylus', () => {
             }
         }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(paths.styles.out))
-        //.pipe(gulp.dest(paths.docs.css));
+        .pipe(gulp.dest(paths.styles.out));
 });
 
 gulp.task('babel', () => {
@@ -63,9 +62,10 @@ gulp.task('babel', () => {
 		    }))
 		    .pipe(concat('stylistic.js'))
 		    .pipe(sourcemaps.write('.'))
-        //.pipe(uglify())
+        // .pipe(uglify())
 		    .pipe(gulp.dest(paths.scripts.out))
-        .pipe(gulp.dest(paths.docs.js));
+        .pipe(gulp.dest(paths.docs.js))
+        .pipe(connect.reload());
 });
 
 gulp.task('templates', () => {
@@ -75,7 +75,8 @@ gulp.task('templates', () => {
         locals: locals,
         pretty: true
       }))
-      .pipe(gulp.dest('./docs'));
+      .pipe(gulp.dest('./docs'))
+      .pipe(connect.reload());
 });
 
 gulp.task('doc_stylus', () => {
@@ -91,18 +92,15 @@ gulp.task('doc_stylus', () => {
           }
       }))
       .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('./docs/css/'));
+      .pipe(gulp.dest('./docs/css/'))
+      .pipe(connect.reload());
 });
 
 gulp.task('serve', () => {
-  gulp.src('./docs')
-      .pipe(webserver({
-        livereload: true,
-        directoryListing: true,
-        open: true,
-        port: 8080,
-        fallback: 'index.html'
-      }))
+  connect.server({
+    root: 'docs',
+    livereload: true
+  });
 });
 
 gulp.task('copy', () => {

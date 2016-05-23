@@ -8,7 +8,7 @@
   user-select: none
   border: btn-border-width solid transparent
   button-size(btn-padding-y, btn-padding-x, font-size-base, line-height, btn-border-radius)
-  margin: 0
+  margin: 0 btn-margin-vertical btn-margin-horizontal 0
   // transition(all .2s ease-in-out)
 
   +hover-focus()
@@ -62,9 +62,6 @@ for bp in map-keys(grid-breakpoints)
     +media-breakpoint-down(bp)
       display: block
       width: 100%
-  &.button-block-{bp} + &.button-block-{bp}
-    margin-top: 5px
-
 
   &.button-lg, &.button-lg + .label
     button-size(btn-padding-y-lg, btn-padding-x-lg, font-size-lg, line-height-lg, btn-border-radius-lg)
@@ -74,45 +71,53 @@ for bp in map-keys(grid-breakpoints)
     button-size(btn-padding-y-sm, btn-padding-x-sm, font-size-sm, line-height-sm, btn-border-radius-sm)
 
 .button-labeled
-  padding: 0
   clearfix()
-  font-size: 0
   display: inline-block
+  padding-top: 0
+  padding-bottom: 0
 
-  .button
+  > .label
     display: inline-block
-    border-right-radius(0)
-    margin: 0
+    background: #fafafa !important
+    //color: gray-darker !important
+    border-left-radius(0)
 
-    ~ .label
-      display: inline-block
-      margin: 0
-      background: #fafafa !important
-      //color: gray-darker !important
-      border-left-radius(0)
+    &.label-pointing
+      position: relative
+      &::before
+        border-width: 0 0 1px 1px
+        background-color: inherit
+        border-style: solid
+        border-color: inherit
+        position: absolute
+        top: 50%
+        margin-top: -0.3333em
+        left: -7px
+        transform: translateX(-50%) translateY(-50%) rotate(45deg)
+        bottom: auto
+        right: auto
+        content: ''
+        -webkit-transform: rotate(45deg)
+        -ms-transform: rotate(45deg)
+        /* transform: rotate(45deg) */
+        background-image: none
+        z-index: 2
+        width: 0.6666em
+        height: 0.6666em
 
-      &.label-pointing
-        position: relative
-        &::before
-          border-width: 0 0 1px 1px;
-          background-color: inherit;
-          border-style: solid;
-          border-color: inherit;
-          position: absolute;
-          top: 50%;
-          margin-top: -0.3333em;
-          left: -7px;
-          transform: translateX(-50%) translateY(-50%) rotate(45deg);
-          bottom: auto;
-          right: auto;
-          content: '';
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          /* transform: rotate(45deg); */
-          background-image: none;
-          z-index: 2;
-          width: 0.6666em;
-          height: 0.6666em;
+  &.left-labeled
+      padding-left: 0
+
+    .label
+      margin-right: .5rem
+      margin-left: 0
+
+  &.right-labeled
+    padding-right: 0
+
+    .label
+      margin-left: .5rem
+      margin-right: 0
 
 .button-link
   font-weight: normal
@@ -135,3 +140,14 @@ for bp in map-keys(grid-breakpoints)
   &:disabled, .disabled
     color: btn-link-disabled-color
     text-decoration: none
+
+.icon-button
+  &.left-icon
+    .icon
+      margin-right: .5rem
+      margin-left: 0
+
+  &.right-icon
+    .icon
+      margin-left: .5rem
+      margin-right: 0
