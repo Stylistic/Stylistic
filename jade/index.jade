@@ -9,7 +9,7 @@ block content
       .masthead-caption.text-center
         img.center-block.m-b-1(src='/images/stylistic-logo-white.png', alt='Stylistic Logo', style='width: 300px;')
         h2.subtitle.m-b-2 not just another CSS framework
-        a.button.button-lg.button-blue.button-block-sm.m-r-1(href='#getting-started') Getting started
+        a.button.button-lg.button-blue.button-block-sm(href='#getting-started') Getting started
         a.button.button-lg.button-red.button-block-sm(href='https://github.com/MarginZero/Stylistic/releases') Release Notes
         .m-t-1.text-center
           .label.label-orange: strong #{version}
@@ -61,8 +61,6 @@ block content
       .row.m-b-2
         .col-xs-12.col-md-8.col-md-offset-2
           h3.m-b-2 Download the archive
-          .row
-            .col-xs-12.col-lg-8.col-lg-offset-2
-              a.button.button-block.button-lg.button-teal(href='https://github.com/MarginZero/Stylistic/archive/#{version}.zip')
-                | Download 
-                i.ion-arrow-down-a
+          a.button.button-block.button-lg.button-teal(href='https://github.com/MarginZero/Stylistic/archive/#{version}.zip')
+            | Download 
+            i.ion-arrow-down-a
