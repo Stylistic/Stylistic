@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "<%= fontName %>";
+  src: url('<%= fontPath %>/<%= fontName %>.eot');
+  src: url('<%= fontPath %>/<%= fontName %>.eot?#iefix') format('eot'),
+          url('<%= fontPath %>/<%= fontName %>.woff') format('woff'),
+          url('<%= fontPath %>/<%= fontName %>.ttf') format('truetype');
+}
+
+icon-base() {
+  font: normal normal 1em/1 <%= fontName %>
+  text-rendering: auto
+  display: inline-block
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  font-style: normal
+  font-variant: normal
+  font-weight: normal
+  vertical-align: sub
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+}
+
+icon-char($filename) {
+  $char = ""
+  <% _.each(glyphs, function(glyph) { %>
+  if $filename == <%= glyph.fileName %> {
+    $char = "\<%= glyph.codePoint %>"
+  }
+  <% }); %>
+  return $char
+}
+
+make-icon($fileName, $insert = 'before', $extend = false) {
+  &:{$insert} {
+    if $extend {
+      icon-base()
+    }
+    content: icon-char($fileName)
+  }
+}
+
+.#{$icon-class} {
+  icon-base()
+<% _.each(glyphs, function(glyph) { %>
+  &.<%= glyph.fileName %> {
+    make-icon(<%= glyph.fileName %>)
+  }
+<% }); %>
+}

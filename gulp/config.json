@@ -1,0 +1,40 @@
+{
+  "templateLocals": {
+    "version": "v0.1.0-alpha.2"
+  },
+  "dirs": {
+    "styles": {
+      "src": "styl/stylistic.styl",
+      "out": "dist/css",
+      "watch": "styl/**/*.styl"
+    },
+    "scripts": {
+      "src": "js/**/*.js",
+      "out": "dist/js",
+      "watch": "js/**/*.js"
+    },
+    "icons": {
+      "fontName": "stylicons",
+      "src": "icons/**/*.svg",
+      "watch": ["icons/**/*.svg", "icons/_icons.styl"],
+      "out": "dist/fonts/stylicons",
+      "template": "icons/_icons.styl",
+      "target": "../../styl/icons.styl",
+      "fontPath": "../fonts/stylicons",
+      "formats": ["ttf", "eot", "woff"]
+    },
+    "docs": {
+      "templates": {
+        "src": "docs/pug/**/*.pug",
+        "out": "docs",
+        "watch": "docs/pug/**/*.pug"
+      },
+      "styles": {
+        "src": "docs/css/site.styl",
+        "out": "docs/css",
+        "watch": ["styl/**/*.styl", "docs/css/**/*.styl"]
+      },
+      "out": "dist"
+    }
+  }
+}

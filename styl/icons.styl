@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "stylistic";
+  src: url('../fonts/stylistic/stylistic.eot');
+  src: url('../fonts/stylistic/stylistic.eot?#iefix') format('eot'),
+          url('../fonts/stylistic/stylistic.woff') format('woff'),
+          url('../fonts/stylistic/stylistic.ttf') format('truetype');
+}
+
+icon-base() {
+  font: normal normal 1em/1 stylistic
+  text-rendering: auto
+  display: inline-block
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  font-style: normal
+  font-variant: normal
+  font-weight: normal
+  vertical-align: sub
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+}
+
+icon-char($filename) {
+  $char = ""
+  
+  if $filename == heart {
+    $char = "\E001"
+  }
+  
+  return $char
+}
+
+make-icon($fileName, $insert = 'before', $extend = false) {
+  &:{$insert} {
+    if $extend {
+      icon-base()
+    }
+    content: icon-char($fileName)
+  }
+}
+
+.icon {
+  icon-base()
+
+  &.heart {
+    make-icon(heart)
+  }
+
+}

@@ -1,8 +1,8 @@
-extends ./partials/_layout.jade
+extends ./partials/_layout.pug
 
 block variables
   - var active = 'home'
-    
+
 block content
   .masthead.masthead-full.p-t-3-p-b-4
     .container
@@ -13,7 +13,7 @@ block content
         a.button.button-lg.button-red.button-block-sm(href='https://github.com/MarginZero/Stylistic/releases') Release Notes
         .m-t-1.text-center
           .label.label-orange: strong #{version}
-          
+
   section#attention-grabber.p-y-4
     .container
       .row.m-b-2
@@ -62,5 +62,5 @@ block content
         .col-xs-12.col-md-8.col-md-offset-2
           h3.m-b-2 Download the archive
           a.button.button-block.button-lg.button-teal(href='https://github.com/MarginZero/Stylistic/archive/#{version}.zip')
-            | Download 
+            | Download
             i.ion-arrow-down-a
