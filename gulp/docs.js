@@ -7,7 +7,7 @@ const gulp = require("gulp"),
       stylus = require('gulp-stylus'),
       poststylus = require('poststylus'),
       stylint = require('gulp-stylint'),
-      fs = require("fs"),
+      fs = require("node-fs-extra"),
       del = require("del");
 
 gulp.task('templates', () => {
@@ -44,7 +44,7 @@ gulp.task('serve', () => {
   });
 });
 
-gulp.task('copy', ["templates"], () => {
+gulp.task('copy', ["templates", "doc-styles"], () => {
   fs.copy("dist", "docs/dist");
 });
 
@@ -52,4 +52,4 @@ gulp.task('clean', () => {
   del(['dist/css/**', 'dist/js/**', 'dist/fonts/**']);
 });
 
-gulp.task("docs", ["templates", "doc-styles"]);
+gulp.task("docs", ["copy"]);

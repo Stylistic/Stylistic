@@ -10,7 +10,7 @@ gulp.task('iconfont', () => {
       .pipe(iconfontCss({
           fontName: config.dirs.icons.fontName,
           path: config.dirs.icons.template,
-          targetPath: config.dirs.icons.target,
+          targetPath: config.dirs.icons["target"],
           fontPath: config.dirs.icons.fontPath
       }))
       .pipe(iconfont({
@@ -18,9 +18,7 @@ gulp.task('iconfont', () => {
           // prependUnicode: true,
           formats: config.dirs.icons.formats,
           timestamp: Math.round(Date.now() / 1000),
-          normalize: true,
-          fixedWidth: true,
-          centerHorizontally: true,
+          fixedWidth: false
       }))
       .on('glyphs', (glyphs, options) => {
           console.log(glyphs, options);

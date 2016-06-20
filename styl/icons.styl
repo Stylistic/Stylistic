@@ -1,13 +1,13 @@
 @font-face {
-  font-family: "stylistic";
-  src: url('../fonts/stylistic/stylistic.eot');
-  src: url('../fonts/stylistic/stylistic.eot?#iefix') format('eot'),
-          url('../fonts/stylistic/stylistic.woff') format('woff'),
-          url('../fonts/stylistic/stylistic.ttf') format('truetype');
+  font-family: "stylicons";
+  src: url('../dist/fonts/stylicons/stylicons.eot');
+  src: url('../dist/fonts/stylicons/stylicons.eot?#iefix') format('eot'),
+          url('../dist/fonts/stylicons/stylicons.woff') format('woff'),
+          url('../dist/fonts/stylicons/stylicons.ttf') format('truetype');
 }
 
 icon-base() {
-  font: normal normal 1em/1 stylistic
+  font: normal normal 1em/1 stylicons
   text-rendering: auto
   display: inline-block
   -webkit-font-smoothing: antialiased
@@ -22,8 +22,116 @@ icon-base() {
 icon-char($filename) {
   $char = ""
   
-  if $filename == heart {
+  if $filename == adjust {
     $char = "\E001"
+  }
+  
+  if $filename == alarm-o {
+    $char = "\E002"
+  }
+  
+  if $filename == alarm-slash-o {
+    $char = "\E003"
+  }
+  
+  if $filename == alarm-slash {
+    $char = "\E004"
+  }
+  
+  if $filename == alarm {
+    $char = "\E005"
+  }
+  
+  if $filename == asterisk {
+    $char = "\E006"
+  }
+  
+  if $filename == at {
+    $char = "\E007"
+  }
+  
+  if $filename == battery-empty {
+    $char = "\E008"
+  }
+  
+  if $filename == battery-full {
+    $char = "\E009"
+  }
+  
+  if $filename == battery-half {
+    $char = "\E00A"
+  }
+  
+  if $filename == battery-o {
+    $char = "\E00B"
+  }
+  
+  if $filename == battery-quarter {
+    $char = "\E00C"
+  }
+  
+  if $filename == battery-three-quarters {
+    $char = "\E00D"
+  }
+  
+  if $filename == battery {
+    $char = "\E00E"
+  }
+  
+  if $filename == chevron-down {
+    $char = "\E00F"
+  }
+  
+  if $filename == chevron-left {
+    $char = "\E010"
+  }
+  
+  if $filename == chevron-right {
+    $char = "\E011"
+  }
+  
+  if $filename == chevron-up {
+    $char = "\E012"
+  }
+  
+  if $filename == circle-notched {
+    $char = "\E013"
+  }
+  
+  if $filename == circle-o {
+    $char = "\E014"
+  }
+  
+  if $filename == circle-thin {
+    $char = "\E015"
+  }
+  
+  if $filename == circle {
+    $char = "\E016"
+  }
+  
+  if $filename == code {
+    $char = "\E017"
+  }
+  
+  if $filename == comment-o {
+    $char = "\E018"
+  }
+  
+  if $filename == comment {
+    $char = "\E019"
+  }
+  
+  if $filename == comments-o {
+    $char = "\E01A"
+  }
+  
+  if $filename == comments {
+    $char = "\E01B"
+  }
+  
+  if $filename == heart {
+    $char = "\E01C"
   }
   
   return $char
@@ -38,10 +146,123 @@ make-icon($fileName, $insert = 'before', $extend = false) {
   }
 }
 
-.icon {
+.{$icon-class}-fw {
+  width: 1.3em
+  text-align: center
+}
+
+.{$icon-class} {
   icon-base()
 
-  &.heart {
+  &.{$icon-class}-adjust {
+    make-icon(adjust)
+  }
+
+  &.{$icon-class}-alarm-o {
+    make-icon(alarm-o)
+  }
+
+  &.{$icon-class}-alarm-slash-o {
+    make-icon(alarm-slash-o)
+  }
+
+  &.{$icon-class}-alarm-slash {
+    make-icon(alarm-slash)
+  }
+
+  &.{$icon-class}-alarm {
+    make-icon(alarm)
+  }
+
+  &.{$icon-class}-asterisk {
+    make-icon(asterisk)
+  }
+
+  &.{$icon-class}-at {
+    make-icon(at)
+  }
+
+  &.{$icon-class}-battery-empty {
+    make-icon(battery-empty)
+  }
+
+  &.{$icon-class}-battery-full {
+    make-icon(battery-full)
+  }
+
+  &.{$icon-class}-battery-half {
+    make-icon(battery-half)
+  }
+
+  &.{$icon-class}-battery-o {
+    make-icon(battery-o)
+  }
+
+  &.{$icon-class}-battery-quarter {
+    make-icon(battery-quarter)
+  }
+
+  &.{$icon-class}-battery-three-quarters {
+    make-icon(battery-three-quarters)
+  }
+
+  &.{$icon-class}-battery {
+    make-icon(battery)
+  }
+
+  &.{$icon-class}-chevron-down {
+    make-icon(chevron-down)
+  }
+
+  &.{$icon-class}-chevron-left {
+    make-icon(chevron-left)
+  }
+
+  &.{$icon-class}-chevron-right {
+    make-icon(chevron-right)
+  }
+
+  &.{$icon-class}-chevron-up {
+    make-icon(chevron-up)
+  }
+
+  &.{$icon-class}-circle-notched {
+    make-icon(circle-notched)
+  }
+
+  &.{$icon-class}-circle-o {
+    make-icon(circle-o)
+  }
+
+  &.{$icon-class}-circle-thin {
+    make-icon(circle-thin)
+  }
+
+  &.{$icon-class}-circle {
+    make-icon(circle)
+  }
+
+  &.{$icon-class}-code {
+    make-icon(code)
+  }
+
+  &.{$icon-class}-comment-o {
+    make-icon(comment-o)
+  }
+
+  &.{$icon-class}-comment {
+    make-icon(comment)
+  }
+
+  &.{$icon-class}-comments-o {
+    make-icon(comments-o)
+  }
+
+  &.{$icon-class}-comments {
+    make-icon(comments)
+  }
+
+  &.{$icon-class}-heart {
     make-icon(heart)
   }
 

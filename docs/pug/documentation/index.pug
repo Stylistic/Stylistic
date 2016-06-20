@@ -8,26 +8,26 @@ block content
     .container
       h1.center-block.text-center.display-1 Documentation
       h4.center-block.text-center So how do you use it?
-      
+
   section.p-y-2
     .container
       h1.section-title.display-4.anchor Grid System
       p.lead Stylistic comes packed with a full 12 column grid system that can be modified to fit your needs, whatever they may be. Both standard CSS classes and mixins are included that will allow you to build your own system if you don't need the overhead that a pre-built grid provides.
-      
+
       .comment-block.comment-block-info
         h5 Getting started
         :marked
           Getting up and going with our grid system is super easy. In fact, if you're already using Bootstrap you will have to do very little to get going. Some important things to note:
           + All rows need to be placed inside a `container` of some kind. The container you place it in is up to you and can either be a `container`, `container-fluid`, `container-full`, or a container that you create by using the `make-container()` Stylus mixin.
           + All `columns` must be placed inside of `row` elements. If you are having spacing issues make sure that you are following this rule.
-          
+
       h3.anchor.m-b-1 Breakpoints
       p.lead The breakpoints in Stylistic are completely customizable like everything else. The default breakpoints are as follows:
-      
+
       table.table-responsive
         thead
           tr
-            th 
+            th
             th Extra Small
             th Small
             th Medium
@@ -51,7 +51,7 @@ block content
           tr
             th(scope="row") # of columns
             td(colspan="5") 12
-        
+
       h3.anchor.m-t-2 Example - Default
       .example-container
         .container.text-center
@@ -87,7 +87,7 @@ block content
             .col-md-4.p-y-1 .col-md-4
           .row
             .col-md-12.p-y-1 .col-md-12
-          
+
       pre.example-code
         code.language-html
           :escape-html
@@ -120,7 +120,7 @@ block content
 
       h3.anchor.m-t-2 Example - Container types
       p You can turn any container into a full-width container or a fluid container just by adding a class
-      
+
       pre.example-code
         code.language-html
           :escape-html
@@ -130,17 +130,17 @@ block content
                 ...
               </div>
             </div>
-            
+
             <!-- This is the same as the above, but with gutters -->
             <div class="container-fluid">
               <div class="row">
                 ...
               </div>
             </div>
-            
+
       h3.anchor.m-t-2 Example - Responsiveness
       p Up till now our grid has only broken down at the media breakpoint. It's possible to define a different size for each breakpoint.
-      
+
       .example-container
         .container.text-center
           .row
@@ -152,7 +152,7 @@ block content
             .col-xs-6.col-md-4.p-y-1 .col-xs-6 .col-md-4
           .row
             .col-xs-6 .col-xs-6
-            
+
       pre.example-code
         code.language-html
           :escape-html
@@ -169,17 +169,17 @@ block content
               <div class="col-xs-6"></div>
               <div class="col-xs-6"></div>
             </div>
-            
+
       h3.anchor.m-t-2 Example - Wrapping
       p When more columns are placed in a row than the grid system allows the extra columns will wrap
-      
+
       .example-container
         .container.text-center
           .row
             .col-xs-9.p-y-1 .col-xs-9
             .col-xs-4.p-y-1 .col-xs-4
             .col-xs-6.p-y-1 .col-xs-6
-            
+
       pre.example-code
         code.language-html
           :escape-html
@@ -188,10 +188,10 @@ block content
               <div class="col-xs-4"></div>
               <div class="col-xs-6"></div>
             </div>
-            
+
       h3.anchor.m-t-2 Example - Column Resets
       p Occasionally you'll run into an issue where coluns don't match up because one is taller than the other. This can be fixed easily by using a clearfix combined with a responsive utility class.
-      
+
       .example-container
         .container.text-center
           .row
@@ -200,7 +200,7 @@ block content
             .clearfix.visible-xs-block
             .col-xs-6.col-sm-3.p-y-1 .col-xs-6 .col-sm-3
             .col-xs-6.col-sm-3.p-y-1 .col-xs-6 .col-sm-3
-            
+
       pre.example-code
         code.language-html
           :escape-html
@@ -211,10 +211,10 @@ block content
               <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
               <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
             </div>
-          
+
       h3.anchor.m-t-2 Example - Column Offsets
       p You can move columns right by utilizing the col-offset property. This is exactly the same as the way Bootstrap does it.
-      
+
       .example-container
         .container.text-center
           .row
@@ -225,7 +225,7 @@ block content
             .col-md-3.col-md-offset-3.p-y-1 .col-md-3 .col-md-offset-3
           .row
             .col-md-6.col-md-offset-3.p-y-1 .col-md-6 .col-md-offset-3
-            
+
       pre.example-code
         code.language-html
           :escape-html
@@ -240,45 +240,45 @@ block content
               <div class="row">
               <div class="col-md-6 col-md-offset-3"></div>
             </div>
-            
+
   section.p-y-2
     .container
       h1.cestion-title.display-4.anchor Colors
       p.lead Unlike with other frameworks, colors in Stylistic are completely customizable from the name to the color itself. That means you can have as many, or as few, colors as you want and when a color changes that change is seen in buttons, backgrounds, etc.
-      
+
       .comment-block.comment-block-warning
         h5 Things to note
         :marked
           Having this much control over colors is a big responsibility. To make sure nothing breaks:
           + Remember that some elements are already tied to a specific color. If you change the name of a color make sure to update your `stylistic_overrides.styl` file
           + Buttons, backgrounds, text-colors, and more will be automatically generated based on the colors you include. So the more colors the bigger your `stylistic.css` file will end up.
-          
+
       h3.m-b-1 Palette
       .palette-circle.bg-teal.text-white
         span
           div Teal
           div #009688
-          
+
       .palette-circle.bg-orange.text-white
         span
           div Orange
           div #ED8B00
-          
+
       .palette-circle.bg-blue.text-white
         span
           div Blue
           div #448AFF
-          
+
       .palette-circle.bg-yellow.text-white
         span
           div Yellow
           div #d0c036
-          
+
       .palette-circle.bg-red.text-white
         span
           div Red
           div #F44336
-          
+
       .palette-circle.bg-gray.text-white
         span
           div Gray
@@ -287,35 +287,52 @@ block content
   section.p-y-2
     .container
         h1.section-title.display-4.anchor Icons
-        p.lead We decided to use the icon font IonIcons because it is beautiful and simple just like Stylistic. To view all of them go to 
+        p.lead We decided to use the icon font IonIcons because it is beautiful and simple just like Stylistic. To view all of them go to
           a(href="http://ionicons.com/") http://ionicons.com
-          
+
         h3.m-b-1 Examples
-        
-        .example-container
-          a.button.button-blue.button-lg: i.ion-arrow-down-a
-          a.button.button-red.button-lg: i.ion-power
+
+        .example-container.icon-examples
+          i.styl.styl-heart
+          i.styl.styl-adjust
+          i.styl.styl-circle
+          i.styl.styl-circle-o
+          i.styl.styl-circle-notched
+          i.styl.styl-circle-thin
+          i.styl.styl-battery-empty
+          i.styl.styl-battery-quarter
+          i.styl.styl-battery-half
+          i.styl.styl-battery-three-quarters
+          i.styl.styl-battery-full
+          i.styl.styl-alarm
+          i.styl.styl-alarm-slash
+          i.styl.styl-alarm-o
+          i.styl.styl-alarm-slash-o
+          i.styl.styl-at
+          i.styl.styl-chevron-up
+          i.styl.styl-chevron-right
+          i.styl.styl-chevron-down
+          i.styl.styl-chevron-left
+          i.styl.styl-comment
+          i.styl.styl-comment-o
+          i.styl.styl-comments
+          i.styl.styl-comments-o
+          i.styl.styl-code
         pre.example-code
           code.language-html
-            :escape-html
-              <a href="#" class="button button-lg button-blue">
-                <i class="ion-arrow-down-a"></i>
-              </a>
-              <a href="#" class="button button-lg button-red">
-                <i class="ion-power"></i>
-              </a>
+
 
   section.p-y-2
     .container
       h1.section-title.display-4.anchor Buttons
       p.lead Beautiful and fully customizable flat buttons
-      
+
       h3.m-b-1 Regular Buttons
-      
+
       .example-container
         a.button.button-teal(href="#") Teal Button
-        a.button.button-orange(href="#") Orange Button 
-        button.button.button-blue(href="#") Blue Button 
+        a.button.button-orange(href="#") Orange Button
+        button.button.button-blue(href="#") Blue Button
         input.button.button-yellow(type="button" href="#" value="Yellow Button")
         a.button.button-red(href="#") Red Button
         a.button.button-gray(href="#") Gray Button
@@ -328,7 +345,7 @@ block content
             <input class="button button-yellow" type="button" value="Yellow button" />
             <a href="#" class="button button-red">Red Button<a/>
             <a href="#" class="button button-gray">Gray Button<a/>
-          
+
       .comment-block.comment-block-warning
         h5 Known issues
         p
@@ -336,18 +353,18 @@ block content
             [#7](https://github.com/MarginZero/Stylistic/issues/7) Right now when the `.button` class is applied to an `input` or a `button` element the element has a height of about 2 extra pixels
 
       h3.m-b-1 Labeled Button
-      
+
       .example-container
           a.button.button-teal.button-labeled.right-labeled.icon-button.left-icon.strong(href="#")
             i.ion.ion-social-facebook.icon
             | Follow us on Facebook
             span.label.label-teal.label-pointing-left 1200
-            
+
           a.button.button-gray.button-labeled.left-labeled.icon-button.right-icon.strong(href="#")
             span.label.label-gray.label-pointing-right 1400
             | Fork this on Github
             i.icon.ion.ion-fork-repo.icon
-            
+
       pre.example-code
         code.language-html
           :escape-html
@@ -356,44 +373,44 @@ block content
               Follow us on Facebook
               <span class="label label-teal label-pointing-left">1200</span>
             </a>
-            
+
             <a href="#" class="button button-gray button-labeled left-labeled icon-button right-icon strong">
               <span class="label label-gray label-pointing-left">1200</span>
               Fork this on Github
               <i class="icon ion ion-fork-repo"></i>
             </a>
-            
-      pre.example-code
-        code.language-html
-            
+
       h3.m-b-1 Icon Button
-      
+
       .example-container
         a.button.button-red.icon-button
-          i.ion.ion-heart
-          
+          i.styl.icon-heart
+
         a.button.button-gray.icon-button
-          i.ion.ion-bookmark
-          
+          i.styl.icon-adjust
+
+      pre.example-code
+        code.language-html
+
   section.p-y-2
     .container
       h1.section-title.display-4.anchor Messages
       p.lead In the words of John Mayer, "Say what you need to say."
-      
+
       h3.m-b-1 Default
-      
+
       .example-container
-      
+
         .message
           .header Default message
           :marked
             This is a message!
-          
+
         .message.message-dark
           .header Default dark message
           :marked
             This is a darker message!
-            
+
       pre.example-code
         code.language-html
           :escape-html
@@ -401,21 +418,21 @@ block content
               <div class="header">Default message</div>
               <p>This is a message!</p>
             </div>
-            
+
             <div class="message message-dark">
               <div class="header">Default dark message</div>
               <p>This is a darker message!</p>
             </div>
-            
+
       h3.m-b-1 Close Button
-        
+
       .example-container
-        
+
         .message
           .i.ion.ion-close.close-btn
           .header Close me!
           .content This message has a close button
-          
+
       pre.example-code
         code.language-html
           :escape-html
@@ -424,27 +441,27 @@ block content
               <div class="header">Close me!</div>
               <div class="content">This message has a close button</div>
             </div>
-            
+
       h3.m-b-1 Syntax
-      
+
       .example-container
-      
+
         .message.message-info
           .header Information message!
           .content This is an info message
-          
+
         .message.message-danger
           .header Danger message!
           .content This is a danger message
-          
+
         .message.message-warning
           .header Warning message!
           .content This is a warning message
-          
+
         .message.message-success
           .header Success message!
           .content This is a success message
-          
+
       pre.example-code
         code.language-html
           :escape-html
@@ -452,67 +469,67 @@ block content
               <div class="header">Information message!</div>
               <div class="content">This is an info message</div>
             </div>
-            
+
             <div class="message message-danger">
               <div class="header">Danger message!</div>
               <div class="content">This is a danger message</div>
             </div>
-            
+
             <div class="message message-warning">
               <div class="header">Warning message!</div>
               <div class="content">This is a warning message</div>
             </div>
-            
+
             <div class="message message-success">
               <div class="header">Success message!</div>
               <div class="content">This is a success message</div>
             </div>
-            
+
       h3.m-b-1 Colored
-      
+
       .example-container
-        
+
         .message.message-dark.message-teal
           .content A teal message
-          
+
         .message.message-dark.message-orange
           .content An orange message
-          
+
         .message.message-dark.message-blue
           .content A blue message
-          
+
         .message.message-dark.message-yellow
           .content A yellow message
-          
+
         .message.message-dark.message-red
           .content A red message
-          
+
         .message.message-dark.message-gray
           .content A gray message
-          
+
       pre.example-code
         code.language-html
           :escape-html
             <div class="message message-dark message-teal">
               <div class="content">A teal message</div>
             </div>
-            
+
             <div class="message message-dark message-orange">
               <div class="content">An orange message</div>
             </div>
-            
+
             <div class="message message-dark message-blue">
               <div class="content">A blue message</div>
             </div>
-            
+
             <div class="message message-dark message-yellow">
               <div class="content">A yellow message</div>
             </div>
-            
+
             <div class="message message-dark message-red">
               <div class="content">A red message</div>
             </div>
-            
+
             <div class="message message-dark message-gray">
               <div class="content">A gray message</div>
             </div>

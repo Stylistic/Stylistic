@@ -203,12 +203,16 @@ select {
   }
 }
 @font-face {
-  font-family: "stylistic";
-  src: url("../fonts/stylistic/stylistic.eot");
-  src: url("../fonts/stylistic/stylistic.eot?#iefix") format('eot'), url("../fonts/stylistic/stylistic.woff") format('woff'), url("../fonts/stylistic/stylistic.ttf") format('truetype');
+  font-family: "stylicons";
+  src: url("../dist/fonts/stylicons/stylicons.eot");
+  src: url("../dist/fonts/stylicons/stylicons.eot?#iefix") format('eot'), url("../dist/fonts/stylicons/stylicons.woff") format('woff'), url("../dist/fonts/stylicons/stylicons.ttf") format('truetype');
 }
-.icon {
-  font: normal normal 1em/1 stylistic;
+.styl-fw {
+  width: 1.3em;
+  text-align: center;
+}
+.styl {
+  font: normal normal 1em/1 stylicons;
   text-rendering: auto;
   display: inline-block;
   -webkit-font-smoothing: antialiased;
@@ -220,8 +224,89 @@ select {
   font-weight: normal;
   vertical-align: sub;
 }
-.icon.heart:before {
+.styl.styl-adjust:before {
   content: "\E001";
+}
+.styl.styl-alarm-o:before {
+  content: "\E002";
+}
+.styl.styl-alarm-slash-o:before {
+  content: "\E003";
+}
+.styl.styl-alarm-slash:before {
+  content: "\E004";
+}
+.styl.styl-alarm:before {
+  content: "\E005";
+}
+.styl.styl-asterisk:before {
+  content: "\E006";
+}
+.styl.styl-at:before {
+  content: "\E007";
+}
+.styl.styl-battery-empty:before {
+  content: "\E008";
+}
+.styl.styl-battery-full:before {
+  content: "\E009";
+}
+.styl.styl-battery-half:before {
+  content: "\E00A";
+}
+.styl.styl-battery-o:before {
+  content: "\E00B";
+}
+.styl.styl-battery-quarter:before {
+  content: "\E00C";
+}
+.styl.styl-battery-three-quarters:before {
+  content: "\E00D";
+}
+.styl.styl-battery:before {
+  content: "\E00E";
+}
+.styl.styl-chevron-down:before {
+  content: "\E00F";
+}
+.styl.styl-chevron-left:before {
+  content: "\E010";
+}
+.styl.styl-chevron-right:before {
+  content: "\E011";
+}
+.styl.styl-chevron-up:before {
+  content: "\E012";
+}
+.styl.styl-circle-notched:before {
+  content: "\E013";
+}
+.styl.styl-circle-o:before {
+  content: "\E014";
+}
+.styl.styl-circle-thin:before {
+  content: "\E015";
+}
+.styl.styl-circle:before {
+  content: "\E016";
+}
+.styl.styl-code:before {
+  content: "\E017";
+}
+.styl.styl-comment-o:before {
+  content: "\E018";
+}
+.styl.styl-comment:before {
+  content: "\E019";
+}
+.styl.styl-comments-o:before {
+  content: "\E01A";
+}
+.styl.styl-comments:before {
+  content: "\E01B";
+}
+.styl.styl-heart:before {
+  content: "\E01C";
 }
 html {
   box-sizing: border-box;
@@ -255,7 +340,8 @@ body {
   color: #373737;
   font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: 400;
 }
 [tabindex="-1"]:focus {
@@ -828,7 +914,8 @@ mark,
 .blockquote-footer {
   display: block;
   font-size: 80%;
-  line-height: 1.5;
+  line-height: 24px;
+  line-height: 1.5rem;
   color: #b6b6b6;
 }
 .blockquote-footer::before {
@@ -938,7 +1025,8 @@ table th,
 table td {
   padding: 12px;
   padding: 0.75rem;
-  line-height: 1.5;
+  line-height: 24px;
+  line-height: 1.5rem;
   vertical-align: top;
   border: 1px solid #ddd;
 }
@@ -982,7 +1070,8 @@ table .table {
   padding: 0.375rem 0.75rem;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 24px;
+  line-height: 1.5rem;
   color: #9e9e9e;
   background-color: #fefefe;
   background-image: none;
@@ -1063,7 +1152,8 @@ table .table {
   padding: 0.25rem 0.75rem;
   font-size: 14px;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 16px;
+  line-height: 1rem;
   border-radius: 0.2rem;
 }
 .form-block-lg {
@@ -1071,7 +1161,8 @@ table .table {
   padding: 0.75rem 1.25rem;
   font-size: 20px;
   font-size: 1.25rem;
-  line-height: 1.333333333333333;
+  line-height: 21.333px;
+  line-height: 1.333333333333333rem;
   border-radius: 0.3rem;
 }
 .form-group {
@@ -1180,7 +1271,8 @@ table .table {
   padding: 0.375rem 1rem;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 16px;
+  line-height: 1rem;
   border-radius: 0.25rem;
   margin: 0 4px 4px 0;
   margin: 0 0.25rem 0.25rem 0;
@@ -1542,7 +1634,8 @@ fieldset[disabled] a.button {
   padding: 0.75rem 1.25rem;
   font-size: 20px;
   font-size: 1.25rem;
-  line-height: 1.333333333333333;
+  line-height: 21.333px;
+  line-height: 1.333333333333333rem;
   border-radius: 0.3rem;
 }
 .button-sm,
@@ -1551,7 +1644,8 @@ fieldset[disabled] a.button {
   padding: 0.25rem 0.75rem;
   font-size: 14px;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 16px;
+  line-height: 1rem;
   border-radius: 0.2rem;
 }
 @media (max-width: 767px) {
@@ -1566,7 +1660,8 @@ fieldset[disabled] a.button {
   padding: 0.75rem 1.25rem;
   font-size: 20px;
   font-size: 1.25rem;
-  line-height: 1.333333333333333;
+  line-height: 21.333px;
+  line-height: 1.333333333333333rem;
   border-radius: 0.3rem;
 }
 .button-sm,
@@ -1575,7 +1670,8 @@ fieldset[disabled] a.button {
   padding: 0.25rem 0.75rem;
   font-size: 14px;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 16px;
+  line-height: 1rem;
   border-radius: 0.2rem;
 }
 @media (max-width: 991px) {
@@ -1590,7 +1686,8 @@ fieldset[disabled] a.button {
   padding: 0.75rem 1.25rem;
   font-size: 20px;
   font-size: 1.25rem;
-  line-height: 1.333333333333333;
+  line-height: 21.333px;
+  line-height: 1.333333333333333rem;
   border-radius: 0.3rem;
 }
 .button-sm,
@@ -1599,7 +1696,8 @@ fieldset[disabled] a.button {
   padding: 0.25rem 0.75rem;
   font-size: 14px;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 16px;
+  line-height: 1rem;
   border-radius: 0.2rem;
 }
 @media (max-width: 1199px) {
@@ -1614,7 +1712,8 @@ fieldset[disabled] a.button {
   padding: 0.75rem 1.25rem;
   font-size: 20px;
   font-size: 1.25rem;
-  line-height: 1.333333333333333;
+  line-height: 21.333px;
+  line-height: 1.333333333333333rem;
   border-radius: 0.3rem;
 }
 .button-sm,
@@ -1623,7 +1722,8 @@ fieldset[disabled] a.button {
   padding: 0.25rem 0.75rem;
   font-size: 14px;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 16px;
+  line-height: 1rem;
   border-radius: 0.2rem;
 }
 .button-block-xl {
@@ -1636,7 +1736,8 @@ fieldset[disabled] a.button {
   padding: 0.75rem 1.25rem;
   font-size: 20px;
   font-size: 1.25rem;
-  line-height: 1.333333333333333;
+  line-height: 21.333px;
+  line-height: 1.333333333333333rem;
   border-radius: 0.3rem;
 }
 .button-sm,
@@ -1645,7 +1746,8 @@ fieldset[disabled] a.button {
   padding: 0.25rem 0.75rem;
   font-size: 14px;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 16px;
+  line-height: 1rem;
   border-radius: 0.2rem;
 }
 .icon-button {
@@ -3450,7 +3552,8 @@ pre code {
   padding: 0.375rem 1rem;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 24px;
+  line-height: 1.5rem;
   border-radius: 0.25rem;
   background-color: transparent;
 }
@@ -3611,7 +3714,8 @@ pre code {
   padding: 1rem 1rem;
   clear: both;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 24px;
+  line-height: 1.5rem;
   color: #767676;
   text-align: left;
   white-space: nowrap;
@@ -3687,7 +3791,8 @@ pre code {
   padding: 3px 20px;
   font-size: 14px;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 24px;
+  line-height: 1.5rem;
   color: #b6b6b6;
   white-space: nowrap;
 }
@@ -3836,7 +3941,8 @@ pre code {
   width: 100%;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 24px;
+  line-height: 1.5rem;
   padding: 16px 16px;
   padding: 1rem 1rem;
 }
@@ -4822,4 +4928,10 @@ dimmer {
 .palette-circle + .palette-circle {
   margin-left: 3.2px;
   margin-left: 0.2rem;
+}
+.icon-examples i.styl {
+  font-size: 64px;
+  font-size: 4rem;
+  margin-right: 4px;
+  margin-right: 0.25rem;
 }

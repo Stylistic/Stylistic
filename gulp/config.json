@@ -19,8 +19,8 @@
       "watch": ["icons/**/*.svg", "icons/_icons.styl"],
       "out": "dist/fonts/stylicons",
       "template": "icons/_icons.styl",
-      "target": "../../styl/icons.styl",
-      "fontPath": "../fonts/stylicons",
+      "target": "../../../styl/icons.styl",
+      "fontPath": "../dist/fonts/stylicons",
       "formats": ["ttf", "eot", "woff"]
     },
     "docs": {

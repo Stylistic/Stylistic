@@ -38,10 +38,15 @@ make-icon($fileName, $insert = 'before', $extend = false) {
   }
 }
 
-.#{$icon-class} {
+.{$icon-class}-fw {
+  width: 1.3em
+  text-align: center
+}
+
+.{$icon-class} {
   icon-base()
 <% _.each(glyphs, function(glyph) { %>
-  &.<%= glyph.fileName %> {
+  &.{$icon-class}-<%= glyph.fileName %> {
     make-icon(<%= glyph.fileName %>)
   }
 <% }); %>
