@@ -394,6 +394,34 @@ block content
 
   section.p-y-2
     .container
+      h1.section-title.display-4.anchor Dropdowns
+
+      h3.m-b-1 Default
+
+      .example-container
+        .dropdown.selection-dropdown
+          input(type="hidden", name="gender")
+          i.icon.dropdown-caret.dropdown-toggle
+          .dropdown-placeholder Gender
+          .dropdown-menu
+            .dropdown-item(data-value="1") Male
+            .dropdown-item(data-value="0") Female
+
+      pre.example-code
+        code.language-html
+          :escape-html
+            <div class="dropdown selection-dropdown">
+              <input type="hidden" name="gender">
+              <i class="icon dropdown-caret dropdown-toggle"></i>
+              <div class="dropdown-placeholder">Gender</div>
+              <div class="dropdown-menu">
+                <div class="dropdown-item" data-value="1">Male</div>
+                <div class="dropdown-item" data-value="0">Female</div>
+              </div>
+            </div>
+
+  section.p-y-2
+    .container
       h1.section-title.display-4.anchor Messages
       p.lead In the words of John Mayer, "Say what you need to say."
 

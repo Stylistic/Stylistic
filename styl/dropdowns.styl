@@ -1,190 +1,56 @@
-.dropup, .dropdown
-  position: relative
-
-  &.inline
-    display: inline-block
-    vertical-align: middle
-
-    .dropdown-toggle
-      width: 100%
-
-  .dropdown-toggle
-    text-align: left
-
-    &::after
-      display: inline-block
-      width: 0
-      height: 0
-      margin-right: .25rem
-      margin-left: .25rem
-      vertical-align: middle
-      content: ""
-      border-top: caret-width solid
-      border-right: caret-width solid transparent
-      border-left: caret-width solid transparent
-
-    &:focus
-      outline: 0
-
-.dropup
-  .dropdown-toggle
-    &::after
-      border-top: 0
-      border-bottom: caret-width solid
-
-.dropdown-menu
-  position: absolute
-  top: 100%
-  left: 0
-  z-index: zindex-dropdown
-  display: none
-  float: left
-  min-width: 100%
-  padding: 5px 0
-  margin: 2px 0 0
-  font-size: font-size-base
-  color: body-color
-  text-align: left
-  list-style: none
-  background-color: white
-  border: dropdown-border-width solid dropdown-border-color
-  border-radius(border-radius)
-  make-box-shadow(0, 6px, 12px, rgba(0, 0, 0, .175))
-
-  &.scrollable
-    max-height: (font-size-base + (spacer-y * 2)) * 6
-    overflow-y: auto
-
-  &.fit-width
-    max-width: 100%
-
-    .dropdown-item, .dropdown-item > a
-      max-width: 100%
-      overflow-x: hidden;
-      text-overflow: ellipsis
-
-.dropdown-divider
-  height: 1px
-  margin: 0 spacer-x
-  overflow: hidden
-  background-color: dropdown-divider-bg
-
-.dropdown-item
-  position: relative
-  display: block
-  width: 100%
-  padding: dropdown-item-padding-y dropdown-item-padding-x
-  clear: both
-  font-weight: normal
-  line-height: line-height
-  color: dropdown-link-color
-  text-align: left
-  white-space: nowrap
-  background: none
-  border: none
-  height: auto
+.dropdown
   cursor: pointer
-  +hover-focus()
-    color: dropdown-link-hover-color
-    text-decoration: none
-    background-color: dropdown-link-hover-bg
-
-  &.active
-    +plain-hover-focus()
-      color: dropdown-link-active-color
-      text-decoration: none
-      background-color: dropdown-link-active-bg
-      outline: 0
-
-  &.disabled
-    +plain-hover-focus()
-      color: dropdown-link-disabled-color
-
-    +hover-focus()
-      text-decoration: none
-      cursor: cursor-disabled
-      background-color: transparent
-      background-image: none
-      reset-filter()
-
-  &.with-right-icon
-    .icon
-      float: right
-
-  &.with-left-icon
-    .icon
-      float: left
-
-  .content
-    display: inline-block
-
-  .description
-    float: right
-    margin: 0 0 0 1em
-    color: rgba(0,0,0,.4)
-
-  a
-    color: inherit
-    text-decoration: inherit
-
-.open
-  background: dropdown-active-bg
-
-  > .dropdown-menu
-    display: block
-
-  > a
-    outline: 0
-
-.dropdown-menu-right
-  right: 0
-  left: auto
-
-.dropdown-menu-left
-  right: auto
-  left: 0
-
-.dropdown-header
-  display: block
-  padding: 3px 20px
-  font-size: font-size-sm
-  line-height: line-height
-  color: dropdown-header-color
-  white-space: nowrap
-
-.dropdown-backdrop
-  position: fixed
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
-  z-index: (zindex-dropdown - 10)
-
-.pull-right > .dropdown-menu
-  right: 0
-  left: auto
-
-.dropup, .navbar-fixed-bottom .dropdown
-  .caret
-    content: ""
-    border-top: 0
-    border-bottom: caret-width solid
-
+  position: relative
+  display: inline-block
+  outline: none
+  text-align: left
+  // transition: some-transition
+  
+  tap-highlight-color: rgba(0, 0, 0, 0) 
+  
   .dropdown-menu
-    top: auto
-    bottom: 100%
-    margin-bottom: 2px
-
-.dropup, .dropdown
-
-  &.disabled
-    .dropdown-toggle
-      color: text-muted
-      cursor: default
-
-      &:hover
-        text-decoration: none
-        color: text-muted
-
-.dropdown.dropdown-block
-  width: 100%
+    cursor: auto
+    position: absolute
+    display: none
+    outline: none
+    top: 100%
+    min-width: max-content
+    transition: dropdown-menu-transition // TODO: Add this to variables.styl
+    
+    margin: 0
+    padding: dropdown-menu-padding // TODO: Add this to variables.styl
+    background: dropdown-bg
+    
+    font-size: dropdown-menu-font-size // TODO: Add this to variables.styl
+    text-shadow: none
+    text-align: left
+    
+    box-shadow: dropdown-menu-box-shadow // TODO: Add this to variables.styl
+    border: dropdown-menu-border // TODO: Add this to variables.styl
+    border-radius: dropdown-menu-border-radius // TODO: Add this to variables.styl
+    z-index: zindex-dropdown
+    will-change: transform, opacity
+    
+    & > *
+      white-space: no-wrap
+      
+  input:not(.search):first-child,
+  select
+    display: none !important
+    
+.dropdown > .dropdown-toggle
+  position: relative
+  width: auto
+  font-size: dropdown-toggle-font-size // TODO: Add this to variables.styl
+  margin: dropdown-toggle-margin // TODO: Add this to variables.styl
+    
+// TODO: Icon styles for inside the dropdown-menu
+  
+.dropdown > .dropdown-placeholder
+  display: inline-block
+  transition: dropdown-placeholder-transition // TODO: Add this to variables.styl
+  
+.dropdown .dropdown-menu > .dropdown-item
+  position: relative
+  cursor: pointer
+  display: block
