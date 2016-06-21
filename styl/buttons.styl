@@ -18,8 +18,10 @@
     text-decoration: none
 
   &:active,
-  &.active
+  &.active,
+  &.open
     background-image: none
+    text-decoration: none
     outline: 0
     box-shadow: inset 0 3px 5px rgba(0,0,0,.125)
 
@@ -43,7 +45,7 @@ for name, color in colors
       color: color
       border-color: color
 
-      &:hover
+      &:hover, &.open
         color: white
         background: color
         border-color: color
@@ -62,6 +64,10 @@ for bp in map-keys(grid-breakpoints)
     +media-breakpoint-down(bp)
       display: block
       width: 100%
+
+  &.button-block-{bp} + &.button-block-{bp}
+    margin-top: 5px
+
 
   &.button-lg, &.button-lg + .label
     button-size(btn-padding-y-lg, btn-padding-x-lg, font-size-lg, line-height-lg, btn-border-radius-lg)

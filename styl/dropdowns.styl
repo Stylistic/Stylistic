@@ -1,15 +1,3 @@
-//  /$$$$$$$                                      /$$
-// | $$__  $$                                    | $$
-// | $$  \ $$  /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$  /$$  /$$  /$$ /$$$$$$$   /$$$$$$$
-// | $$  | $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$| $$ | $$ | $$| $$__  $$ /$$_____/
-// | $$  | $$| $$  \__/| $$  \ $$| $$  \ $$| $$  | $$| $$  \ $$| $$ | $$ | $$| $$  \ $$|  $$$$$$
-// | $$  | $$| $$      | $$  | $$| $$  | $$| $$  | $$| $$  | $$| $$ | $$ | $$| $$  | $$ \____  $$
-// | $$$$$$$/| $$      |  $$$$$$/| $$$$$$$/|  $$$$$$$|  $$$$$$/|  $$$$$/$$$$/| $$  | $$ /$$$$$$$/
-// |_______/ |__/       \______/ | $$____/  \_______/ \______/  \_____/\___/ |__/  |__/|_______/
-//                               | $$
-//                               | $$
-//                               |__/
-
 .dropdown
   cursor: pointer
   position: relative
@@ -26,25 +14,26 @@
     display: none
     outline: none
     top: 100%
+    left: 0
     min-width: max-content
-    transition: dropdown-menu-transition // TODO: Add this to variables.styl
+    transition: dropdown-menu-transition
     
     margin: 0
-    padding: dropdown-menu-padding // TODO: Add this to variables.styl
+    padding: dropdown-menu-padding
     background: dropdown-bg
     
-    font-size: dropdown-menu-font-size // TODO: Add this to variables.styl
+    font-size: dropdown-menu-font-size
     text-shadow: none
     text-align: left
     
-    box-shadow: dropdown-menu-box-shadow // TODO: Add this to variables.styl
-    border: dropdown-menu-border // TODO: Add this to variables.styl
-    border-radius: dropdown-menu-border-radius // TODO: Add this to variables.styl
+    box-shadow: dropdown-menu-box-shadow
+    border: dropdown-menu-border
+    border-radius: dropdown-menu-border-radius
     z-index: zindex-dropdown
     will-change: transform, opacity
     
     & > *
-      white-space: no-wrap
+      white-space: nowrap
       
   input:not(.search):first-child,
   select
@@ -53,88 +42,105 @@
 .dropdown > .dropdown-toggle
   position: relative
   width: auto
-  font-size: dropdown-toggle-font-size // TODO: Add this to variables.styl
-  margin: dropdown-toggle-margin // TODO: Add this to variables.styl
+  font-size: dropdown-toggle-font-size
+  margin: dropdown-toggle-margin
     
 // TODO: Icon styles for inside the dropdown-menu
   
 .dropdown > .dropdown-placeholder
   display: inline-block
-  transition: dropdown-placeholder-transition // TODO: Add this to variables.styl
+  transition: dropdown-placeholder-transition
+  font-weight: dropdown-placeholder-font-weight
   
 .dropdown .dropdown-menu > .dropdown-item
   position: relative
   cursor: pointer
   display: block
-  border: dropdown-menu-item-border // TODO: Add this to variables.styl
-  height: dropdown-menu-item-height // TODO: Add this to variables.styl
-  text-align: dropdown-menu-item-text-align // TODO: Add this to variables.styl
+  border: dropdown-menu-item-border
+  height: dropdown-menu-item-height
+  text-align: dropdown-menu-item-text-align
   
-  border-top: dropdown-menu-item-border-top // TODO: Add this to variables.styl
-  line-height: dropdown-menu-item-line-height // TODO: Add this to variables.styl
-  font-size: dropdown-menu-item-font-size // TODO: Add this to variables.styl
-  color: dropdown-menu-item-color // TODO: Add this to variables.styl
+  border-top: dropdown-menu-item-border-top
+  line-height: dropdown-menu-item-line-height
+  font-size: dropdown-menu-item-font-size
+  color: dropdown-menu-item-color
 
-  padding: dropdown-menu-item-padding // TODO: Add this to variables.styl
-  text-transform: dropdown-menu-item-text-transform // TODO: Add this to variables.styl
-  font-weight: dropdown-menu-item-font-weight // TODO: Add this to variables.styl
-  box-shadow: dropdown-menu-item-box-shadow // TODO: Add this to variables.styl
-  touch-callout: none // TODO: Add this to variables.styl
-  
-  &:first-child
-    border-top-width: 0
+  padding: dropdown-menu-item-padding
+  text-transform: dropdown-menu-item-text-transform
+  font-weight: dropdown-menu-item-font-weight
+  box-shadow: dropdown-menu-item-box-shadow
+  -webkit-touch-callout: none
     
 .dropdown .dropdown-menu .dropdown-menu
-  top: dropdown-submenu-top // TODO: Add this to variables.styl
-  left: dropdown-submenu-left // TODO: Add this to variables.styl
-  margin: dropdown-submenu-right // TODO: Add this to variables.styl
-  right: dropdown-submenu-right // TODO: Add this to variables.styl
-  margin: dropdown-submenu-margin // TODO: Add this to variables.styl
-  border-radius: dropdown-submenu-border-radius // TODO: Add this to variables.styl
-  z-index: zindex-dropdown-submenu // TODO: Add this to variables.styl
+  top: dropdown-submenu-top
+  left: dropdown-submenu-left
+  margin: dropdown-submenu-right
+  right: dropdown-submenu-right
+  margin: dropdown-submenu-margin
+  border-radius: dropdown-submenu-border-radius
+  z-index: zindex-dropdown-submenu
   
 
 /*--------------------
   SELECTION DROPDOWN
  --------------------*/
  
- .selection-dropdown
-   cursor: pointer
-   word-wrap: break-word
-   line-height: 1rem
-   white-space: normal
-   outline: 0
-   transform: rotateZ(0deg)
+.selection-dropdown
+  cursor: pointer
+  word-wrap: break-word
+  line-height: 1rem
+  white-space: normal
+  outline: 0
+  transform: rotateZ(0deg)
+
+  min-width: selection-dropdown-min-width
+  min-height: selection-dropdown-min-height
+
+  background: selection-dropdown-bg
+  display: selection-dropdown-display
+  padding: selection-dropdown-padding
+  color: selection-dropdown-color
+  box-shadow: selection-dropdown-box-shadow
+  border: selection-dropdown-border
+  border-radius: selection-dropdown-border-radius
+  transition: selection-dropdown-transition
+  
+  .dropdown-toggle
+    cursor: pointer
+    position: absolute
+    top: auto
+    width: auto
+    margin: selection-icon-margin
+    padding: selection-icon-padding
+    right: selection-icon-right
+    opacity: selection-icon-opacity
+    transition: selection-icon-transition
+    color: dropdown-toggle-color
+ 
+  &.compact
+    min-width: 0
    
-   min-width: selection-dropdown-min-width // TODO: Add this to variables.styl
-   min-height: selection-dropdown-min-height // TODO: Add this to variables.styl
-   
-   background: selection-dropdown-bg // TODO: Add this to variables.styl
-   display: selection-dropdown-display // TODO: Add this to variables.styl
-   padding: selection-dropdown-padding // TODO: Add this to variables.styl
-   color: selection-dropdown-color // TODO: Add this to variables.styl
-   box-shadow: selection-dropdown-box-shadow // TODO: Add this to variables.styl
-   border: selection-dropdown-border // TODO: Add this to variables.styl
-   border-radius: selection-dropdown-border-radius // TODO: Add this to variables.styl
-   transition: selection-dropdown-transition // TODO: Add this to variables.styl
-   
-   &.compact
-     min-width: 0
-     
-   .dropdown-menu
-     overflow-x: hidden
-     overflow-y: auto
-     backface-visibility: hidden
-     overflow-scrolling: touch
-     border-top-width: 0 !important
-     width: auto
-     outline: none
-     margin: (0px - dropdown-menu-border-width) // TODO: Add this to variables.styl
-     min-width: dropdown-menu-min-width // TODO: Add this to variables.styl
-     width: dropdown-menu-min-width // TODO: Add this to variables.styl
-     
-     &::after, &::before
-       display: none
+  .dropdown-menu
+    overflow-x: hidden
+    overflow-y: auto
+    backface-visibility: hidden
+    -webkit-overflow-scrolling: touch
+    border-top-width: 0 !important
+    outline: none
+    margin: (0px - dropdown-menu-border-width)
+    width: dropdown-menu-min-width
+    min-width: dropdown-menu-min-width
+
+    &::after, &::before
+      display: none
+      
+    .dropdown-item
+      white-space: normal
+      word-wrap: normal
+
+      &:hover
+        background-color: selection-dropdown-hover-background
+      
    
 select.selection-dropdown {
   height: selection-dropdown-height;
@@ -142,3 +148,47 @@ select.selection-dropdown {
   border: selection-dropdown-border;
 }
 
+.inline-dropdown
+  cursor: pointer
+  display: inline-block
+  color: inline-text-color
+  
+  .dropdown-toggle
+    margin: inline-icon-margin
+    vertical-align: baseline
+    
+  .dropdown-placeholder
+    font-weight: inline-placeholder-font-weight
+    
+  .dropdown-menu
+    cursor: auto
+    margin-top: inline-menu-margin-top
+    border-radius: inline-menu-border-radius
+    
+.button.dropdown
+  margin: 0
+  
+  &.dropdown-menu
+    min-width: 100%
+
+.floating-dropdown .dropdown-menu
+  left: 0
+  right: auto
+  box-shadow: floating-menu-box-shadow !important
+  border-radius: floating-menu-border-radius !important
+  white-space: normal
+  
+  &:first-child
+    border-top: none
+  
+  &.right-floating
+    left: auto
+    right: 0
+
+.floating-dropdown > .dropdown-menu
+  margin-top: floating-menu-margin-top !important
+  border-radius: floating-menu-border-radius !important
+
+
+.dropdown.open > .dropdown-menu
+  display: block

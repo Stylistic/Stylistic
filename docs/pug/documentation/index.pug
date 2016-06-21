@@ -399,18 +399,44 @@ block content
       h3.m-b-1 Default
 
       .example-container
-        .dropdown.selection-dropdown
+        .dropdown.selection-dropdown.m-r-1
           input(type="hidden", name="gender")
           i.dropdown-toggle.styl-chevron-down
           .dropdown-placeholder Gender
           .dropdown-menu
-            .dropdown-item(data-value="1") Male
-            .dropdown-item(data-value="0") Female
+            a.dropdown-item(href="#", data-value="1") Male
+            a.dropdown-item(href="#", data-value="0") Female
+            a.dropdown-item(href="#", data-value="-1") Some other gender that we did not think of?
+
+        .dropdown.selection-dropdown.floating-dropdown.m-r-1
+          input(type="hidden", name="gender")
+          i.dropdown-toggle.styl-chevron-down
+          .dropdown-placeholder Gender
+          .dropdown-menu
+            a.dropdown-item(href="#", data-value="1") Male
+            a.dropdown-item(href="#", data-value="0") Female
+
+        .button.dropdown.floating-dropdown.labeled-icon-button.button-teal.open
+          i.styl-circle-notched
+          .dropdown-placeholder Select one
+          .dropdown-menu
+            a.dropdown-item(href="#") The red one
+            a.dropdown-item(href="#") The green one
 
       pre.example-code
         code.language-html
           :escape-html
-            <div class="dropdown selection-dropdown">
+            <div class="dropdown selection-dropdown m-r-1">
+              <input type="hidden" name="gender">
+              <i class="icon dropdown-caret dropdown-toggle"></i>
+              <div class="dropdown-placeholder">Gender</div>
+              <div class="dropdown-menu">
+                <div class="dropdown-item" data-value="1">Male</div>
+                <div class="dropdown-item" data-value="0">Female</div>
+              </div>
+            </div>
+
+            <div class="dropdown selection-dropdown floating-dropdown">
               <input type="hidden" name="gender">
               <i class="icon dropdown-caret dropdown-toggle"></i>
               <div class="dropdown-placeholder">Gender</div>
