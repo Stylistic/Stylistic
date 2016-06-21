@@ -6,6 +6,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-webfont');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	grunt.initConfig({
 
@@ -69,10 +70,34 @@ module.exports = function(grunt) {
 		        dest: 'dist/fonts',
 		        destCss: 'styl',
 		        options: {
-		            stylesheet: 'icons',
-		            relativeFontPath: '/fonts'
+		            stylesheet: 'styl',
+		            template: 'icons/_icons.styl',
+		            relativeFontPath: '/fonts',
+		            engine: 'node',
+		            fontFamilyName: 'stylfont',
+		            fontFilename: 'stylfont',
+		            htmlDemo: false,
+		            templateOptions: {
+						        baseClass: 'glyph-icon',
+						        classPrefix: 'glyph_',
+						        mixinPrefix: 'glyph-',
+						        fontPath: '../fonts',
+						        fontName: 'stylfont'
+						    }
 		        }
 		    }
+		},
+
+		copy: {
+			fonts: {
+				files: [{
+					expand: true,
+					cwd: 'dist/fonts',
+					src: ['**'],
+					dest: 'docs/build/fonts',
+					filter: 'isFile'
+				}]
+			}
 		},
 
 		connect: {

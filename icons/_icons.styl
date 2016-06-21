@@ -21,11 +21,11 @@ icon-base() {
 
 icon-char($filename) {
   $char = ""
-  <% _.each(glyphs, function(glyph) { %>
-  if $filename == <%= glyph.fileName %> {
-    $char = "\<%= glyph.codePoint %>"
+  <% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
+  if $filename == <%= glyphs[glyphIdx] %> {
+    $char = "\<%= codepoints[glyphIdx] %>"
   }
-  <% }); %>
+  <% } %>
   return $char
 }
 
@@ -38,16 +38,16 @@ make-icon($fileName, $insert = 'before', $extend = false) {
   }
 }
 
-.{$icon-class}-fw {
+.{$icon-prefix}fw {
   width: 1.3em
   text-align: center
 }
 
-.{$icon-class} {
+.{$icon-prefix} {
   icon-base()
-<% _.each(glyphs, function(glyph) { %>
-  &.{$icon-class}-<%= glyph.fileName %> {
-    make-icon(<%= glyph.fileName %>)
+<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
+  &.{$icon-prefix}<%= glyphs[glyphIdx] %> {
+    make-icon(<%= glyphs[glyphIdx] %>)
   }
-<% }); %>
+<% } %>
 }
