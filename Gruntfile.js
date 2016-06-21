@@ -102,6 +102,6 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('default', ['stylus', 'pug', 'connect', 'watch'])
+	grunt.registerTask('default', ['stylus', 'pug', 'watch'])
 
 }
