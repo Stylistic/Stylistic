@@ -5,7 +5,6 @@
   outline: none
   text-align: left
   // transition: some-transition
-  z-index: zindex-dropdown
   tap-highlight-color: rgba(0, 0, 0, 0)
   
   .dropdown-menu
@@ -211,5 +210,8 @@ select.selection-dropdown {
   border-radius: floating-menu-border-radius !important
 
 
-.dropdown.open .dropdown-menu
-  display: block
+.dropdown.open
+  z-index: zindex-dropdown
+
+  .dropdown-menu
+    display: block
