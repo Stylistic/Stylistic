@@ -169,11 +169,27 @@ select.selection-dropdown {
     margin-top: inline-menu-margin-top
     border-radius: inline-menu-border-radius
     
-.button.dropdown
-  margin: 0
-  
-  &.dropdown-menu
-    min-width: 100%
+.button-dropdown
+  & > .button
+    display: block
+    width: 100%
+    text-align: inherit
+    position: relative
+    transition: dropdown-placeholder-transition
+    font-weight: dropdown-placeholder-font-weight
+    color: dropdown-placeholder-color
+    
+    & > .icon
+      cursor: pointer
+      position: absolute
+      top: auto
+      width: auto
+      margin: dropdown-btn-icon-margin
+      padding: dropdown-btn-icon-padding
+      right: dropdown-btn-icon-right
+      opacity: dropdown-btn-icon-opacity
+      transition: dropdown-btn-icon-transition
+      color: dropdown-toggle-color
 
 .floating-dropdown .dropdown-menu
   left: 0
